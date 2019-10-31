@@ -1,32 +1,140 @@
+
 // This Source Code Form is subject to the terms of the Mozilla Public
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 @import '../../includes/lib';
 
-label {
-    display: block;
-    font-weight: bold;
-    margin: 0 0 .25em;
+$form-red: #d70022;
+$form-yellow: #d7b600;
+$form-green: $color-green-60;
 
-    &.mzp-u-inline {
-        @include bidi(((padding, 0 $spacing-sm 0 0, 0 0 0 $spacing-sm),));
-        display: inline;
-        font-weight: normal;
-    }
+/* -------------------------------------------------------------------------- */
+// Resets
+// many from https://necolas.github.io/normalize.css/
+
+form,
+fieldset,
+legend {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+
+legend {
+    box-sizing: border-box; /* 1 */
+    color: inherit; /* 2 */
+    display: table; /* 1 */
+    max-width: 100%; /* 1 */
+    padding: 0; /* 3 */
+    white-space: normal; /* 1 */
 }
 
 button,
 input,
 select,
+optgroup,
 textarea {
     @include font-base;
     @include text-body-md;
+    line-height: 1.25;
+    margin: 0;
 }
 
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+
 textarea {
-    height: auto;
-    max-width: 100%;
+    overflow: auto;
+}
+
+/**
+* 1. Add the correct box sizing in IE 10.
+* 2. Remove the padding in IE 10.
+*/
+
+[type="checkbox"],
+[type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+    -webkit-appearance: textfield; /* 1 */
+    outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+    -webkit-appearance: button; /* 1 */
+    font: inherit; /* 2 */
+}
+
+/* -------------------------------------------------------------------------- */
+// Element styles
+
+fieldset {
+    margin-bottom: $spacing-lg;
+}
+
+legend {
+    @include text-body-lg;
+    font-weight: bold;
+    margin-bottom: $spacing-lg;
+}
+
+label {
+    @include text-body-sm;
+    color: $color-gray-70;
+    display: block;
+    font-weight: bold;
+    margin: 0 0 $spacing-md;
+}
+
+
+[type="checkbox"],
+[type="radio"] {
+    border-radius: 4px;
+
+    .mzp-is-error & {
+        box-shadow: 0 0 0 1px $form-red;
+    }
+}
+
+[type="checkbox"] {
+    border-radius: 100%;
 }
 
 textarea,
@@ -40,98 +148,285 @@ input[type='number'],
 input[type='date'],
 input[type='time'] {
     @include border-box;
+    @include text-body-md;
     background: $color-white;
-    border-radius: 3px;
-    border: 1px solid $color-gray-80;
-    display: inline-block;
+    border-radius: 4px;
+    border: 2px solid $color-gray-50;
     line-height: 1.25;
-    padding: .25em $spacing-sm;
+    margin: 0 0 $spacing-md;
+    padding: $spacing-sm;
+
+    &::placeholder {
+        color: $color-gray-70;
+    }
 
     &:hover {
-        border-color: $color-black;
+        border-color: $color-link-hover;
     }
 
     &:focus {
-        border-color: $color-black;
-        box-shadow: 0 0 0 2px $color-blue-40;
+        outline: none;
+        border-color: $color-link;
+        box-shadow: 0 0 1px 1px rgba($color-blue-40, .5);
     }
 
-    &:disabled {
-        background: $color-gray-30;
+    .mzp-is-error & {
+        border-color: $form-red;
+        box-shadow: none;
 
-        &:hover,
+        &:hover {
+            border-color: $color-red-80;
+        }
+
+        &:focus {
+            border-color: $form-red;
+            box-shadow: 0 0 1px 1px rgba($form-red, .5);
+        }
+    }
+
+    &:disabled,
+    &[aria-disabled=true] {
+        background: $color-gray-10;
+        border-color: $color-gray-30;
+        color: $color-gray-70;
+
         &:focus {
             border-color: $color-gray-80;
         }
     }
 }
 
-select:focus {
-    box-shadow: 0 0 0 2px $color-blue-40;
+input[type='search'] {
+    background-image: $url-image-search-form;
+    background-repeat: no-repeat;
+    background-position: left 8px top 50%, 0 0;
+    padding: $spacing-sm $spacing-sm $spacing-sm calc(1.5em + #{$spacing-sm * 2});
+
+    &:hover {
+        background-image: $url-image-search-link-hover;
+    }
+
+    &:focus {
+        background-image: $url-image-search-link;
+    }
+
+    [dir="rtl"] & {
+        background-position: right 8px top 50%, 0 0;
+        padding: $spacing-sm calc(1.5em + #{$spacing-sm * 2}) $spacing-sm $spacing-sm;
+    }
+}
+
+input[type='color'],
+input[type='file'] {
+    background: $color-white;
+    border-radius: 4px;
+    border: 2px solid $color-gray-50;
+    line-height: 1.25;
+    margin: 0 0 $spacing-md;
+
+    &:hover {
+        border-color: $color-link-hover;
+    }
+
+    &:focus {
+        border-color: $color-link;
+        box-shadow: 0 0 1px 1px rgba($color-blue-40, .5);
+        outline: none;
+    }
+
+    .mzp-is-error & {
+        border-color: $form-red;
+        box-shadow: none;
+
+        &:hover {
+            border-color: $color-red-80;
+        }
+
+        &:focus {
+            border-color: $form-red;
+            box-shadow: 0 0 1px 1px rgba($form-red, .5);
+        }
+    }
+
+    &:disabled,
+    &[aria-disabled=true] {
+        background: $color-gray-10;
+        border-color: $color-gray-30;
+        color: $color-gray-70;
+
+        &:focus {
+            border-color: $color-gray-80;
+        }
+    }
+}
+
+input[type='file'] {
+    padding: $spacing-sm;
+}
+
+textarea {
+    height: auto;
+    max-width: 100%;
+}
+
+// with thanks to https://www.filamentgroup.com/lab/select-css.html
+select {
+	display: block;
+	font-weight: normal;
+	color: #444;
+	line-height: 1.25;
+	margin: 0 0 $spacing-md;
+    padding: $spacing-sm calc(1.5em + #{$spacing-sm * 2}) $spacing-sm $spacing-sm;
+	width: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
+	border: 2px solid $color-gray-50;
+	border-radius: 4px;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	background-color: #fff;
+	background-image: $url-image-arrow-down-form,
+	                  linear-gradient(to bottom, #ffffff 0%,#ffffff 100%); // must keep gradient to avoid bugs
+	background-repeat: no-repeat, repeat;
+	background-position: right 8px top 50%, 0 0;
+    background-size: 1.5em auto, 100%;
+
+    [dir="rtl"] & {
+        background-position: left 8px top 50%, 0 0;
+        padding: $spacing-sm $spacing-sm $spacing-sm calc(1.5em + #{$spacing-sm * 2});
+    }
+
+    &::-ms-expand {
+        display: none;
+    }
+
+    &:hover {
+        border-color: $color-link-hover;
+        background-image: $url-image-arrow-down-link-hover,
+	                  linear-gradient(to bottom, #ffffff 0%,#ffffff 100%); // must keep gradient to avoid bugs
+    }
+
+    &:focus {
+        border-color: $color-link;
+        background-image: $url-image-arrow-down-link,
+	                  linear-gradient(to bottom, #ffffff 0%,#ffffff 100%); // must keep gradient to avoid bugs
+        box-shadow: 0 0 1px 1px rgba($color-blue-40, .5);
+        color: #222;
+        outline: none;
+    }
+
+    .mzp-is-error & {
+        border-color: $form-red;
+        box-shadow: none;
+
+        &:hover {
+            border-color: $color-red-80;
+        }
+
+        &:focus {
+            border-color: $form-red;
+            box-shadow: 0 0 1px 1px rgba($form-red, .5);
+        }
+    }
+
+    &:disabled,
+    &[aria-disabled=true] {
+        background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
+	                      linear-gradient(to bottom, $color-gray-10 0%, $color-gray-10 100%); // must keep gradient to avoid bugs
+	    border-color: $color-gray-30;
+        color: $color-gray-70;
+
+        &:hover {
+            border-color: $color-gray-30;
+        }
+
+        &:focus {
+            border-color: $color-gray-80;
+        }
+    }
+
+    option {
+        font-weight: normal;
+    }
+}
+
+button {
+    margin: 0 0 $spacing-md;
+    padding: $spacing-sm $spacing-md;
+    border-radius: 4px;
+    font-weight: bold;
+    border: 2px solid $color-gray-50;
+    background: #fff;
+    color: $color-gray-80;
+
+    &:hover {
+        background: $color-gray-20;
+    }
+
+    &:focus {
+        background: $color-gray-20;
+        border-color: $color-link-hover;
+        box-shadow: 0 0 1px 1px rgba($color-blue-40, .5);
+    }
+
+    &:disabled {
+        background: #fff;
+        border-color: $color-gray-40;
+        color: $color-gray-40;
+
+        &:focus {
+            border-color: $color-gray-80;
+        }
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+// Basic components and utility classes
+
+label {
+    // inline included for backwards compatability but I think it should be removed - SH
+    &.mzp-u-inline {
+        @include bidi(((padding, 0 $spacing-sm 0 0, 0 0 0 $spacing-sm),));
+        display: inline;
+        font-weight: normal;
+    }
 }
 
 legend {
-    @include text-display-sm;
-
     .mzp-u-inline & {
         @include text-body-md;
     }
 }
 
-fieldset li {
-    margin-bottom: .5em;
-}
-
 .mzp-c-fieldnote {
-    @include text-body-sm;
+    @include text-body-xs;
     color: $color-gray-80;
     display: block;
     font-weight: normal;
+
+    .mzp-is-error & {
+        color: $form-red;
+    }
 }
 
-.mzp-c-form-errors {
-    background: $color-yellow-50;
-    border: 2px solid $color-yellow-60;
-    margin: 0 0 1em;
-    padding: $spacing-sm $spacing-md;
 
-    ul {
+/* -------------------------------------------------------------------------- */
+// Errors
+
+.mzp-c-form-errors {
+    @include light-links;
+    background-color: $form-red;
+    border-radius: 4px;
+    color: #fff;
+    padding: $spacing-sm;
+    margin-bottom: $spacing-lg;
+
+    :last-child {
         margin-bottom: 0;
     }
 
     li {
-        margin-bottom: .5em;
+        margin-bottom: $spacing-sm;
     }
-}
-
-.mzp-is-error {
-    color: $color-red-60;
-
-    .mzp-c-fieldnote {
-        color: $color-red-60;
-    }
-
-    textarea,
-    input[type='email'],
-    input[type='url'],
-    input[type='tel'],
-    input[type='password'],
-    input[type='search'],
-    input[type='text'],
-    input[type='number'],
-    input[type='date'],
-    input[type='time'] {
-        border-color: $color-red-60;
-
-        &:focus {
-            box-shadow: 0 0 0 2px $color-red-50;
-        }
-    }
-
-    select,
-    input[type='checkbox'],
-    input[type='radio'] {
-        box-shadow: 0 0 0 2px $color-red-50;
-    }
-
 }

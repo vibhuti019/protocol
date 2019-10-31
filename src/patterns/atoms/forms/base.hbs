@@ -1,0 +1,79 @@
+---
+order: 1
+---
+
+<fieldset>
+  <legend>Check boxes</legend>
+  <label for="checkbox-1">
+    <input type="checkbox" name="checkboxes" id="checkbox-1"> Option 1
+  </label>
+  <label for="checkbox-2">
+    <input type="checkbox" name="checkboxes" id="checkbox-2"> Option 2
+  </label>
+</fieldset>
+
+
+<fieldset>
+  <legend>Radio buttons</legend>
+  <label for="radio-1">
+    <input type="radio" name="radios" id="radio-1"> Option 1
+  </label>
+  <label for="radio-2">
+    <input type="radio" name="radios" id="radio-2"> Option 2
+  </label>
+</fieldset>
+
+<fieldset>
+  <legend>Inputs</legend>
+  <label for="text">Text</label>
+  <input type="text" name="text" id="text">
+
+  <label for="email">E-mail</label>
+  <input type="email" name="email" id="email" placeholder="you@example.com">
+
+  <label for="password">Password</label>
+  <input type="password" name="password" id="password">
+
+  <label for="tel">Tel</label>
+  <input type="tel" name="tel" id="tel">
+
+  <label for="url">URL</label>
+  <input type="url" name="url" id="url">
+
+  <label for="search">Search</label>
+  <input type="search" name="search" id="search">
+
+  <label for="number">Number</label>
+  <input type="number" name="number" id="number">
+
+  <label for="date">Date</label>
+  <input type="date" name="date" id="date">
+
+  <label for="time">Time</label>
+  <input type="time" name="time" id="time">
+
+  <label for="color">Color</label>
+  <input type="color" name="color" id="color">
+
+  <label for="file">File</label>
+  <input type="file" name="file" id="file">
+
+  <label for="range">Range</label>
+  <input type="range" name="range" id="range">
+
+  <label for="textarea">Text area</label>
+  <textarea name="textarea" id="textarea" rows="3" cols="40"></textarea>
+</fieldset>
+
+
+<fieldset>
+  <legend>Select</legend>
+  <label for="language">Language</label>
+    <select name="language" id="language">
+    {{#each (data "items")}}
+      <option value="{{lang-code}}">{{language}}</option>
+    {{/each}}
+  </select>
+</fieldset>
+
+<button>Button</button>

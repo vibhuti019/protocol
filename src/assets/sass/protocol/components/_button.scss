@@ -19,19 +19,20 @@ a.mzp-c-button {
     cursor: pointer;
     display: inline-block;
     font-weight: bold;
-    padding: ($spacing-md - 2px) ($spacing-xl - 2px); //2px extra padding removed to compensate for 2px border.
+    padding: ($spacing-md - 2px) ($spacing-xl - 2px); // 2px extra padding removed to compensate for 2px border.
     text-decoration: none !important;  /* stylelint-disable-line declaration-no-important */
 
     &:focus,
     &:hover {
         @include transform(translate(-2px, -2px));
         background-color: $color-white;
+        border: 2px solid $color-black;
         box-shadow: 4px 4px 0 0 $color-black;
         color: $color-black;
     }
 
     &:disabled {
-        background-color: $color-gray-30;
+        background: #fff;
         border-color: $color-gray-30;
         pointer-events: none;
     }
