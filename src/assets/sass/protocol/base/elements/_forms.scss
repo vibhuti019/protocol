@@ -113,6 +113,11 @@ legend {
     @include text-body-lg;
     font-weight: bold;
     margin-bottom: $spacing-lg;
+
+    .mzp-t-firefox & {
+        @include font-firefox;
+        color: $color-off-black;
+    }
 }
 
 label {
@@ -120,20 +125,19 @@ label {
     color: $color-gray-70;
     display: block;
     font-weight: bold;
-    margin: 0 0 $spacing-md;
+    margin: 0 0 $spacing-sm;
 }
-
 
 [type="checkbox"],
 [type="radio"] {
     border-radius: 4px;
 
     .mzp-is-error & {
-        box-shadow: 0 0 0 1px $form-red;
+        box-shadow: 0 0 0 2px $form-red;
     }
 }
 
-[type="checkbox"] {
+[type="radio"] {
     border-radius: 100%;
 }
 
@@ -167,7 +171,7 @@ input[type='time'] {
     &:focus {
         outline: none;
         border-color: $color-link;
-        box-shadow: 0 0 1px 1px rgba($color-blue-40, .5);
+        box-shadow: 0 0 0 2px rgba($color-blue-40, .5);
     }
 
     .mzp-is-error & {
@@ -180,7 +184,7 @@ input[type='time'] {
 
         &:focus {
             border-color: $form-red;
-            box-shadow: 0 0 1px 1px rgba($form-red, .5);
+            box-shadow: 0 0 0 2px rgba($form-red, .5);
         }
     }
 
@@ -230,7 +234,7 @@ input[type='file'] {
 
     &:focus {
         border-color: $color-link;
-        box-shadow: 0 0 1px 1px rgba($color-blue-40, .5);
+        box-shadow: 0 0 0 2px rgba($color-blue-40, .5);
         outline: none;
     }
 
@@ -244,7 +248,7 @@ input[type='file'] {
 
         &:focus {
             border-color: $form-red;
-            box-shadow: 0 0 1px 1px rgba($form-red, .5);
+            box-shadow: 0 0 0 2px rgba($form-red, .5);
         }
     }
 
@@ -311,7 +315,7 @@ select {
         border-color: $color-link;
         background-image: $url-image-arrow-down-link,
 	                  linear-gradient(to bottom, #ffffff 0%,#ffffff 100%); // must keep gradient to avoid bugs
-        box-shadow: 0 0 1px 1px rgba($color-blue-40, .5);
+        box-shadow: 0 0 0 2px rgba($color-blue-40, .5);
         color: #222;
         outline: none;
     }
@@ -326,7 +330,7 @@ select {
 
         &:focus {
             border-color: $form-red;
-            box-shadow: 0 0 1px 1px rgba($form-red, .5);
+            box-shadow: 0 0 0 2px rgba($form-red, .5);
         }
     }
 
@@ -367,7 +371,7 @@ button {
     &:focus {
         background: $color-gray-20;
         border-color: $color-link-hover;
-        box-shadow: 0 0 1px 1px rgba($color-blue-40, .5);
+        box-shadow: 0 0 0 2px rgba($color-blue-40, .5);
     }
 
     &:disabled {

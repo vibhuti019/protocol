@@ -1,0 +1,19 @@
+---
+name: Custom Checkboxes and Radio Buttons
+description: These are available with special code that needs to be precicely used.
+order: 1
+notes: |
+    - use `mzp-c-input-check` for both checkboxes and radio buttons
+    - the input must be before the label in source order
+    - nothing else can go inside the parent div
+---
+
+<div class="mzp-c-input-check">
+  <input type="checkbox" name="checkboxes" id="checkbox-c1">
+  <label for="checkbox-c1">Checkbox</label>
+</div>
+
+<div class="mzp-c-input-check">
+  <input type="radio" name="radio-c1" id="radio-c1">
+  <label for="radio-c1">Radio button</label>
+</div>

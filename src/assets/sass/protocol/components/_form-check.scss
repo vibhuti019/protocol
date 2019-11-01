@@ -1,0 +1,78 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+@import '../includes/lib';
+
+$check-height: 26px;
+$check-sprite-grid: 30px;
+
+.mzp-c-input-check {
+    box-sizing: border-box;
+    min-height: $check-height;
+    overflow: hidden;
+    position: relative;
+
+    // hide real input
+    input[type="checkbox"],
+    input[type="radio"] {
+        @include bidi(((left, 0, right, auto),));
+        box-sizing: border-box;
+        position: absolute;
+        top: 0;
+        width: $check-height;
+        height: $check-height;
+        opacity: 0;
+        z-index: 1;
+    }
+
+    // label
+    label {
+        @include bidi(((padding-left, #{$check-height + $spacing-md}, padding-right, 0),));
+        padding-top: 4px;
+        font-weight: normal;
+        vertical-align: top;
+    }
+
+    // create fake input
+    label:before {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: $check-sprite-grid * 7 * -1; //todo bidi
+    }
+
+    input[type="checkbox"] + label:before {
+        content: url('/static/img/forms/check_sprite.svg');
+    }
+
+    input[type="radio"] + label:before {
+        content: url('/static/img/forms/radio_sprite.svg');
+    }
+
+    input:hover + label:before {
+        left: $check-sprite-grid * 6 * -1; //todo bidi
+        top: $check-sprite-grid * 1 * -1; //todo bidi
+    }
+
+    input:focus + label:before {
+        left: $check-sprite-grid * 5 * -1; //todo bidi
+        top: $check-sprite-grid * 2 * -1; //todo bidi
+    }
+
+    input:checked + label:before {
+        left: $check-sprite-grid * 4 * -1; //todo bidi
+        top: $check-sprite-grid * 3 * -1; //todo bidi
+    }
+
+    input:checked:hover + label:before {
+        left: $check-sprite-grid * 3 * -1; //todo bidi
+        top: $check-sprite-grid * 4 * -1; //todo bidi
+    }
+
+    input:checked:focus + label:before {
+        left: $check-sprite-grid * 2 * -1; //todo bidi
+        top: $check-sprite-grid * 5 * -1; //todo bidi
+    }
+}
+
