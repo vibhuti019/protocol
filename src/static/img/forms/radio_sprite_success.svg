@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="240px" height="240px" viewBox="0 0 240 240" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <bx:grid x="0" y="0" width="30" height="30"/>
+  </defs>
+  <title>Group 4</title>
+  <desc>Created with Sketch.</desc>
+  <g id="Atoms" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Group-4" transform="translate(2.000000, 2.000000)">
+      <g transform="matrix(1, 0, 0, 1, 40, 54)">
+        <circle id="Oval-Copy-3" stroke-width="2" fill="#FFFFFF" cx="61" cy="77" r="10" style="stroke: rgb(0, 135, 135);"/>
+        <circle id="Oval-Copy-4" cx="61" cy="77" r="5" style="fill: rgb(42, 195, 162); stroke: rgb(42, 195, 162);"/>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 52, 44)">
+        <circle id="Oval-Copy" stroke-width="2" fill="#FFFFFF" cx="79" cy="57" r="10" style="stroke: rgb(42, 195, 162);"/>
+        <circle id="Oval-Copy" cx="79" cy="57" r="5" style="stroke: rgb(42, 195, 162); paint-order: stroke; fill: rgb(42, 195, 162);"/>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 2, 96)"/>
+      <circle id="Oval" stroke-width="2" fill="#FFFFFF" cx="221" cy="11" r="10" style="stroke: rgb(42, 195, 162);"/>
+      <circle id="Oval-Copy-10" stroke-width="2" fill="#FFFFFF" cx="191" cy="41" r="10" style="stroke: rgb(0, 135, 135);"/>
+      <g transform="matrix(1, 0, 0, 1, 10.928001, 84.955002)">
+        <circle id="circle-3" fill="#FFFFFF" cx="60.072" cy="76.045" r="11" style="stroke-width: 4px; stroke-opacity: 0.5; stroke: rgb(42, 195, 162);"/>
+        <circle id="circle-1" stroke-width="2" fill="#FFFFFF" cx="60.072" cy="76" r="10" style="stroke: rgb(0, 135, 135);"/>
+        <circle id="circle-2" cx="60" cy="76" r="5" style="fill: rgb(42, 195, 162); stroke: rgb(42, 195, 162);"/>
+      </g>
+      <circle id="circle-5" fill="#FFFFFF" cx="161" cy="71" r="11" style="stroke-width: 4px; stroke-opacity: 0.5; stroke: rgb(42, 195, 162);"/>
+      <circle id="circle-4" stroke-width="2" fill="#FFFFFF" cx="161" cy="71" r="10" style="stroke: rgb(0, 135, 135);"/>
+    </g>
+  </g>
+</svg>

@@ -106,7 +106,11 @@ textarea {
 // Element styles
 
 fieldset {
-    margin-bottom: $spacing-lg;
+    margin-bottom: $spacing-md;
+
+    > *:last-child {
+        margin-bottom: 0;
+    }
 }
 
 legend {
@@ -128,6 +132,7 @@ label {
     margin: 0 0 $spacing-sm;
 }
 
+/* check boxes and radio buttons */
 [type="checkbox"],
 [type="radio"] {
     border-radius: 4px;
@@ -141,6 +146,8 @@ label {
     border-radius: 100%;
 }
 
+
+/* input fields that are not checkboxes and radio buttons */
 textarea,
 input[type='email'],
 input[type='url'],
@@ -200,10 +207,21 @@ input[type='time'] {
     }
 }
 
+textarea,
+input[type='email'],
+input[type='url'],
+input[type='tel'],
+input[type='password'],
+input[type='search'],
+input[type='text'],
+input[type='number'] {
+    min-width: 300px;
+}
+
 input[type='search'] {
     background-image: $url-image-search-form;
     background-repeat: no-repeat;
-    background-position: left 8px top 50%, 0 0;
+    background-position: left 8px top 50%;
     padding: $spacing-sm $spacing-sm $spacing-sm calc(1.5em + #{$spacing-sm * 2});
 
     &:hover {
@@ -215,7 +233,7 @@ input[type='search'] {
     }
 
     [dir="rtl"] & {
-        background-position: right 8px top 50%, 0 0;
+        background-position: right 8px top 50%;
         padding: $spacing-sm calc(1.5em + #{$spacing-sm * 2}) $spacing-sm $spacing-sm;
     }
 }
@@ -273,6 +291,9 @@ textarea {
     max-width: 100%;
 }
 
+/* -------------------------------------------------------------------------- */
+// Select
+
 // with thanks to https://www.filamentgroup.com/lab/select-css.html
 select {
 	display: block;
@@ -293,11 +314,11 @@ select {
 	background-image: $url-image-arrow-down-form,
 	                  linear-gradient(to bottom, #ffffff 0%,#ffffff 100%); // must keep gradient to avoid bugs
 	background-repeat: no-repeat, repeat;
-	background-position: right 8px top 50%, 0 0;
+	background-position: right 8px top 50%;
     background-size: 1.5em auto, 100%;
 
     [dir="rtl"] & {
-        background-position: left 8px top 50%, 0 0;
+        background-position: left 8px top 50%;
         padding: $spacing-sm $spacing-sm $spacing-sm calc(1.5em + #{$spacing-sm * 2});
     }
 
@@ -355,6 +376,9 @@ select {
     }
 }
 
+/* -------------------------------------------------------------------------- */
+// Buttons
+
 button {
     margin: 0 0 $spacing-md;
     padding: $spacing-sm $spacing-md;
@@ -386,12 +410,12 @@ button {
 }
 
 /* -------------------------------------------------------------------------- */
-// Basic components and utility classes
+// Components and utility classes (basic only, for backwards compatability)
 
 label {
     // inline included for backwards compatability but I think it should be removed - SH
     &.mzp-u-inline {
-        @include bidi(((padding, 0 $spacing-sm 0 0, 0 0 0 $spacing-sm),));
+        @include bidi(((padding, 0 $spacing-sm 0, 0 0 $spacing-sm),)); //TODO
         display: inline;
         font-weight: normal;
     }
@@ -416,7 +440,7 @@ legend {
 
 
 /* -------------------------------------------------------------------------- */
-// Errors
+// Errors (basic only, for backwards compatability)
 
 .mzp-c-form-errors {
     @include light-links;

@@ -1,0 +1,289 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+@import '../includes/lib';
+
+$form-red: #d70022;
+$form-yellow: #d7b600;
+$form-green: $color-green-60;
+$check-height: 26px;
+$symbol-spacing: calc(1.5em + #{$spacing-sm * 2});
+
+textarea,
+input[type='email'],
+input[type='url'],
+input[type='tel'],
+input[type='password'],
+input[type='search'],
+input[type='text'],
+input[type='number'],
+input[type='date'],
+input[type='time'],
+input[type='color'],
+input[type='file'],
+select {
+
+    .mzp-is-error & {
+        border-color: $form-red;
+        box-shadow: none;
+
+        &:hover {
+            border-color: $color-red-80;
+        }
+
+        &:focus {
+            border-color: $form-red;
+            box-shadow: 0 0 0 2px rgba($form-red, .5);
+        }
+
+        &:focus:hover {
+            border-color: $color-red-80;
+        }
+    }
+
+    .mzp-is-warn & {
+        border-color: $form-yellow;
+        box-shadow: none;
+
+        &:hover {
+            border-color: $color-yellow-70;
+        }
+
+        &:focus {
+            border-color: $form-yellow;
+            box-shadow: 0 0 0 2px rgba($form-yellow, .5);
+        }
+
+        &:focus:hover {
+            border-color: $color-yellow-70;
+        }
+    }
+
+    .mzp-is-success & {
+        border-color: $form-green;
+        box-shadow: none;
+
+        &:hover {
+            border-color: $color-green-70;
+        }
+
+        &:focus {
+            border-color: $form-green;
+            box-shadow: 0 0 0 2px rgba($form-green, .5);
+        }
+
+        &:focus:hover {
+            border-color: $color-green-70;
+        }
+    }
+}
+
+textarea,
+input[type='email'],
+input[type='url'],
+input[type='tel'],
+input[type='password'],
+input[type='text'],
+input[type='number'],
+input[type='date'],
+input[type='time'] {
+
+    .mzp-is-error &,
+    .mzp-is-success & {
+        background-repeat: no-repeat;
+        background-position: right 8px top 50%;
+        padding: $spacing-sm $symbol-spacing $spacing-sm $spacing-sm;
+
+        [dir="rtl"] & {
+            background-position: left 8px top 50%;
+            padding: $spacing-sm $spacing-sm $spacing-sm $symbol-spacing;
+        }
+    }
+
+    .mzp-is-error & {
+        background-image: $url-error-form-red;
+    }
+
+    .mzp-is-success & {
+        background-image: $url-success-form-green;
+    }
+}
+
+textarea {
+    .mzp-is-error &,
+    .mzp-is-success & {
+        background-position: right 8px top 8px;
+
+        [dir="rtl"] & {
+            background-position: left 8px top 8px;
+        }
+    }
+}
+
+
+input[type='search'] {
+    .mzp-is-error &,
+    .mzp-is-success & {
+        background-repeat: no-repeat;
+        background-position: left 8px top 50%, right 8px top 50%;
+        padding: $spacing-sm $symbol-spacing $spacing-sm $symbol-spacing;
+
+        [dir="rtl"] & {
+            background-position: right 8px top 50%, left 8px top 50%;
+            padding: $spacing-sm $symbol-spacing $spacing-sm $symbol-spacing;
+        }
+    }
+
+    .mzp-is-error & {
+        background-image: $url-image-search-form, $url-error-form-red;
+
+        &:hover {
+            background-image: $url-image-search-link-hover, $url-error-form-red;
+        }
+
+        &:focus {
+            background-image: $url-image-search-link, $url-error-form-red;
+        }
+    }
+
+    .mzp-is-success & {
+        background-image: $url-image-search-form, $url-success-form-green;
+
+        &:hover {
+            background-image: $url-image-search-link-hover, $url-success-form-green;
+        }
+
+        &:focus {
+            background-image: $url-image-search-link, $url-success-form-green;
+        }
+    }
+}
+
+select {
+    .mzp-is-error &,
+    .mzp-is-success & {
+        background-repeat: no-repeat, no-repeat, repeat;
+        background-position: right 8px top 50%, right calc(1.5em + 8px * 2) top 50%, 0 0;
+        background-size: 1.5em auto, auto, 100%;
+
+        [dir="rtl"] & {
+            // TODO
+            // background-position: left 8px top 50%;
+            // padding: $spacing-sm $spacing-sm $spacing-sm calc(1.5em + #{$spacing-sm * 2});
+        }
+        padding: $spacing-sm calc(3em + #{$spacing-sm * 3}) $spacing-sm $spacing-sm;
+
+        [dir="rtl"] & {
+            // TODO
+            // background-position: right 8px top 50%, left 8px top 50%;
+            // padding: $spacing-sm $symbol-spacing $spacing-sm $symbol-spacing;
+        }
+    }
+
+    .mzp-is-error & {
+        background-image: $url-image-arrow-down-form, $url-error-form-red, linear-gradient(to bottom, #ffffff 0%,#ffffff 100%); // must keep gradient to avoid bugs;
+
+        &:hover {
+            background-image: $url-image-arrow-down-link-hover, $url-error-form-red, linear-gradient(to bottom, #ffffff 0%,#ffffff 100%); // must keep gradient to avoid bugs;
+        }
+
+        &:focus {
+            background-image: $url-image-arrow-down-link, $url-error-form-red, linear-gradient(to bottom, #ffffff 0%,#ffffff 100%); // must keep gradient to avoid bugs;
+        }
+    }
+
+    .mzp-is-success & {
+        background-image: $url-image-arrow-down-form, $url-success-form-green, linear-gradient(to bottom, #ffffff 0%,#ffffff 100%); // must keep gradient to avoid bugs;
+
+        &:hover {
+            background-image: $url-image-arrow-down-link-hover, $url-success-form-green, linear-gradient(to bottom, #ffffff 0%,#ffffff 100%); // must keep gradient to avoid bugs;
+        }
+
+        &:focus {
+            background-image: $url-image-arrow-down-link, $url-success-form-green, linear-gradient(to bottom, #ffffff 0%,#ffffff 100%); // must keep gradient to avoid bugs;
+        }
+    }
+}
+
+.mzp-is-error .mzp-c-input-check,
+.mzp-is-error.mzp-c-input-check {
+    input[type="checkbox"] + label:before {
+        content: url('/static/img/forms/check_sprite_error.svg');
+    }
+
+    input[type="radio"] + label:before {
+        content: url('/static/img/forms/radio_sprite_error.svg');
+    }
+
+    label {
+        background-image: $url-error-form-red;
+        background-repeat: no-repeat;
+        background-position: top 2px left #{$check-height + $spacing-xs};
+        padding-left: calc(3em + #{$spacing-sm * 2});
+    }
+}
+
+.mzp-is-error .mzp-c-group-check .mzp-c-input-check label,
+.mzp-is-error.mzp-c-group-check .mzp-c-input-check label {
+    background-image: none;
+    @include bidi(((padding-left, #{$check-height + $spacing-md}, padding-right, 0),));
+}
+
+.mzp-c-group-check {
+    .mzp-is-error &,
+    .mzp-is-success &,
+    &.mzp-is-error,
+    &.mzp-is-success {
+        background-repeat: no-repeat;
+        background-position: right 8px top 8px;
+        padding-right: $symbol-spacing;
+
+        [dir="rtl"] & {
+            background-position: left 8px top 8px;
+            padding-left: $symbol-spacing;
+            padding-right: 0;
+        }
+    }
+
+    .mzp-is-error &,
+    &.mzp-is-error {
+        background-image: $url-error-form-red;
+        border-color: $form-red;
+
+        input[type="checkbox"] + label:before {
+            content: url('/static/img/forms/check_sprite_error.svg');
+        }
+
+        input[type="radio"] + label:before {
+            content: url('/static/img/forms/radio_sprite_error.svg');
+        }
+    }
+
+    .mzp-is-warn &,
+    &.mzp-is-warn {
+        border-color: $form-yellow;
+
+        input[type="checkbox"] + label:before {
+            content: url('/static/img/forms/check_sprite_warn.svg');
+        }
+
+        input[type="radio"] + label:before {
+            content: url('/static/img/forms/radio_sprite_warn.svg');
+        }
+    }
+
+    .mzp-is-success &,
+    &.mzp-is-success {
+        background-image: $url-success-form-green;
+        border-color: $form-green;
+
+        input[type="checkbox"] + label:before {
+            content: url('/static/img/forms/check_sprite_success.svg');
+        }
+
+        input[type="radio"] + label:before {
+            content: url('/static/img/forms/radio_sprite_success.svg');
+        }
+    }
+}

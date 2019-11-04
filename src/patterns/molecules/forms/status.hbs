@@ -15,3 +15,105 @@ inline check boxes
 with notes
 with error messages
 with disabled button
+
+Add the class to any parent element.
+
+TODO: symbol padding makes the form fields wider than those with no status, only when there is no width set.
+
+<fieldset id="status">
+  <legend>Status:</legend>
+  <div class="mzp-c-input-check">
+    <input type="radio" name="status" id="status-none" value="none">
+    <label for="status-none">none</label>
+  </div>
+  <div class="mzp-c-input-check">
+    <input type="radio" name="status" id="status-error" value="error">
+    <label for="status-error">error</label>
+  </div>
+  <div class="mzp-c-input-check">
+    <input type="radio" name="status" id="status-warn" value="warn">
+    <label for="status-warn">warn</label>
+  </div>
+  <div class="mzp-c-input-check">
+    <input type="radio" name="status" id="status-success" value="success">
+    <label for="status-success">success</label>
+  </div>
+</fieldset>
+
+<div id="form">
+  <fieldset>
+    <label for="text-b">Text</label>
+    <input type="text" name="text" id="text-b">
+
+    <label for="email-b">E-mail</label>
+    <input type="email" name="email" id="email-b" placeholder="you@example.com">
+
+    <label for="password-b">Password</label>
+    <input type="password" name="password" id="password-b">
+
+    <label for="search-b">Search</label>
+    <input type="search" name="search" id="search-b">
+
+    <label for="textarea-b">Text area</label>
+    <textarea name="textarea" id="textarea-b" rows="3" cols="40"></textarea>
+
+    <label for="language-1">Language</label>
+      <select name="language" id="language-1">
+      {{#each (data "items")}}
+        <option value="{{lang-code}}">{{language}}</option>
+      {{/each}}
+    </select>
+  </fieldset>
+
+  <fieldset class="mzp-c-group-check">
+    <legend>Check boxes</legend>
+    <div class="mzp-c-input-check">
+      <input type="checkbox" name="checkboxes" id="checkbox-1-b">
+      <label for="checkbox-1-b">Option 1</label>
+    </div>
+    <div class="mzp-c-input-check">
+      <input type="checkbox" name="checkboxes" id="checkbox-2-b">
+      <label for="checkbox-2-b">Option 2</label>
+    </div>
+  </fieldset>
+  <fieldset class="mzp-c-group-check">
+    <legend>Radio buttons</legend>
+    <div class="mzp-c-input-check">
+      <input type="radio" name="radios" id="radio-1-b">
+      <label for="radio-1-b">Option 1</label>
+    </div>
+    <div class="mzp-c-input-check">
+      <input type="radio" name="radios" id="radio-2-b">
+      <label for="radio-2-b">Option 2</label>
+    </div>
+  </fieldset>
+  <div class="mzp-c-input-check">
+    <input type="checkbox" name="checkboxes" id="checkbox-b">
+    <label for="checkbox-b">I’m okay with Mozilla handling my info as explained in <a href="/en-US/privacy/websites/">this Privacy Notice</a></label>
+  </div>
+<div>
+
+<script>
+
+(function(doc, Mzp) {
+  var form = doc.getElementById('form');
+  var buttons = doc.querySelectorAll('#status input[type=radio]');
+
+  // add listener for change
+  for (i = 0; i < buttons.length; ++i) {
+    buttons[i].addEventListener('change', function() {
+      var button = this;
+      var status = button.value;
+      var newClass = 'mzp-is-' + status;
+      form.className = newClass;
+    })
+  }
+
+  // when there's a change remove class from from
+
+  // create new class and add to form
+
+})(document, window.Mzp);
+
+
+</script>

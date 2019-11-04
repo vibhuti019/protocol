@@ -8,12 +8,32 @@ notes: |
     - nothing else can go inside the parent div
 ---
 
+
+<div class="mzp-c-input-check">
+  <input type="radio" name="radio-c1" id="radio-c1">
+  <label for="radio-c1">Radio button</label>
+</div>
+
 <div class="mzp-c-input-check">
   <input type="checkbox" name="checkboxes" id="checkbox-c1">
   <label for="checkbox-c1">Checkbox</label>
 </div>
 
+<p>Fieldset necissary for user feedback states:</p>
+<fieldset class="mzp-c-group-check">
+  <legend>Check boxes <span class="mzp-c-fieldnote">Example with a fieldnote.</span></legend>
+  <div class="mzp-c-input-check">
+    <input type="checkbox" name="checkboxes" id="checkbox-c2">
+    <label for="checkbox-c2">Option 1</label>
+  </div>
+  <div class="mzp-c-input-check">
+    <input type="checkbox" name="checkboxes" id="checkbox-c3">
+    <label for="checkbox-c3">Option 2</label>
+  </div>
+</fieldset>
+
+Except how to do feedback required single checkbox?
 <div class="mzp-c-input-check">
-  <input type="radio" name="radio-c1" id="radio-c1">
-  <label for="radio-c1">Radio button</label>
+  <input type="checkbox" name="checkboxes" id="checkbox-c4">
+  <label for="checkbox-c4">I’m okay with Mozilla handling my info as explained in <a href="/en-US/privacy/websites/">this Privacy Notice</a></label>
 </div>

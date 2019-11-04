@@ -7,8 +7,26 @@
 $check-height: 26px;
 $check-sprite-grid: 30px;
 
+.mzp-c-group-check {
+    border: 2px solid $color-gray-30;
+    border-radius: 4px;
+    padding: 0 $spacing-sm;
+    margin-bottom: $spacing-md;
+
+    legend {
+        @include text-body-sm;
+        color: $color-gray-70;
+        display: block;
+        font-weight: bold;
+        float: left;
+        margin-bottom: $spacing-sm;
+        padding: $spacing-sm 0 0 0;
+    }
+}
+
 .mzp-c-input-check {
     box-sizing: border-box;
+    clear: left;
     min-height: $check-height;
     overflow: hidden;
     position: relative;

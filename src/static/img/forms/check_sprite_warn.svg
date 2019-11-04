@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="240px" height="240px" viewBox="0 0 240 240" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <bx:grid x="0" y="0" width="30" height="30"/>
+  </defs>
+  <title>Group 3</title>
+  <desc>Created with Sketch.</desc>
+  <g id="Atoms" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Group-3" transform="translate(2.000000, 2.000000)">
+      <rect id="Background-Copy-17" stroke-width="2" fill="#FFFFFF" x="211" width="20" height="20" rx="1" y="1" style="stroke: rgb(215, 182, 0);"/>
+      <rect id="Background-Copy-33" stroke-width="2" fill="#FFFFFF" x="181" y="31" width="20" height="20" rx="1" style="stroke: rgb(196, 90, 39);"/>
+      <g transform="matrix(1, 0, 0, 1, 122.030991, 122)">
+        <rect id="rect-5" stroke-width="2" x="-1.031" y="-31" width="20" height="20" rx="2" style="fill: rgb(215, 182, 0); stroke: rgb(215, 182, 0);"/>
+        <path d="M 4.665 -21.413 C 4.269 -21.797 3.635 -21.787 3.251 -21.391 C 2.867 -20.994 2.876 -20.361 3.273 -19.977 L 7.083 -16.282 C 7.472 -15.906 8.089 -15.906 8.477 -16.284 L 15.667 -23.284 C 16.062 -23.669 16.071 -24.302 15.686 -24.698 C 15.3 -25.094 14.667 -25.102 14.271 -24.717 L 7.778 -18.395 L 4.665 -21.413 Z" id="path-2" fill="#FFFFFF" fill-rule="nonzero"/>
+      </g>
+      <g id="Group" transform="matrix(1, 0, 0, 1, 92.030991, 122)">
+        <rect id="Background-Copy-34" stroke-width="2" x="-1" y="-1" width="20" height="20" rx="2" style="fill: rgb(215, 182, 0); stroke: rgb(196, 90, 39);"/>
+        <path d="M4.69608416,8.58782637 C4.29956529,8.20339012 3.66647608,8.21318502 3.28203983,8.60970389 C2.89760358,9.00622276 2.90739847,9.63931197 3.30391734,10.0237482 L7.11423771,13.7179615 C7.50269516,14.094582 8.12024908,14.0939324 8.50791337,13.7164955 L15.697593,6.71649554 C16.0933023,6.33122597 16.1017653,5.69811756 15.7164957,5.30240831 C15.3312262,4.90669906 14.6981177,4.89823602 14.3024085,5.28350559 L7.80885455,11.6057452 L4.69608416,8.58782637 Z" id="line-copy-2" fill="#FFFFFF" fill-rule="nonzero"/>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 36.999989, -42.000011)">
+        <rect id="rect-2" style="stroke-width: 4px; stroke-opacity: 0.5; stroke: rgb(215, 182, 0);" x="113" y="102" width="22" height="22" rx="3" ry="3" fill="#FFFFFF"/>
+        <rect id="rect-1" stroke-width="2" fill="#FFFFFF" style="stroke: rgb(196, 90, 39);" x="114" y="103" width="20" height="20" rx="2" ry="2"/>
+      </g>
+      <g id="g-1" transform="matrix(1, 0, 0, 1, 62, 152.813995)">
+        <rect id="rect-4" fill="#FFFFFF" style="stroke-width: 4px; stroke-opacity: 0.5; stroke: rgb(215, 182, 0);" x="-2" y="-2.814" width="22" height="22" rx="3" ry="3"/>
+        <rect id="rect-3" x="-1" y="-1.814" width="20" height="20" rx="2" ry="2" stroke-width="2" style="fill: rgb(215, 182, 0); stroke: rgb(196, 90, 39);"/>
+        <path d="M 4.696 7.774 C 4.3 7.389 3.666 7.399 3.282 7.796 C 2.898 8.192 2.907 8.825 3.304 9.21 L 7.114 12.904 C 7.503 13.281 8.12 13.28 8.508 12.902 L 15.698 5.902 C 16.093 5.517 16.102 4.884 15.716 4.488 C 15.331 4.093 14.698 4.084 14.302 4.47 L 7.809 10.792 L 4.696 7.774 Z" id="path-1" fill="#FFFFFF" fill-rule="nonzero"/>
+      </g>
+    </g>
+  </g>
+</svg>
