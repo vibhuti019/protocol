@@ -1,0 +1,97 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+/* -------------------------------------------------------------------------- */
+// Article demo
+
+@import '../protocol/includes/lib';
+@import '../docs/protocol';
+@import '../docs/protocol-extra';
+
+
+.mzp-c-emphasis-box {
+    margin: $layout-lg auto;
+    // token: $box-shadow-sm
+    box-shadow: 0 8px 12px 1px rgba(29, 17, 51, .04), 0 3px 16px 2px rgba(9, 32, 77, .12), 0 5px 10px -3px rgba(29, 17, 51, .12);
+
+    h2 {
+        @include text-display-sm;
+    }
+
+    h3 {
+        @include text-display-xs;
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+
+    &.t-zero-space {
+        padding: 0;
+    }
+}
+
+
+
+.fxa-form-cta {
+    .fxa-email-form {
+        width: 100%;
+        margin-bottom: $spacing-lg;
+
+        a {
+            color: $color-off-black;
+        }
+    }
+
+    .fxa-email-form-intro {
+        @include text-body-lg;
+    }
+
+    .fxa-email-field-container {
+        .field {
+            label {
+                @include visually-hidden;
+            }
+
+            input[type="email"] {
+                box-shadow: none;
+                padding: $spacing-md $spacing-lg;
+                width: 100%;
+            }
+        }
+
+        .mzp-c-button {
+            width: 100%;
+        }
+    }
+
+    @media #{$mq-sm} {
+        .fxa-email-field-container {
+            @include grid-column-gap($spacing-md);
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+
+            .field {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    @media #{$mq-md} {
+        .fxa-email-form {
+            display: grid;
+
+            .agreement {
+                @include text-body-sm;
+                grid-column-end: span 2;
+                grid-row-start: 2;
+                margin-bottom: 0;
+                margin-top: $spacing-sm;
+                text-align: left;
+            }
+        }
+    }
+}
+
+
