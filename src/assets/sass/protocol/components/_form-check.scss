@@ -8,10 +8,10 @@ $check-height: 26px;
 $check-sprite-grid: 30px;
 
 .mzp-c-group-check {
-    border: 2px solid $color-gray-30;
     border-radius: 4px;
-    padding: 0 $spacing-sm;
+    border: 2px solid $color-gray-30;
     margin-bottom: $spacing-md;
+    padding: 0 $spacing-sm;
 
     legend {
         @include text-body-sm;
@@ -21,6 +21,7 @@ $check-sprite-grid: 30px;
         float: left;
         margin-bottom: $spacing-sm;
         padding: $spacing-sm 0 0 0;
+        width: 100%;
     }
 }
 
@@ -31,33 +32,42 @@ $check-sprite-grid: 30px;
     overflow: hidden;
     position: relative;
 
+    @media #{$mq-sm} {
+        .mzp-c-group-check.mzp-l-group-inline &,
+        &.mzp-l-group-inline {
+            display: inline-block;
+            margin-right: $spacing-lg;
+            vertical-align: top;
+        }
+    }
+
     // hide real input
     input[type="checkbox"],
     input[type="radio"] {
         @include bidi(((left, 0, right, auto),));
         box-sizing: border-box;
+        height: $check-height;
+        opacity: 0;
         position: absolute;
         top: 0;
         width: $check-height;
-        height: $check-height;
-        opacity: 0;
         z-index: 1;
     }
 
     // label
     label {
         @include bidi(((padding-left, #{$check-height + $spacing-md}, padding-right, 0),));
-        padding-top: 4px;
         font-weight: normal;
+        padding-top: 4px;
         vertical-align: top;
     }
 
     // create fake input
     label:before {
         display: block;
+        left: $check-sprite-grid * 7 * -1; //todo bidi
         position: absolute;
         top: 0;
-        left: $check-sprite-grid * 7 * -1; //todo bidi
     }
 
     input[type="checkbox"] + label:before {

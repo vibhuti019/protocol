@@ -2,25 +2,15 @@
 name: Status
 description: More status messages
 order: 3
+notes: |
+  - add error class to any parent element
 ---
 
-Add a form here (maybe don't require input group?)
-Add JS to toggle is-error, is-warning, and is-success classes.
+need:
+- with error messages/note
+- with disabled button
 
-Form should have examples of all supported inputs:
-text input
-fieldset
-check boxes
-inline check boxes
-with notes
-with error messages
-with disabled button
-
-Add the class to any parent element.
-
-TODO: symbol padding makes the form fields wider than those with no status, only when there is no width set.
-
-<fieldset id="status">
+<fieldset id="status" class="mzp-c-group-check mzp-u-inline">
   <legend>Status:</legend>
   <div class="mzp-c-input-check">
     <input type="radio" name="status" id="status-none" value="none">
@@ -55,7 +45,10 @@ TODO: symbol padding makes the form fields wider than those with no status, only
     <input type="search" name="search" id="search-b">
 
     <label for="textarea-b">Text area</label>
-    <textarea name="textarea" id="textarea-b" rows="3" cols="40"></textarea>
+    <textarea name="textarea" id="textarea-b" rows="3" cols="20"></textarea>
+
+    <label for="textarea-b2">Text area with no set cols</label>
+    <textarea name="textarea" id="textarea-b2"></textarea>
 
     <label for="language-1">Language</label>
       <select name="language" id="language-1">

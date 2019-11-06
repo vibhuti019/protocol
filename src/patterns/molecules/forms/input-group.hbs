@@ -14,16 +14,20 @@ Can we get by without classes on the label and field? Should we?
 
 <div class="mzp-l-input-row">
   <div class="mzp-c-input-group">
-    <label class="mzp-c-input-label" for="email">Card Number</label>
-    <input class="mzp-c-input-field" type="text">
+    <label class="mzp-c-input-label" for="card">Card Number</label>
+    <input id="card" class="mzp-c-input-field" type="text">
   </div>
+  <fieldset class="mzp-c-input-group">
+    <legend>Expiry</legend>
+    TODO: right class name for this? Something special?
+    <label class="mzp-c-input-label" for="expiry">Expiry Month</label>
+    <input id="expiry" class="mzp-c-input-field" type="text"  size="2" maxlength="2" minlength="2">/
+    <label class="mzp-c-input-label" for="expiry">Expiry Year</label>
+    <input id="expiry" class="mzp-c-input-field" type="text"  size="2" maxlength="2" minlength="2">
+  </fieldset>
   <div class="mzp-c-input-group">
-    <label class="mzp-c-input-label" for="email">Expiry</label>
-    <input class="mzp-c-input-field" type="text">
-  </div>
-  <div class="mzp-c-input-group">
-    <label class="mzp-c-input-label" for="email">CVC</label>
-    <input class="mzp-c-input-field" type="text">
+    <label class="mzp-c-input-label" for="cvc">CVC</label>
+    <input id="cvc" class="mzp-c-input-field" type="text" size="3" maxlength="3" minlength="3">
   </div>
   <p class="mzp-c-group-note">For account recovery.</p>
 </div>

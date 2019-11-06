@@ -218,6 +218,11 @@ input[type='number'] {
     min-width: 300px;
 }
 
+textarea[cols],
+input[size] {
+    min-width: 0;
+}
+
 input[type='search'] {
     background-image: $url-image-search-form;
     background-repeat: no-repeat;
@@ -413,7 +418,7 @@ button {
 // Components and utility classes (basic only, for backwards compatability)
 
 label {
-    // inline included for backwards compatability but I think it should be removed - SH
+    // inline included for backwards compatability but I think it should be moved - SH
     &.mzp-u-inline {
         @include bidi(((padding, 0 $spacing-sm 0, 0 0 $spacing-sm),)); //TODO
         display: inline;
