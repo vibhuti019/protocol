@@ -206,8 +206,8 @@ select {
     }
 }
 
-.mzp-is-error .mzp-c-input-check,
-.mzp-is-error.mzp-c-input-check {
+.mzp-is-error .mzp-c-input-choice,
+.mzp-is-error.mzp-c-input-choice {
     input[type="checkbox"] + label:before {
         content: url('/static/img/forms/check_sprite_error.svg');
     }
@@ -224,13 +224,13 @@ select {
     }
 }
 
-.mzp-is-error .mzp-c-group-check .mzp-c-input-check label,
-.mzp-is-error.mzp-c-group-check .mzp-c-input-check label {
+.mzp-is-error .mzp-c-group-choice .mzp-c-input-choice label,
+.mzp-is-error.mzp-c-group-choice .mzp-c-input-choice label {
     background-image: none;
     @include bidi(((padding-left, #{$check-height + $spacing-md}, padding-right, 0),));
 }
 
-.mzp-c-group-check {
+.mzp-c-group-choice {
     .mzp-is-error &,
     .mzp-is-success &,
     &.mzp-is-error,

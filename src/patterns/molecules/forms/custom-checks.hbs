@@ -3,36 +3,36 @@ name: Custom Checkboxes and Radio Buttons
 description: These are available with special code that needs to be precicely used.
 order: 1
 notes: |
-    - use `mzp-c-input-check` for both checkboxes and radio buttons
+    - use `mzp-c-input-choice` for both checkboxes and radio buttons
     - the input must be before the label in source order
     - nothing else can go inside the parent div
 ---
 
 
-<div class="mzp-c-input-check">
+<div class="mzp-c-input-choice">
   <input type="radio" name="radio-c1" id="radio-c1">
   <label for="radio-c1">Radio button</label>
 </div>
 
-<div class="mzp-c-input-check">
+<div class="mzp-c-input-choice">
   <input type="checkbox" name="checkboxes" id="checkbox-c1">
   <label for="checkbox-c1">Checkbox</label>
 </div>
 
 <p>Fieldset necissary for user feedback states:</p>
-<fieldset class="mzp-c-group-check">
+<fieldset class="mzp-c-group-choice">
   <legend>Check boxes <span class="mzp-c-fieldnote">Example with a fieldnote.</span></legend>
-  <div class="mzp-c-input-check">
+  <div class="mzp-c-input-choice">
     <input type="checkbox" name="checkboxes" id="checkbox-c2">
     <label for="checkbox-c2">Option 1</label>
   </div>
-  <div class="mzp-c-input-check">
+  <div class="mzp-c-input-choice">
     <input type="checkbox" name="checkboxes" id="checkbox-c3">
     <label for="checkbox-c3">Option 2</label>
   </div>
 </fieldset>
 
-<div class="mzp-c-input-check">
+<div class="mzp-c-input-choice">
   <input type="checkbox" name="checkboxes" id="checkbox-ca">
   <label for="checkbox-ca">I’m okay with Mozilla handling my info as explained in <a href="/en-US/privacy/websites/">this Privacy Notice</a></label>
 </div>
