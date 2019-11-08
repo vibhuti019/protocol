@@ -149,22 +149,23 @@ label {
 
 /* input fields that are not checkboxes and radio buttons */
 textarea,
+input[list],
+input[type='date'],
 input[type='email'],
-input[type='url'],
-input[type='tel'],
+input[type='number'],
 input[type='password'],
 input[type='search'],
+input[type='tel'],
 input[type='text'],
-input[type='number'],
-input[type='date'],
-input[type='time'] {
+input[type='time'],
+input[type='url'] {
     @include border-box;
     @include text-body-md;
     background: $color-white;
     border-radius: 4px;
     border: 2px solid $color-gray-50;
     line-height: 1.25;
-    margin: 0 0 $spacing-md;
+    margin: 0 0 $spacing-lg;
     padding: $spacing-sm;
 
     &::placeholder {
@@ -209,12 +210,13 @@ input[type='time'] {
 
 textarea,
 input[type='email'],
-input[type='url'],
-input[type='tel'],
+input[list],
+input[type='number'],
 input[type='password'],
 input[type='search'],
+input[type='tel'],
 input[type='text'],
-input[type='number'] {
+input[type='url'] {
     min-width: 300px;
 }
 
@@ -249,7 +251,7 @@ input[type='file'] {
     border-radius: 4px;
     border: 2px solid $color-gray-50;
     line-height: 1.25;
-    margin: 0 0 $spacing-md;
+    margin: 0 0 $spacing-lg;
 
     &:hover {
         border-color: $color-link-hover;
@@ -305,9 +307,9 @@ select {
 	font-weight: normal;
 	color: #444;
 	line-height: 1.25;
-	margin: 0 0 $spacing-md;
+	margin: 0 0 $spacing-lg;
     padding: $spacing-sm calc(1.5em + #{$spacing-sm * 2}) $spacing-sm $spacing-sm;
-	width: 100%;
+	min-width: 300px;
 	max-width: 100%;
 	box-sizing: border-box;
 	border: 2px solid $color-gray-50;
@@ -385,7 +387,7 @@ select {
 // Buttons
 
 button {
-    margin: 0 0 $spacing-md;
+    margin: 0 0 $spacing-lg;
     padding: $spacing-sm $spacing-md;
     border-radius: 4px;
     font-weight: bold;

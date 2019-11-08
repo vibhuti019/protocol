@@ -1,0 +1,385 @@
+---
+title: Form components
+---
+
+
+<fieldset id="status" class="mzp-c-set-choices mzp-l-set-inline">
+  <legend class="mzp-c-group-label">Status:</legend>
+  <div class="mzp-c-choice">
+    <input type="radio" name="status" id="status-none" value="none">
+    <label for="status-none">none</label>
+  </div>
+  <div class="mzp-c-choice">
+    <input type="radio" name="status" id="status-error" value="error">
+    <label for="status-error">error</label>
+  </div>
+  <div class="mzp-c-choice">
+    <input type="radio" name="status" id="status-warn" value="warn">
+    <label for="status-warn">warn</label>
+  </div>
+  <div class="mzp-c-choice">
+    <input type="radio" name="status" id="status-success" value="success">
+    <label for="status-success">success</label>
+  </div>
+</fieldset>
+
+<form id="form">
+  <fieldset>
+    <legend class="mzp-c-group-label">Unstyled form elements</legend>
+
+    <label for="p-color">Color</label>
+    <input type="color" name="color" id="p-color">
+
+    <label for="p-date">Date</label>
+    <input type="date" name="date" id="p-date">
+
+    <label for="p-email">E-mail</label>
+    <input type="email" name="email" id="p-email">
+
+    <label for="p-file">File</label>
+    <input type="file" name="file" id="p-file">
+
+    <label for="p-list">List</label>
+    <input list="p-list-options" name="list" id="p-list">
+    <datalist id="p-list-options">
+      <option value="Option 1">
+      <option value="Option 2">
+    </datalist>
+
+    <label for="p-number">Number</label>
+    <input type="number" name="number" id="p-number">
+
+    <label for="p-password">Password</label>
+    <input type="password" name="password" id="p-password">
+
+    <label for="p-search">Search</label>
+    <input type="search" name="search" id="p-search">
+
+    <label for="p-tel">Tel</label>
+    <input type="tel" name="tel" id="p-tel">
+
+    <label for="p-text">Text</label>
+    <input type="text" name="text" id="p-text">
+
+    <label for="p-time">Time</label>
+    <input type="time" name="time" id="p-time">
+
+    <label for="p-url">URL</label>
+    <input type="url" name="url" id="p-url">
+
+    <label for="p-select">Select</label>
+      <select name="select" id="p-select">
+        <option>Option 1</option>
+        <option>Option 2</option>
+    </select>
+
+    <label for="p-textarea">Text area</label>
+    <textarea name="textarea" id="p-textarea"></textarea>
+
+    <label for="p-checkbox">
+      <input type="checkbox" name="checkbox" id="p-checkbox"> Option 1
+    </label>
+
+    <label for="p-radio">
+      <input type="radio" name="radio" id="p-radio"> Option 1
+    </label>
+
+    <button type="button">Button</button>
+
+  </fieldset>
+
+
+<fieldset>
+    <legend class="mzp-c-group-label">Form components</legend>
+
+    <div class="mzp-c-input-group">
+      <label for="g-color">Color</label>
+      <input type="color" name="color" id="g-color">
+    </div>
+
+    <div class="mzp-c-input-group">
+      <label for="g-date">Date</label>
+      <input type="date" name="date" id="g-date">
+    </div>
+
+    <div class="mzp-c-input-group">
+      <label for="g-email">E-mail</label>
+      <input type="email" name="email" id="g-email">
+    </div>
+
+    <div class="mzp-c-input-group">
+      <label for="g-file">File</label>
+      <input type="file" name="file" id="g-file">
+    </div>
+
+    <div class="mzp-c-input-group">
+      <label for="g-list">List</label>
+      <input list="g-list-options" name="list" id="g-list">
+      <datalist id="g-list-options">
+        <option value="Option 1">
+        <option value="Option 2">
+      </datalist>
+    </div>
+
+    <div class="mzp-c-input-group">
+      <label for="g-number">Number</label>
+      <input type="number" name="number" id="g-number">
+    </div>
+
+    <div class="mzp-c-input-group">
+      <label for="g-password">Password</label>
+      <input type="password" name="password" id="g-password">
+    </div>
+
+    <div class="mzp-c-input-group">
+      <label for="search">Search</label>
+      <input type="search" name="search" id="search">
+    </div>
+
+    <div class="mzp-c-input-group">
+      <label for="g-tel">Tel</label>
+      <input type="tel" name="tel" id="g-tel">
+    </div>
+
+    <div class="mzp-c-input-group">
+      <label for="g-text">Text</label>
+      <input type="text" name="text" id="g-text">
+    </div>
+
+    <div class="mzp-c-input-group">
+      <label for="g-time">Time</label>
+      <input type="time" name="time" id="g-time">
+    </div>
+
+    <div class="mzp-c-input-group">
+      <label for="g-url">URL</label>
+      <input type="url" name="url" id="g-url">
+    </div>
+
+    <div class="mzp-c-input-group">
+      <label for="select">Select</label>
+      <select name="select" id="select">
+          <option>Option 1</option>
+          <option>Option 2</option>
+      </select>
+    </div>
+
+    <div class="mzp-c-input-group">
+      <label for="g-textarea">Text area</label>
+      <textarea name="textarea" id="g-textarea"></textarea>
+    </div>
+
+    <div class="mzp-c-input-group">
+      <div class="mzp-c-choice">
+        <input type="radio" name="g-radio" id="g-radio"><label for="g-radio">Radio button</label>
+      </div>
+    </div>
+
+    <div class="mzp-c-input-group">
+      <div class="mzp-c-choice">
+        <input type="checkbox" name="g-check" id="g-check"><label for="g-check">Checkbox</label>
+      </div>
+    </div>
+
+    <div class="mzp-c-input-group">
+      <button type="button" class="mzp-c-button">Button</button>
+    </div>
+</fieldset>
+
+
+
+<fieldset class="mzp-c-set-choices">
+  <legend class="mzp-c-group-label">Checkboxes</legend>
+  <div class="mzp-c-choice">
+    <input type="checkbox" name="checkboxes" id="s-check-1"><label for="s-check-1">Option 1</label>
+  </div>
+  <div class="mzp-c-choice">
+    <input type="checkbox" name="checkboxes" id="s-check-2"><label for="s-check-2">Option 2</label>
+  </div>
+</fieldset>
+
+<fieldset class="mzp-c-set-choices mzp-l-set-inline">
+  <legend class="mzp-c-group-label">Checkboxes Inline</legend>
+  <div class="mzp-c-choice">
+    <input type="checkbox" name="checkboxes" id="si-check-1"><label for="si-check-1">Option 1</label>
+  </div>
+  <div class="mzp-c-choice">
+    <input type="checkbox" name="checkboxes" id="si-check-2"><label for="si-check-2">Option 2</label>
+  </div>
+</fieldset>
+
+<div class="mzp-c-input-group">
+  <div class="mzp-c-choice">
+    <input type="checkbox" name="g-check" id="g-check"><label for="g-check">Single checkbox</label>
+  </div>
+</div>
+
+<div class="mzp-c-input-group">
+  <div class="mzp-c-choice mzp-is-legal">
+    <input type="checkbox" name="g-check" id="g-check"><label for="g-check">Single checkbox that for some reason we want to have a less prominent label</label>
+  </div>
+</div>
+
+<fieldset class="mzp-c-set-choices">
+  <legend class="mzp-c-group-label">Check boxes <span class="mzp-c-fieldnote">Example with a fieldnote.</span></legend>
+
+  <div class="mzp-c-choice">
+    <input type="checkbox" name="checkboxes" id="checkbox-c2"><label for="checkbox-c2">Option 1</label>
+  </div>
+  <div class="mzp-c-choice">
+    <input type="checkbox" name="checkboxes" id="checkbox-c3"><label for="checkbox-c3">Option 2</label>
+  </div>
+  <p class="mzp-c-group-note">More information about this set</p>
+</fieldset>
+
+<div class="mzp-c-input-group">
+  <div class="mzp-c-choice mzp-is-legal">
+    <input type="checkbox" name="checkboxes" id="checkbox-ca"><label for="checkbox-ca">I’m okay with Mozilla handling my info as explained in <a href="/en-US/privacy/websites/">this Privacy Notice</a></label>
+  </div>
+</div>
+
+
+<!-- placeholders -->
+Yeah,
+<!-- size configurations -->
+
+cols
+size
+wide select options
+
+<!-- custom checks  -->
+
+
+
+
+
+<!-- input groups -->
+Can we get by without classes on the label and field? Should we?
+
+<div class="mzp-c-input-group">
+  <label class="mzp-c-input-label" for="email">E-mail <em class="mzp-c-fieldnote">Required</em></label>
+  <input class="mzp-c-input-field" type="email" name="email" id="email" placeholder="you@example.com">
+  <p class="mzp-c-input-note">For account recovery.</p>
+</div>
+
+<div class="mzp-l-input-row">
+  <div class="mzp-c-input-group">
+    <label class="mzp-c-input-label" for="card">Card Number</label>
+    <input id="card" class="mzp-c-input-field" type="text">
+  </div>
+  <fieldset class="mzp-c-input-group">
+    <legend class="mzp-c-group-label">Expiry</legend>
+    TODO: right class name for this? Something special?
+    <label class="mzp-c-input-label" for="expiry">Expiry Month</label>
+    <input id="expiry" class="mzp-c-input-field" type="text"  size="2" maxlength="2" minlength="2">/
+    <label class="mzp-c-input-label" for="expiry">Expiry Year</label>
+    <input id="expiry" class="mzp-c-input-field" type="text"  size="2" maxlength="2" minlength="2">
+  </fieldset>
+  <div class="mzp-c-input-group">
+    <label class="mzp-c-input-label" for="cvc">CVC</label>
+    <input id="cvc" class="mzp-c-input-field" type="text" size="3" maxlength="3" minlength="3">
+  </div>
+  <p class="mzp-c-group-note">For account recovery.</p>
+</div>
+
+<!-- inline -->
+  <fieldset class="mzp-c-set-choices mzp-l-set-inline">
+    <legend class="mzp-c-group-label">Check boxes <span class="mzp-c-fieldnote">Example with a fieldnote.</span></legend>
+    <div class="mzp-c-choice">
+      <input type="checkbox" name="checkboxes" id="checkbox-c4">
+      <label for="checkbox-c4">Option 1</label>
+    </div>
+    <div class="mzp-c-choice">
+      <input type="checkbox" name="checkboxes" id="checkbox-c5">
+      <label for="checkbox-c5">Option 2</label>
+    </div>
+    <div class="mzp-c-choice">
+      <input type="checkbox" name="checkboxes" id="checkbox-c6">
+      <label for="checkbox-c6">Obnoxiously long input option that is intended to push this to a new line</label>
+    </div>
+    <div class="mzp-c-choice">
+      <input type="checkbox" name="checkboxes" id="checkbox-c7">
+      <label for="checkbox-c7">Option 4</label>
+    </div>
+  </fieldset>
+
+<!-- all fields -->
+  <fieldset>
+    <label for="text-b">Text</label>
+    <input type="text" name="text" id="text-b">
+
+    <label for="email-b">E-mail</label>
+    <input type="email" name="email" id="email-b" placeholder="you@example.com">
+
+    <label for="password-b">Password</label>
+    <input type="password" name="password" id="password-b">
+
+    <label for="search-b">Search</label>
+    <input type="search" name="search" id="search-b">
+
+    <label for="textarea-b">Text area</label>
+    <textarea name="textarea" id="textarea-b" rows="3" cols="20"></textarea>
+
+    <label for="textarea-b2">Text area with no set cols</label>
+    <textarea name="textarea" id="textarea-b2"></textarea>
+
+    <label for="language-1">Language</label>
+      <select name="language" id="language-1">
+      {{#each (data "items")}}
+        <option value="{{lang-code}}">{{language}}</option>
+      {{/each}}
+    </select>
+  </fieldset>
+
+  <fieldset class="mzp-c-set-choices">
+    <legend class="mzp-c-group-label">Check boxes</legend>
+    <div class="mzp-c-choice">
+      <input type="checkbox" name="checkboxes" id="checkbox-1-b">
+      <label for="checkbox-1-b">Option 1</label>
+    </div>
+    <div class="mzp-c-choice">
+      <input type="checkbox" name="checkboxes" id="checkbox-2-b">
+      <label for="checkbox-2-b">Option 2</label>
+    </div>
+  </fieldset>
+  <fieldset class="mzp-c-set-choices">
+    <legend class="mzp-c-group-label">Radio buttons</legend>
+    <div class="mzp-c-choice">
+      <input type="radio" name="radios" id="radio-1-b">
+      <label for="radio-1-b">Option 1</label>
+    </div>
+    <div class="mzp-c-choice">
+      <input type="radio" name="radios" id="radio-2-b">
+      <label for="radio-2-b">Option 2</label>
+    </div>
+  </fieldset>
+  <div class="mzp-c-choice">
+    <input type="checkbox" name="checkboxes" id="checkbox-b">
+    <label for="checkbox-b">I’m okay with Mozilla handling my info as explained in <a href="/en-US/privacy/websites/">this Privacy Notice</a></label>
+  </div>
+  <button>ADD BUTTONS</button>
+</form>
+
+<script>
+
+(function(doc, Mzp) {
+  var form = doc.getElementById('form');
+  var buttons = doc.querySelectorAll('#status input[type=radio]');
+
+  // add listener for change
+  for (i = 0; i < buttons.length; ++i) {
+    buttons[i].addEventListener('change', function() {
+      var button = this;
+      var status = button.value;
+      var newClass = 'mzp-is-' + status;
+      form.className = newClass;
+    })
+  }
+
+  // when there's a change remove class from from
+
+  // create new class and add to form
+
+})(document, window.Mzp);
+
+</script>

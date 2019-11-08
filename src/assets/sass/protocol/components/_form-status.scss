@@ -10,19 +10,20 @@ $form-green: $color-green-60;
 $check-height: 26px;
 $symbol-spacing: calc(1.5em + #{$spacing-sm * 2});
 
-textarea,
+input[list]
+input[type='color'],
+input[type='date'],
 input[type='email'],
-input[type='url'],
-input[type='tel'],
+input[type='file'],
+input[type='number'],
 input[type='password'],
 input[type='search'],
+input[type='tel'],
 input[type='text'],
-input[type='number'],
-input[type='date'],
 input[type='time'],
-input[type='color'],
-input[type='file'],
-select {
+input[type='url'],
+select,
+textarea {
 
     .mzp-is-error & {
         border-color: $form-red;
@@ -79,15 +80,15 @@ select {
     }
 }
 
-textarea,
-input[type='email'],
-input[type='url'],
-input[type='tel'],
-input[type='password'],
-input[type='text'],
-input[type='number'],
 input[type='date'],
-input[type='time'] {
+input[type='email'],
+input[type='number'],
+input[type='password'],
+input[type='tel'],
+input[type='text'],
+input[type='time'],
+input[type='url'],
+textarea, {
 
     .mzp-is-error &,
     .mzp-is-success & {
@@ -109,18 +110,6 @@ input[type='time'] {
         background-image: $url-success-form-green;
     }
 }
-
-textarea {
-    .mzp-is-error &,
-    .mzp-is-success & {
-        background-position: right 8px top 8px;
-
-        [dir="rtl"] & {
-            background-position: left 8px top 8px;
-        }
-    }
-}
-
 
 input[type='search'] {
     .mzp-is-error &,
@@ -159,6 +148,19 @@ input[type='search'] {
         }
     }
 }
+
+textarea {
+    .mzp-is-error &,
+    .mzp-is-success & {
+        background-position: right 8px top 8px;
+
+        [dir="rtl"] & {
+            background-position: left 8px top 8px;
+        }
+    }
+}
+
+/* -------------------------------------------------------------------------- */
 
 select {
     .mzp-is-error &,
@@ -206,8 +208,12 @@ select {
     }
 }
 
-.mzp-is-error .mzp-c-input-choice,
-.mzp-is-error.mzp-c-input-choice {
+/* -------------------------------------------------------------------------- */
+// Checks
+
+/* errors for checks by themselves */
+.mzp-is-error .mzp-c-input-group.mzp-has-choice,
+.mzp-is-error.mzp-c-input-group.mzp-has-choice {
     input[type="checkbox"] + label:before {
         content: url('/static/img/forms/check_sprite_error.svg');
     }
@@ -224,45 +230,59 @@ select {
     }
 }
 
-.mzp-is-error .mzp-c-group-choice .mzp-c-input-choice label,
-.mzp-is-error.mzp-c-group-choice .mzp-c-input-choice label {
+/* errors for checks in a set */
+
+// undo individual error formatting
+.mzp-is-error .mzp-c-set-choices .mzp-c-input-group.mzp-has-choice,
+.mzp-is-error .mzp-c-set-choices .mzp-c-input-group.mzp-has-choice {
+    input + label {
+        background-image: none;
+        padding-left: $symbol-spacing;
+    }
+}
+
+.mzp-is-error .mzp-c-set-choices .mzp-c-input-choice label,
+.mzp-is-error.mzp-c-set-choices .mzp-c-input-choice label {
     background-image: none;
     @include bidi(((padding-left, #{$check-height + $spacing-md}, padding-right, 0),));
 }
 
-.mzp-c-group-choice {
+// add error formatting
+.mzp-c-set-choices {
     .mzp-is-error &,
     .mzp-is-success &,
     &.mzp-is-error,
     &.mzp-is-success {
-        background-repeat: no-repeat;
-        background-position: right 8px top 8px;
-        padding-right: $symbol-spacing;
-
-        [dir="rtl"] & {
-            background-position: left 8px top 8px;
+        legend {
+            background-repeat: no-repeat;
+            background-position: left 2px top;
             padding-left: $symbol-spacing;
-            padding-right: 0;
+
+            [dir="rtl"] & {
+                background-position: right 2px top 0;
+                padding-right: $symbol-spacing;
+                padding-left: 0;
+            }
         }
     }
 
     .mzp-is-error &,
     &.mzp-is-error {
-        background-image: $url-error-form-red;
-        border-color: $form-red;
+        legend {
+            background-image: $url-error-form-red;
 
-        input[type="checkbox"] + label:before {
-            content: url('/static/img/forms/check_sprite_error.svg');
-        }
+            input[type="checkbox"] + label:before {
+                content: url('/static/img/forms/check_sprite_error.svg');
+            }
 
-        input[type="radio"] + label:before {
-            content: url('/static/img/forms/radio_sprite_error.svg');
+            input[type="radio"] + label:before {
+                content: url('/static/img/forms/radio_sprite_error.svg');
+            }
         }
     }
 
     .mzp-is-warn &,
     &.mzp-is-warn {
-        border-color: $form-yellow;
 
         input[type="checkbox"] + label:before {
             content: url('/static/img/forms/check_sprite_warn.svg');
@@ -276,7 +296,6 @@ select {
     .mzp-is-success &,
     &.mzp-is-success {
         background-image: $url-success-form-green;
-        border-color: $form-green;
 
         input[type="checkbox"] + label:before {
             content: url('/static/img/forms/check_sprite_success.svg');
