@@ -24,6 +24,7 @@ title: Form components
 </fieldset>
 
 <form id="form">
+  <!--
   <fieldset>
     <legend class="mzp-c-group-label">Unstyled form elements</legend>
 
@@ -88,7 +89,7 @@ title: Form components
 
   </fieldset>
 
-
+-->
 <fieldset>
     <legend class="mzp-c-group-label">Form components</legend>
 
@@ -129,6 +130,11 @@ title: Form components
     <div class="mzp-c-input-group">
       <label for="g-password">Password</label>
       <input type="password" name="password" id="g-password">
+    </div>
+
+    <div class="mzp-c-input-group">
+      <label for="g-range">Range</label>
+      <input type="range" name="range" id="g-range">
     </div>
 
     <div class="mzp-c-input-group">
@@ -238,126 +244,6 @@ title: Form components
   </div>
 </div>
 
-
-<!-- placeholders -->
-Yeah,
-<!-- size configurations -->
-
-cols
-size
-wide select options
-
-<!-- custom checks  -->
-
-
-
-
-
-<!-- input groups -->
-Can we get by without classes on the label and field? Should we?
-
-<div class="mzp-c-input-group">
-  <label class="mzp-c-input-label" for="email">E-mail <em class="mzp-c-fieldnote">Required</em></label>
-  <input class="mzp-c-input-field" type="email" name="email" id="email" placeholder="you@example.com">
-  <p class="mzp-c-input-note">For account recovery.</p>
-</div>
-
-<div class="mzp-l-input-row">
-  <div class="mzp-c-input-group">
-    <label class="mzp-c-input-label" for="card">Card Number</label>
-    <input id="card" class="mzp-c-input-field" type="text">
-  </div>
-  <fieldset class="mzp-c-input-group">
-    <legend class="mzp-c-group-label">Expiry</legend>
-    TODO: right class name for this? Something special?
-    <label class="mzp-c-input-label" for="expiry">Expiry Month</label>
-    <input id="expiry" class="mzp-c-input-field" type="text"  size="2" maxlength="2" minlength="2">/
-    <label class="mzp-c-input-label" for="expiry">Expiry Year</label>
-    <input id="expiry" class="mzp-c-input-field" type="text"  size="2" maxlength="2" minlength="2">
-  </fieldset>
-  <div class="mzp-c-input-group">
-    <label class="mzp-c-input-label" for="cvc">CVC</label>
-    <input id="cvc" class="mzp-c-input-field" type="text" size="3" maxlength="3" minlength="3">
-  </div>
-  <p class="mzp-c-group-note">For account recovery.</p>
-</div>
-
-<!-- inline -->
-  <fieldset class="mzp-c-set-choices mzp-l-set-inline">
-    <legend class="mzp-c-group-label">Check boxes <span class="mzp-c-fieldnote">Example with a fieldnote.</span></legend>
-    <div class="mzp-c-choice">
-      <input type="checkbox" name="checkboxes" id="checkbox-c4">
-      <label for="checkbox-c4">Option 1</label>
-    </div>
-    <div class="mzp-c-choice">
-      <input type="checkbox" name="checkboxes" id="checkbox-c5">
-      <label for="checkbox-c5">Option 2</label>
-    </div>
-    <div class="mzp-c-choice">
-      <input type="checkbox" name="checkboxes" id="checkbox-c6">
-      <label for="checkbox-c6">Obnoxiously long input option that is intended to push this to a new line</label>
-    </div>
-    <div class="mzp-c-choice">
-      <input type="checkbox" name="checkboxes" id="checkbox-c7">
-      <label for="checkbox-c7">Option 4</label>
-    </div>
-  </fieldset>
-
-<!-- all fields -->
-  <fieldset>
-    <label for="text-b">Text</label>
-    <input type="text" name="text" id="text-b">
-
-    <label for="email-b">E-mail</label>
-    <input type="email" name="email" id="email-b" placeholder="you@example.com">
-
-    <label for="password-b">Password</label>
-    <input type="password" name="password" id="password-b">
-
-    <label for="search-b">Search</label>
-    <input type="search" name="search" id="search-b">
-
-    <label for="textarea-b">Text area</label>
-    <textarea name="textarea" id="textarea-b" rows="3" cols="20"></textarea>
-
-    <label for="textarea-b2">Text area with no set cols</label>
-    <textarea name="textarea" id="textarea-b2"></textarea>
-
-    <label for="language-1">Language</label>
-      <select name="language" id="language-1">
-      {{#each (data "items")}}
-        <option value="{{lang-code}}">{{language}}</option>
-      {{/each}}
-    </select>
-  </fieldset>
-
-  <fieldset class="mzp-c-set-choices">
-    <legend class="mzp-c-group-label">Check boxes</legend>
-    <div class="mzp-c-choice">
-      <input type="checkbox" name="checkboxes" id="checkbox-1-b">
-      <label for="checkbox-1-b">Option 1</label>
-    </div>
-    <div class="mzp-c-choice">
-      <input type="checkbox" name="checkboxes" id="checkbox-2-b">
-      <label for="checkbox-2-b">Option 2</label>
-    </div>
-  </fieldset>
-  <fieldset class="mzp-c-set-choices">
-    <legend class="mzp-c-group-label">Radio buttons</legend>
-    <div class="mzp-c-choice">
-      <input type="radio" name="radios" id="radio-1-b">
-      <label for="radio-1-b">Option 1</label>
-    </div>
-    <div class="mzp-c-choice">
-      <input type="radio" name="radios" id="radio-2-b">
-      <label for="radio-2-b">Option 2</label>
-    </div>
-  </fieldset>
-  <div class="mzp-c-choice">
-    <input type="checkbox" name="checkboxes" id="checkbox-b">
-    <label for="checkbox-b">I’m okay with Mozilla handling my info as explained in <a href="/en-US/privacy/websites/">this Privacy Notice</a></label>
-  </div>
-  <button>ADD BUTTONS</button>
 </form>
 
 <script>
