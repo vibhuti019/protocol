@@ -212,8 +212,8 @@ select {
 // Checks
 
 /* errors for checks by themselves */
-.mzp-is-error .mzp-c-input-group.mzp-has-choice,
-.mzp-is-error.mzp-c-input-group.mzp-has-choice {
+.mzp-is-error .mzp-c-choice,
+.mzp-is-error.mzp-c-choice {
     input[type="checkbox"] + label:before {
         content: url('/static/img/forms/check_sprite_error.svg');
     }
@@ -233,16 +233,16 @@ select {
 /* errors for checks in a set */
 
 // undo individual error formatting
-.mzp-is-error .mzp-c-set-choices .mzp-c-input-group.mzp-has-choice,
-.mzp-is-error .mzp-c-set-choices .mzp-c-input-group.mzp-has-choice {
+.mzp-is-error .mzp-c-set-choices .mzp-c-choice,
+.mzp-is-error .mzp-c-set-choices .mzp-c-choice {
     input + label {
         background-image: none;
         padding-left: $symbol-spacing;
     }
 }
 
-.mzp-is-error .mzp-c-set-choices .mzp-c-input-choice label,
-.mzp-is-error.mzp-c-set-choices .mzp-c-input-choice label {
+.mzp-is-error .mzp-c-set-choices .mzp-c-choice label,
+.mzp-is-error.mzp-c-set-choices .mzp-c-choice label {
     background-image: none;
     @include bidi(((padding-left, #{$check-height + $spacing-md}, padding-right, 0),));
 }
