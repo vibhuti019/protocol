@@ -24,7 +24,6 @@ title: Form components
 </fieldset>
 
 <form id="form">
-  <!--
   <fieldset>
     <legend class="mzp-c-group-label">Unstyled form elements</legend>
 
@@ -89,7 +88,7 @@ title: Form components
 
   </fieldset>
 
--->
+
 <fieldset>
     <legend class="mzp-c-group-label">Form components</legend>
 
@@ -190,6 +189,14 @@ title: Form components
     <div class="mzp-c-input-group">
       <button type="button" class="mzp-c-button">Button</button>
     </div>
+
+     <div class="mzp-c-input-group">
+      <input type="submit" value="Submit" class="mzp-c-button">
+    </div>
+
+    <div class="mzp-c-input-group">
+      <input type="reset" value="Reset">
+    </div>
 </fieldset>
 
 
@@ -244,6 +251,344 @@ title: Form components
   </div>
 </div>
 
+
+<!-- placeholders -->
+Yeah,
+<!-- size configurations -->
+
+cols
+size
+wide select options
+
+<!-- custom checks  -->
+
+
+
+
+
+<!-- input groups -->
+Can we get by without classes on the label and field? Should we?
+
+<div class="mzp-c-input-group">
+  <label class="mzp-c-input-label" for="email">E-mail <em class="mzp-c-fieldnote">Required</em></label>
+  <input class="mzp-c-input-field" type="email" name="email" id="email" placeholder="you@example.com">
+  <p class="mzp-c-input-note">For account recovery.</p>
+</div>
+
+<div class="mzp-l-input-row">
+  <div class="mzp-c-input-group">
+    <label class="mzp-c-input-label" for="card">Card Number</label>
+    <input id="card" class="mzp-c-input-field" type="text">
+  </div>
+  <fieldset class="mzp-c-input-group">
+    <legend class="mzp-c-group-label">Expiry</legend>
+    TODO: right class name for this? Something special?
+    <label class="mzp-c-input-label" for="expiry">Expiry Month</label>
+    <input id="expiry" class="mzp-c-input-field" type="text"  size="2" maxlength="2" minlength="2">/
+    <label class="mzp-c-input-label" for="expiry">Expiry Year</label>
+    <input id="expiry" class="mzp-c-input-field" type="text"  size="2" maxlength="2" minlength="2">
+  </fieldset>
+  <div class="mzp-c-input-group">
+    <label class="mzp-c-input-label" for="cvc">CVC</label>
+    <input id="cvc" class="mzp-c-input-field" type="text" size="3" maxlength="3" minlength="3">
+  </div>
+  <p class="mzp-c-group-note">For account recovery.</p>
+</div>
+
+<!-- inline -->
+  <fieldset class="mzp-c-set-choices mzp-l-set-inline">
+    <legend class="mzp-c-group-label">Check boxes <span class="mzp-c-fieldnote">Example with a fieldnote.</span></legend>
+    <div class="mzp-c-choice">
+      <input type="checkbox" name="checkboxes" id="checkbox-c4">
+      <label for="checkbox-c4">Option 1</label>
+    </div>
+    <div class="mzp-c-choice">
+      <input type="checkbox" name="checkboxes" id="checkbox-c5">
+      <label for="checkbox-c5">Option 2</label>
+    </div>
+    <div class="mzp-c-choice">
+      <input type="checkbox" name="checkboxes" id="checkbox-c6">
+      <label for="checkbox-c6">Obnoxiously long input option that is intended to push this to a new line</label>
+    </div>
+    <div class="mzp-c-choice">
+      <input type="checkbox" name="checkboxes" id="checkbox-c7">
+      <label for="checkbox-c7">Option 4</label>
+    </div>
+  </fieldset>
+
+<!-- all fields -->
+  <fieldset>
+    <label for="text-b">Text</label>
+    <input type="text" name="text" id="text-b">
+
+    <label for="email-b">E-mail</label>
+    <input type="email" name="email" id="email-b" placeholder="you@example.com">
+
+    <label for="password-b">Password</label>
+    <input type="password" name="password" id="password-b">
+
+    <label for="search-b">Search</label>
+    <input type="search" name="search" id="search-b">
+
+    <label for="textarea-b">Text area</label>
+    <textarea name="textarea" id="textarea-b" rows="3" cols="20"></textarea>
+
+    <label for="textarea-b2">Text area with no set cols</label>
+    <textarea name="textarea" id="textarea-b2"></textarea>
+
+    <label for="language-1">Language</label>
+      <select name="language" id="language-1">
+      {{#each (data "items")}}
+        <option value="{{lang-code}}">{{language}}</option>
+      {{/each}}
+    </select>
+  </fieldset>
+
+  <fieldset class="mzp-c-set-choices">
+    <legend class="mzp-c-group-label">Check boxes</legend>
+    <div class="mzp-c-choice">
+      <input type="checkbox" name="checkboxes" id="checkbox-1-b">
+      <label for="checkbox-1-b">Option 1</label>
+    </div>
+    <div class="mzp-c-choice">
+      <input type="checkbox" name="checkboxes" id="checkbox-2-b">
+      <label for="checkbox-2-b">Option 2</label>
+    </div>
+  </fieldset>
+  <fieldset class="mzp-c-set-choices">
+    <legend class="mzp-c-group-label">Radio buttons</legend>
+    <div class="mzp-c-choice">
+      <input type="radio" name="radios" id="radio-1-b">
+      <label for="radio-1-b">Option 1</label>
+    </div>
+    <div class="mzp-c-choice">
+      <input type="radio" name="radios" id="radio-2-b">
+      <label for="radio-2-b">Option 2</label>
+    </div>
+  </fieldset>
+  <div class="mzp-c-choice">
+    <input type="checkbox" name="checkboxes" id="checkbox-b">
+    <label for="checkbox-b">I’m okay with Mozilla handling my info as explained in <a href="/en-US/privacy/websites/">this Privacy Notice</a></label>
+  </div>
+  <button>ADD BUTTONS</button>
+</form>
+
+<hr>
+<hr>
+<hr>
+<form action="/en-US/press/speakerrequest/" method="post" name="speaker-request-form" id="speaker-request-form" enctype="multipart/form-data">
+    <input type="hidden" name="csrfmiddlewaretoken" value="xk1p2ljBYT4wcfP2TAboTiHT2O2MRwwikIcOAwAUdogOfHB0NE1VL54WwWPu418S">
+    <h3><a href="https://www.mozilla.org/en-US/press/speakerrequest/">Speaker request form</a></h3>
+    <fieldset>
+        <ol>
+            <li class="field required">
+                <label for="sr_event_name">Event Name</label>
+                <input type="text" name="sr_event_name" class="required" required="" aria-required="true" maxlength="255" id="sr_event_name">
+            </li>
+            <li class="field required">
+                <label for="sr_event_url">Event URL</label>
+                <input type="url" name="sr_event_url" class="required" required="" aria-required="true" placeholder="http://www.my-event.com" maxlength="2000" id="sr_event_url">
+            </li>
+            <div class="fields-container">
+                <li class="field required">
+                    <label for="sr_event_date">Date</label>
+                    <input type="date" name="sr_event_date" class="required" required="" aria-required="true" id="sr_event_date">
+                    <div class="field-note date-note" style="display: none;">
+                        2015-03-14 or March 14, 2015
+                    </div>
+                </li>
+                <li class="field required">
+                    <label for="sr_event_time">Time</label>
+                    <input type="time" name="sr_event_time" class="required" required="" aria-required="true" id="sr_event_time">
+                    <div class="field-note time-note" style="display: none;">
+                        2:30 PM or 14:30
+                    </div>
+                </li>
+            </div>
+            <li class="field">
+                <label for="sr_guest_speaker1">Guest Speaker Choice #1</label>
+                <input type="text" name="sr_guest_speaker1" maxlength="200" id="sr_guest_speaker1">
+            </li>
+            <li class="field">
+                <label for="sr_guest_speaker2">Guest Speaker Choice #2</label>
+                <input type="text" name="sr_guest_speaker2" maxlength="200" id="sr_guest_speaker2">
+            </li>
+        </ol>
+    </fieldset>
+    <fieldset>
+        <legend>Contact Information</legend>
+        <ol>
+            <li class="field required">
+                <label for="sr_contact_name">Name</label>
+                <input type="text" name="sr_contact_name" required="" class="required" aria-required="true" maxlength="200" id="sr_contact_name">
+            </li>
+            <li class="field">
+                <label for="sr_contact_title">Title</label>
+                <input type="text" name="sr_contact_title" maxlength="200" id="sr_contact_title">
+            </li>
+            <li class="field">
+                <label for="sr_contact_company">Company</label>
+                <input type="text" name="sr_contact_company" maxlength="200" id="sr_contact_company">
+            </li>
+            <li class="field">
+                <label for="sr_contact_phone">Phone</label>
+                <input type="tel" name="sr_contact_phone" maxlength="50" id="sr_contact_phone">
+            </li>
+            <div class="super-priority-field"><label for="office-fax-628-20191121134756096246">Leave this field empty.</label><input type="text" name="office_fax" id="office-fax-628-20191121134756096246"></div>
+            <li class="field required">
+                <label for="sr_contact_email">Email</label>
+                <input type="email" name="sr_contact_email" required="" class="required" aria-required="true" maxlength="254" id="sr_contact_email">
+            </li>
+            <li class="field">
+                <label for="sr_contact_company_url">Company URL</label>
+                <input type="text" name="sr_contact_company_url" placeholder="http://www.my-company.com" maxlength="2000" id="sr_contact_company_url">
+            </li>
+        </ol>
+    </fieldset>
+    <fieldset>
+        <legend>Event Details</legend>
+        <ol>
+            <li class="field">
+                <label for="sr_event_venue">Venue</label>
+                <input type="text" name="sr_event_venue" maxlength="400" id="sr_event_venue">
+            </li>
+            <li class="field">
+                <label for="sr_event_theme">Theme</label>
+                <input type="text" name="sr_event_theme" maxlength="200" id="sr_event_theme">
+            </li>
+            <li class="field">
+                <label for="sr_event_goal">Goal</label>
+                <input type="text" name="sr_event_goal" maxlength="300" id="sr_event_goal">
+            </li>
+            <li class="field">
+                <label for="sr_event_format">Format</label>
+                <input type="text" name="sr_event_format" maxlength="200" id="sr_event_format">
+            </li>
+            <li class="field">
+                <label for="sr_event_audience_size">Expected Audience Size</label>
+                <input type="number" name="sr_event_audience_size" min="1" placeholder="25" id="sr_event_audience_size">
+            </li>
+            <li class="field">
+                <label for="sr_event_audience_demographics">Audience Demographics</label>
+                <textarea name="sr_event_audience_demographics" cols="40" rows="10" maxlength="500" id="sr_event_audience_demographics"></textarea>
+            </li>
+            <li class="field">
+                <label for="sr_event_speakers_confirmed">Confirmed Speakers</label>
+                <textarea name="sr_event_speakers_confirmed" cols="40" rows="10" maxlength="500" id="sr_event_speakers_confirmed"></textarea>
+            </li>
+            <!--
+            <li class="field">
+                <label for="sr_event_speakers_invited">Invited Speakers</label>
+                <textarea name="sr_event_speakers_invited" cols="40" rows="10" maxlength="500" id="sr_event_speakers_invited"></textarea>
+            </li>
+            <li class="field">
+                <label for="sr_event_speakers_past">Past Speakers</label>
+                <textarea name="sr_event_speakers_past" cols="40" rows="10" maxlength="1000" id="sr_event_speakers_past"></textarea>
+            </li>
+            <li class="field">
+                <label for="sr_event_media_coverage">Media Coverage</label>
+                <textarea name="sr_event_media_coverage" cols="40" rows="10" maxlength="500" id="sr_event_media_coverage"></textarea>
+            </li>
+            <li class="field">
+                <label for="sr_event_sponsors">Event Sponsors</label>
+                <textarea name="sr_event_sponsors" cols="40" rows="10" maxlength="500" id="sr_event_sponsors"></textarea>
+            </li>
+            -->
+            <li class="field">
+                <label for="sr_event_confirmation_deadline">Confirmation Deadline</label>
+                <input type="date" name="sr_event_confirmation_deadline" id="sr_event_confirmation_deadline">
+                <div class="field-note date-note" style="display: none;">
+                    2015-03-14 or March 14, 2015
+                </div>
+            </li>
+        </ol>
+    </fieldset>
+    <fieldset>
+        <legend>Presentation Details</legend>
+        <ol>
+            <li class="field">
+                <label>Type of Presentation</label>
+                <ul id="sr_presentation_type">
+                    <li><label for="sr_presentation_type_0"><input type="checkbox" name="sr_presentation_type" value="keynote" id="sr_presentation_type_0">
+                            Keynote</label>
+                    </li>
+                    <li><label for="sr_presentation_type_1"><input type="checkbox" name="sr_presentation_type" value="presentation" id="sr_presentation_type_1">
+                            Presentation</label>
+                    </li>
+                    <li><label for="sr_presentation_type_2"><input type="checkbox" name="sr_presentation_type" value="fireside chat" id="sr_presentation_type_2">
+                            Fireside Chat</label>
+                    </li>
+                    <li><label for="sr_presentation_type_3"><input type="checkbox" name="sr_presentation_type" value="panel" id="sr_presentation_type_3">
+                            Panel</label>
+                    </li>
+                    <li><label for="sr_presentation_type_4"><input type="checkbox" name="sr_presentation_type" value="other" id="sr_presentation_type_4">
+                            Other</label>
+                    </li>
+                </ul>
+            </li>
+            <li class="field">
+                <label for="sr_presentation_topic">Topic of Presentation</label>
+                <input type="text" name="sr_presentation_topic" maxlength="255" id="sr_presentation_topic">
+            </li>
+            <li class="field">
+                <label for="sr_presentation_length">Expected Length</label>
+                <input type="number" name="sr_presentation_length" min="0.5" step="0.5" placeholder="2.5" id="sr_presentation_length">
+                <div class="field-note">
+                    (in hours, e.g. 2.5)
+                </div>
+            </li>
+        </ol>
+    </fieldset>
+    <fieldset>
+        <legend>Additional Information</legend>
+        <div class="field" id="sr_attachment">
+            <label for="sr_attachment">PDF Attachment</label>
+            <input type="file" name="sr_attachment" id="sr_attachment">
+            <div class="field-note">
+                Agenda, media list, etc.
+                Maximum file size is 5 MB.
+            </div>
+        </div>
+    </fieldset>
+    <button type="submit" name="submit_form" class="button">Submit</button>
+</form>
+<hr>
+<hr>
+<hr>
+<form name="mozilla-contact-us" id="press_inquiry" class="press-inquiry" action="/en-US/press/press-inquiry/" method="post">
+    <h3><a href="https://www.mozilla.org/en-US/press/press-inquiry/">Press Inquiry</a></h3>
+    <input type="hidden" name="csrfmiddlewaretoken" value="me4eLGmc97rHAK4iOLAW9IEvWS6zojN69CfDjRDvoCDZDcQgIPqt1v1yq0ThBOpG">
+    <fieldset>
+        <div class="field required">
+            <label for="id_jobtitle">Job Title</label>
+            <input type="text" name="jobtitle" class="required" required="" aria-required="true" id="id_jobtitle">
+        </div>
+        <div class="field required">
+            <label for="id_name">Name</label>
+            <input type="text" name="name" class="required" required="" aria-required="true" id="id_name">
+        </div>
+        <div class="field required">
+            <label for="id_user_email">Email Address</label>
+            <input type="email" name="user_email" required="" class="required" aria-required="true" maxlength="254" id="id_user_email">
+        </div>
+        <div class="field required">
+            <label for="id_media_org">Media Organization</label>
+            <input type="text" name="media_org" class="required" required="" aria-required="true" id="id_media_org">
+        </div>
+        <div class="field required">
+            <label for="id_inquiry">Inquiry</label>
+            <textarea name="inquiry" cols="40" rows="10" class="required" required="" aria-required="true" id="id_inquiry"></textarea>
+        </div>
+        <div class="field required">
+            <label for="id_deadline">Deadline</label>
+            <input type="date" name="deadline" class="required" required="" aria-required="true" id="id_deadline">
+            <div class="field-note">2015-03-14 or March 14, 2015</div>
+        </div>
+        <div class="super-priority-field"><label for="office-fax-145-20191121134754156430">Leave this field empty.</label><input type="text" name="office_fax" id="office-fax-145-20191121134754156430"></div>
+    </fieldset>
+    <div class="form-submit">
+        <input type="submit" class="button" id="form-submit" value="Submit">
+    </div>
 </form>
 
 <script>
