@@ -4,24 +4,13 @@
 
 @import '../includes/lib';
 
-
-$check-height: 26px;
-$check-sprite-grid: 30px;
-
 .mzp-c-choice {
     box-sizing: border-box;
     clear: left;
+    margin-bottom: $field-spacing;
     min-height: $check-height;
     overflow: hidden;
     position: relative;
-
-    @media #{$mq-sm} {
-        .mzp-l-set-inline & {
-            display: inline-block;
-            margin-right: $spacing-lg;
-            vertical-align: top;
-        }
-    }
 
     // hide real input
     input[type="checkbox"],
@@ -39,11 +28,13 @@ $check-sprite-grid: 30px;
     // label
     label {
         @include bidi(((padding-left, #{$check-height + $spacing-md}, padding-right, 0),));
+        margin-bottom: 0;
         padding-top: 4px;
         vertical-align: top;
     }
 
     &.mzp-is-legal label {
+        color: $color-gray-80; //TODO: keep darker text?
         font-weight: normal;
     }
 
@@ -89,3 +80,48 @@ $check-sprite-grid: 30px;
     }
 }
 
+// multiple together, inline or not
+
+// the spacing on these involves maths because the margins don't collapse on fieldsets
+// normally I'd just remove the bottom margin on the :last-child
+// but with inline elements we can't know how many are on the last line to remove the bottom margin
+// the maths is done with padding instead of margin so there's consistant behaviour no matter what element the class is applied to
+// this involves a fair amount of removing margins too
+.mzp-c-group-choices {
+    margin-bottom: 0;
+    padding-bottom: $field-spacing - $label-spacing;
+
+    legend { // TODO: class or mixin for labels
+        @include text-body-sm;
+        color: $color-gray-70;
+        display: block;
+        font-weight: bold;
+        float: left;
+        padding-bottom: $label-spacing;
+        margin: 0;
+        width: 100%;
+    }
+
+    .mzp-c-choice {
+        margin-bottom: 0;
+        padding-bottom: $label-spacing;
+
+        label {
+            color: $color-gray-80; //TODO: keep darker text?
+            font-weight: normal;
+            margin-bottom: 0;
+        }
+    }
+
+    .mzp-c-field-info {
+        margin: 0;
+        padding-top: $spacing-md - $label-spacing;
+        padding-bottom: $label-spacing;
+    }
+
+    &.mzp-l-group-inline .mzp-c-choice {
+        display: inline-block;
+        margin-right: $field-spacing;
+        vertical-align: top;
+    }
+}

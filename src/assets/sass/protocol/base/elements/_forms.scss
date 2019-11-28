@@ -5,10 +5,6 @@
 
 @import '../../includes/lib';
 
-$form-red: #d70022;
-$form-yellow: #d7b600;
-$form-green: $color-green-60;
-
 /* -------------------------------------------------------------------------- */
 // Resets
 // many from https://necolas.github.io/normalize.css/
@@ -106,9 +102,13 @@ textarea {
 // Element styles
 
 fieldset {
-    margin-bottom: $spacing-md;
+    margin-bottom: $field-spacing;
+    min-width: 0; // https://stackoverflow.com/questions/17408815/fieldset-resizes-wrong-appears-to-have-unremovable-min-width-min-content
+    width: 100%;
 
-    > *:last-child {
+    > *:last-child,
+    > *:last-child > *:last-child,
+    > *:last-child > *:last-child > *:last-child {
         margin-bottom: 0;
     }
 }
@@ -116,7 +116,7 @@ fieldset {
 legend {
     @include text-body-lg;
     font-weight: bold;
-    margin-bottom: $spacing-lg;
+    margin-bottom: $field-spacing;
 
     .mzp-t-firefox & {
         @include font-firefox;
@@ -129,7 +129,7 @@ label {
     color: $color-gray-70;
     display: block;
     font-weight: bold;
-    margin: 0 0 $spacing-sm;
+    margin: 0 0 $label-spacing;
 }
 
 /* check boxes and radio buttons */
@@ -163,10 +163,10 @@ input[type='url'] {
     @include text-body-md;
     background: $color-white;
     border-radius: 4px;
-    border: 2px solid $color-gray-50;
+    border: $field-border;
     line-height: 1.25;
-    margin: 0 0 $spacing-lg;
-    padding: $spacing-sm;
+    margin: 0 0 $field-spacing;
+    padding: $field-padding;
 
     &::placeholder {
         color: $color-gray-70;
@@ -218,6 +218,7 @@ input[type='tel'],
 input[type='text'],
 input[type='url'] {
     min-width: 300px;
+    max-width: 100%;
 }
 
 textarea[cols],
@@ -229,7 +230,7 @@ input[type='search'] {
     background-image: $url-image-search-form;
     background-repeat: no-repeat;
     background-position: left 8px top 50%;
-    padding: $spacing-sm $spacing-sm $spacing-sm calc(1.5em + #{$spacing-sm * 2});
+    padding: $field-padding $field-padding $field-padding calc(1.5em + #{$field-padding * 2});
 
     &:hover {
         background-image: $url-image-search-link-hover;
@@ -241,7 +242,7 @@ input[type='search'] {
 
     [dir="rtl"] & {
         background-position: right 8px top 50%;
-        padding: $spacing-sm calc(1.5em + #{$spacing-sm * 2}) $spacing-sm $spacing-sm;
+        padding: $field-padding calc(1.5em + #{$field-padding * 2}) $field-padding $field-padding;
     }
 }
 
@@ -249,9 +250,9 @@ input[type='color'],
 input[type='file'] {
     background: $color-white;
     border-radius: 4px;
-    border: 2px solid $color-gray-50;
+    border: $field-border;
     line-height: 1.25;
-    margin: 0 0 $spacing-lg;
+    margin: 0 0 $field-spacing;
 
     &:hover {
         border-color: $color-link-hover;
@@ -290,12 +291,11 @@ input[type='file'] {
 }
 
 input[type='file'] {
-    padding: $spacing-sm;
+    padding: $field-padding;
 }
 
 textarea {
     height: auto;
-    max-width: 100%;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -303,30 +303,31 @@ textarea {
 
 // with thanks to https://www.filamentgroup.com/lab/select-css.html
 select {
-	display: block;
-	font-weight: normal;
-	color: #444;
-	line-height: 1.25;
-	margin: 0 0 $spacing-lg;
-    padding: $spacing-sm calc(1.5em + #{$spacing-sm * 2}) $spacing-sm $spacing-sm;
-	min-width: 300px;
-	max-width: 100%;
-	box-sizing: border-box;
-	border: 2px solid $color-gray-50;
-	border-radius: 4px;
 	-moz-appearance: none;
 	-webkit-appearance: none;
 	appearance: none;
 	background-color: #fff;
-	background-image: $url-image-arrow-down-form,
-	                  linear-gradient(to bottom, #ffffff 0%,#ffffff 100%); // must keep gradient to avoid bugs
-	background-repeat: no-repeat, repeat;
+    background-image: $url-image-arrow-down-form,
+                      linear-gradient(to bottom, #ffffff 0%,#ffffff 100%); // must keep gradient to avoid bugs
 	background-position: right 8px top 50%;
+    background-repeat: no-repeat, repeat;
     background-size: 1.5em auto, 100%;
+	border-radius: 4px;
+	border: $field-border;
+	box-sizing: border-box;
+	color: #444;
+	display: block;
+	font-weight: normal;
+	line-height: 1.25;
+	margin: 0 0 $field-spacing;
+	max-width: 100%;
+	min-width: 300px;
+    padding: $field-padding calc(1.5em + #{$field-padding * 2}) $field-padding $field-padding;
+    text-overflow: ellipsis;
 
     [dir="rtl"] & {
         background-position: left 8px top 50%;
-        padding: $spacing-sm $spacing-sm $spacing-sm calc(1.5em + #{$spacing-sm * 2});
+        padding: $field-padding $field-padding $field-padding calc(1.5em + #{$field-padding * 2});
     }
 
     &::-ms-expand {
@@ -387,11 +388,11 @@ select {
 // Buttons
 
 button {
-    margin: 0 0 $spacing-lg;
+    margin: 0 0 $field-spacing;
     padding: $spacing-sm $spacing-md;
     border-radius: 4px;
     font-weight: bold;
-    border: 2px solid $color-gray-50;
+    border: $field-border;
     background: #fff;
     color: $color-gray-80;
 
@@ -436,8 +437,8 @@ legend {
 
 .mzp-c-group-note,
 .mzp-c-fieldnote {
-    @include text-body-xs;
-    color: $color-gray-80;
+    @include text-body-sm;
+    color: $color-gray-70;
     display: block;
     font-weight: normal;
 
@@ -456,13 +457,13 @@ legend {
     border-radius: 4px;
     color: #fff;
     padding: $spacing-sm;
-    margin-bottom: $spacing-lg;
+    margin-bottom: $field-spacing;
 
     :last-child {
         margin-bottom: 0;
     }
 
     li {
-        margin-bottom: $spacing-sm;
+        margin-bottom: $label-spacing;
     }
 }

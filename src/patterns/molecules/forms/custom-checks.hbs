@@ -9,30 +9,34 @@ notes: |
 ---
 
 
-<div class="mzp-c-input-choice">
-  <input type="radio" name="radio-c1" id="radio-c1">
-  <label for="radio-c1">Radio button</label>
-</div>
+{{#embed "patterns.molecules.forms.test.choice" id="c1" type="radio" name="c1"}}
+  {{#content "label"}}
+    Label
+  {{/content}}
+{{/embed}}
 
-<div class="mzp-c-input-choice">
-  <input type="checkbox" name="checkboxes" id="checkbox-c1">
-  <label for="checkbox-c1">Checkbox</label>
-</div>
+{{#embed "patterns.molecules.forms.test.choice" id="c2" type="checkbox" name="c2"}}
+{{#content "label"}}
+    Label
+  {{/content}}
+{{/embed}}
 
-<p>Fieldset necissary for user feedback states:</p>
-<fieldset class="mzp-c-set-choices">
-  <legend>Check boxes <span class="mzp-c-fieldnote">Example with a fieldnote.</span></legend>
-  <div class="mzp-c-input-choice">
-    <input type="checkbox" name="checkboxes" id="checkbox-c2">
-    <label for="checkbox-c2">Option 1</label>
-  </div>
-  <div class="mzp-c-input-choice">
-    <input type="checkbox" name="checkboxes" id="checkbox-c3">
-    <label for="checkbox-c3">Option 2</label>
-  </div>
+{{#embed "patterns.molecules.forms.test.choice" id="c3" type="checkbox" name="c3" is-legal="true" }}
+ {{#content "label"}}
+    I'm okay with Mozilla handling my info as expalined in this <a href="#">privacy notice</a>
+  {{/content}}
+{{/embed}}
+
+<fieldset class="mzp-c-group-choices">
+  <legend>Multiple radio buttons <span class="mzp-c-fieldnote">Example with a fieldnote.</span></legend>
+  {{#embed "patterns.molecules.forms.test.choice" id="o1" type="radio" name="o"}}
+    {{#content "label"}}
+      Option One
+    {{/content}}
+  {{/embed}}
+  {{#embed "patterns.molecules.forms.test.choice" id="o2" type="radio" name="o"}}
+    {{#content "label"}}
+      Option Two
+    {{/content}}
+  {{/embed}}
 </fieldset>
-
-<div class="mzp-c-input-choice">
-  <input type="checkbox" name="checkboxes" id="checkbox-ca">
-  <label for="checkbox-ca">I’m okay with Mozilla handling my info as explained in <a href="/en-US/privacy/websites/">this Privacy Notice</a></label>
-</div>

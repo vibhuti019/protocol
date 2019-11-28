@@ -1,0 +1,70 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+@import '../includes/lib';
+
+
+.mzp-c-field {
+    margin-bottom: $field-spacing;
+    max-width: 100%;
+
+    textarea,
+    input[list],
+    input[type='color'],
+    input[type='date'],
+    input[type='email'],
+    input[type='file'],
+    input[type='number'],
+    input[type='password'],
+    input[type='search'],
+    input[type='tel'],
+    input[type='text'],
+    input[type='time'],
+    input[type='url'] {
+        margin-bottom: 0; // bottom margin is on the field now
+    }
+}
+
+.mzp-c-field-label {
+    @include text-body-sm;
+    color: $color-gray-70;
+    display: block;
+    font-weight: bold;
+    margin: 0 0 $label-spacing;
+}
+
+.mzp-c-field-msg {
+    @include text-body-xs;
+    background-color: $form-red;
+    border-radius: 4px;
+    box-shadow: 0 8px 12px 1px rgba(28, 17, 50, 0.04),
+                0 3px 16px 2px rgba(9, 32, 78, 0.12),
+                0 4px 6px -3px rgba(9, 32, 78, 0.12);
+    color: #fff;
+    padding: $spacing-xs #{$spacing-sm + 2px};
+    margin-top: 2px;
+    position: relative;
+
+    &:after {
+        content: '';
+        border: 7px solid transparent;
+        border-bottom: 8px solid $form-red;
+        position: absolute;
+        bottom: 100%;
+        left: 6px;
+        height: 0;
+        width: 0;
+        z-index: 1;
+    }
+}
+
+.mzp-c-field-info {
+    @include text-body-sm;
+    color: $color-gray-70;
+    margin-top: $spacing-md;
+
+    .mzp-c-field-msg + & {
+        margin-top: $spacing-xs;
+    }
+}

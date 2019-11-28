@@ -4,12 +4,6 @@
 
 @import '../includes/lib';
 
-$form-red: #d70022;
-$form-yellow: #d7b600;
-$form-green: $color-green-60;
-$check-height: 26px;
-$symbol-spacing: calc(1.5em + #{$spacing-sm * 2});
-
 input[list],
 input[type='color'],
 input[type='date'],
@@ -80,198 +74,140 @@ textarea {
     }
 }
 
-input[type='date'],
-input[type='email'],
-input[type='number'],
-input[type='password'],
-input[type='tel'],
-input[type='text'],
-input[type='time'],
-input[type='url'],
-textarea {
+// input[type='date'],
+// input[type='email'],
+// input[type='number'],
+// input[type='password'],
+// input[type='tel'],
+// input[type='text'],
+// input[type='time'],
+// input[type='url'],
+// textarea {
 
-    .mzp-is-error &,
-    .mzp-is-success & {
-        background-repeat: no-repeat;
-        background-position: right 8px top 50%;
-        padding: $spacing-sm $symbol-spacing $spacing-sm $spacing-sm;
+//     .mzp-is-error &,
+//     .mzp-is-success & {
+//         background-repeat: no-repeat;
+//         background-position: right 8px top 50%;
+//         padding: $field-padding $symbol-spacing $field-padding $field-padding;
 
-        [dir="rtl"] & {
-            background-position: left 8px top 50%;
-            padding: $spacing-sm $spacing-sm $spacing-sm $symbol-spacing;
-        }
-    }
+//         [dir="rtl"] & {
+//             background-position: left 8px top 50%;
+//             padding: $field-padding $field-padding $field-padding $symbol-spacing;
+//         }
+//     }
 
-    .mzp-is-error & {
-        background-image: $url-error-form-red;
-    }
+//     .mzp-is-error & {
+//         background-image: $url-error-form-red;
+//     }
 
-    .mzp-is-success & {
-        background-image: $url-success-form-green;
-    }
-}
+//     .mzp-is-success & {
+//         background-image: $url-success-form-green;
+//     }
+// }
 
-input[type='search'] {
-    .mzp-is-error &,
-    .mzp-is-success & {
-        background-repeat: no-repeat;
-        background-position: left 8px top 50%, right 8px top 50%;
-        padding: $spacing-sm $symbol-spacing $spacing-sm $symbol-spacing;
+// input[type='search'] {
+//     .mzp-is-error &,
+//     .mzp-is-success & {
+//         background-repeat: no-repeat;
+//         background-position: left 8px top 50%, right 8px top 50%;
+//         padding: $field-padding $symbol-spacing $field-padding $symbol-spacing;
 
-        [dir="rtl"] & {
-            background-position: right 8px top 50%, left 8px top 50%;
-            padding: $spacing-sm $symbol-spacing $spacing-sm $symbol-spacing;
-        }
-    }
+//         [dir="rtl"] & {
+//             background-position: right 8px top 50%, left 8px top 50%;
+//             padding: $field-padding $symbol-spacing $field-padding $symbol-spacing;
+//         }
+//     }
 
-    .mzp-is-error & {
-        background-image: $url-image-search-form, $url-error-form-red;
+//     .mzp-is-error & {
+//         background-image: $url-image-search-form, $url-error-form-red;
 
-        &:hover {
-            background-image: $url-image-search-link-hover, $url-error-form-red;
-        }
+//         &:hover {
+//             background-image: $url-image-search-link-hover, $url-error-form-red;
+//         }
 
-        &:focus {
-            background-image: $url-image-search-link, $url-error-form-red;
-        }
-    }
+//         &:focus {
+//             background-image: $url-image-search-link, $url-error-form-red;
+//         }
+//     }
 
-    .mzp-is-success & {
-        background-image: $url-image-search-form, $url-success-form-green;
+//     .mzp-is-success & {
+//         background-image: $url-image-search-form, $url-success-form-green;
 
-        &:hover {
-            background-image: $url-image-search-link-hover, $url-success-form-green;
-        }
+//         &:hover {
+//             background-image: $url-image-search-link-hover, $url-success-form-green;
+//         }
 
-        &:focus {
-            background-image: $url-image-search-link, $url-success-form-green;
-        }
-    }
-}
+//         &:focus {
+//             background-image: $url-image-search-link, $url-success-form-green;
+//         }
+//     }
+// }
 
-textarea {
-    .mzp-is-error &,
-    .mzp-is-success & {
-        background-position: right 8px top 8px;
+// textarea {
+//     .mzp-is-error &,
+//     .mzp-is-success & {
+//         background-position: right 8px top 8px;
 
-        [dir="rtl"] & {
-            background-position: left 8px top 8px;
-        }
-    }
-}
-
-/* -------------------------------------------------------------------------- */
-
-select {
-    .mzp-is-error &,
-    .mzp-is-success & {
-        background-repeat: no-repeat, no-repeat, repeat;
-        background-position: right 8px top 50%, right calc(1.5em + 8px * 2) top 50%, 0 0;
-        background-size: 1.5em auto, auto, 100%;
-
-        [dir="rtl"] & {
-            // TODO
-            // background-position: left 8px top 50%;
-            // padding: $spacing-sm $spacing-sm $spacing-sm calc(1.5em + #{$spacing-sm * 2});
-        }
-        padding: $spacing-sm calc(3em + #{$spacing-sm * 3}) $spacing-sm $spacing-sm;
-
-        [dir="rtl"] & {
-            // TODO
-            // background-position: right 8px top 50%, left 8px top 50%;
-            // padding: $spacing-sm $symbol-spacing $spacing-sm $symbol-spacing;
-        }
-    }
-
-    .mzp-is-error & {
-        background-image: $url-image-arrow-down-form, $url-error-form-red, linear-gradient(to bottom, #ffffff 0%,#ffffff 100%); // must keep gradient to avoid bugs;
-
-        &:hover {
-            background-image: $url-image-arrow-down-link-hover, $url-error-form-red, linear-gradient(to bottom, #ffffff 0%,#ffffff 100%); // must keep gradient to avoid bugs;
-        }
-
-        &:focus {
-            background-image: $url-image-arrow-down-link, $url-error-form-red, linear-gradient(to bottom, #ffffff 0%,#ffffff 100%); // must keep gradient to avoid bugs;
-        }
-    }
-
-    .mzp-is-success & {
-        background-image: $url-image-arrow-down-form, $url-success-form-green, linear-gradient(to bottom, #ffffff 0%,#ffffff 100%); // must keep gradient to avoid bugs;
-
-        &:hover {
-            background-image: $url-image-arrow-down-link-hover, $url-success-form-green, linear-gradient(to bottom, #ffffff 0%,#ffffff 100%); // must keep gradient to avoid bugs;
-        }
-
-        &:focus {
-            background-image: $url-image-arrow-down-link, $url-success-form-green, linear-gradient(to bottom, #ffffff 0%,#ffffff 100%); // must keep gradient to avoid bugs;
-        }
-    }
-}
+//         [dir="rtl"] & {
+//             background-position: left 8px top 8px;
+//         }
+//     }
+// }
 
 /* -------------------------------------------------------------------------- */
-// Checks
 
-/* errors for checks by themselves */
-.mzp-is-error .mzp-c-choice,
-.mzp-is-error.mzp-c-choice {
-    input[type="checkbox"] + label:before {
-        content: url('/static/img/forms/check_sprite_error.svg');
-    }
+// select {
+//     .mzp-is-error &,
+//     .mzp-is-success & {
+//         background-repeat: no-repeat, no-repeat, repeat;
+//         background-position: right 8px top 50%, right calc(1.5em + 8px * 2) top 50%, 0 0;
+//         background-size: 1.5em auto, auto, 100%;
 
-    input[type="radio"] + label:before {
-        content: url('/static/img/forms/radio_sprite_error.svg');
-    }
+//         [dir="rtl"] & {
+//             // TODO
+//             // background-position: left 8px top 50%;
+//             // padding: $field-padding $field-padding $field-padding calc(1.5em + #{$field-padding * 2});
+//         }
+//         padding: $field-padding calc(3em + #{$field-padding * 3}) $field-padding $field-padding;
 
-    label {
-        background-image: $url-error-form-red;
-        background-repeat: no-repeat;
-        background-position: top 2px left #{$check-height + $spacing-xs};
-        padding-left: calc(3em + #{$spacing-sm * 2});
-    }
-}
+//         [dir="rtl"] & {
+//             // TODO
+//             // background-position: right 8px top 50%, left 8px top 50%;
+//             // padding: $field-padding $symbol-spacing $field-padding $symbol-spacing;
+//         }
+//     }
 
-/* errors for checks in a set */
+//     .mzp-is-error & {
+//         background-image: $url-image-arrow-down-form, $url-error-form-red, linear-gradient(to bottom, #ffffff 0%,#ffffff 100%); // must keep gradient to avoid bugs;
 
-// undo individual error formatting
-.mzp-is-error .mzp-c-set-choices .mzp-c-choice,
-.mzp-is-error .mzp-c-set-choices .mzp-c-choice {
-    input + label {
-        background-image: none;
-        padding-left: $symbol-spacing;
-    }
-}
+//         &:hover {
+//             background-image: $url-image-arrow-down-link-hover, $url-error-form-red, linear-gradient(to bottom, #ffffff 0%,#ffffff 100%); // must keep gradient to avoid bugs;
+//         }
 
-.mzp-is-error .mzp-c-set-choices .mzp-c-choice label,
-.mzp-is-error.mzp-c-set-choices .mzp-c-choice label {
-    background-image: none;
-    @include bidi(((padding-left, #{$check-height + $spacing-md}, padding-right, 0),));
-}
+//         &:focus {
+//             background-image: $url-image-arrow-down-link, $url-error-form-red, linear-gradient(to bottom, #ffffff 0%,#ffffff 100%); // must keep gradient to avoid bugs;
+//         }
+//     }
 
-// add error formatting
-.mzp-c-set-choices {
-    .mzp-is-error &,
-    .mzp-is-success &,
-    &.mzp-is-error,
-    &.mzp-is-success {
-        legend {
-            background-repeat: no-repeat;
-            background-position: left 2px top;
-            padding-left: $symbol-spacing;
+//     .mzp-is-success & {
+//         background-image: $url-image-arrow-down-form, $url-success-form-green, linear-gradient(to bottom, #ffffff 0%,#ffffff 100%); // must keep gradient to avoid bugs;
 
-            [dir="rtl"] & {
-                background-position: right 2px top 0;
-                padding-right: $symbol-spacing;
-                padding-left: 0;
-            }
-        }
-    }
+//         &:hover {
+//             background-image: $url-image-arrow-down-link-hover, $url-success-form-green, linear-gradient(to bottom, #ffffff 0%,#ffffff 100%); // must keep gradient to avoid bugs;
+//         }
 
+//         &:focus {
+//             background-image: $url-image-arrow-down-link, $url-success-form-green, linear-gradient(to bottom, #ffffff 0%,#ffffff 100%); // must keep gradient to avoid bugs;
+//         }
+//     }
+// }
+
+/* -------------------------------------------------------------------------- */
+// Choices
+
+.mzp-c-choice {
     .mzp-is-error &,
     &.mzp-is-error {
-        legend {
-            background-image: $url-error-form-red;
-        }
-
         input[type="checkbox"] + label:before {
             content: url('/static/img/forms/check_sprite_error.svg');
         }
@@ -294,10 +230,6 @@ select {
 
     .mzp-is-success &,
     &.mzp-is-success {
-        legend {
-            background-image: $url-success-form-green;
-        }
-
         input[type="checkbox"] + label:before {
             content: url('/static/img/forms/check_sprite_success.svg');
         }
