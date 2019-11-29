@@ -28,42 +28,19 @@
 }
 
 .mzp-c-field-label {
-    @include form-label();
+    @include form-label;
 }
 
 .mzp-c-field-msg {
-    @include text-body-xs;
-    @include border-box;
-    background-color: $form-red;
-    border-radius: 4px;
-    box-shadow: 0 8px 12px 1px rgba(28, 17, 50, 0.04),
-                0 3px 16px 2px rgba(9, 32, 78, 0.12),
-                0 4px 6px -3px rgba(9, 32, 78, 0.12);
-    color: #fff;
-    margin: 2px 0 0;
-    max-width: 100%;
-    padding: $spacing-xs #{$spacing-sm + 2px};
-    position: relative;
-    width: max-content;
+    @include form-msg;
 
-    .mzp-c-choice-label + &:after,
     .mzp-c-field-control + &:after {
-        content: '';
-        border: 7px solid transparent;
-        border-bottom: 8px solid $form-red;
-        position: absolute;
-        bottom: 100%;
-        left: 6px;
-        height: 0;
-        width: 0;
-        z-index: 1;
+        @include form-msg-pointer;
     }
 }
 
 .mzp-c-field-info {
-    @include text-body-sm;
-    color: $color-gray-70;
-    margin: 0;
+   @include form-info;
 
     .mzp-c-field-msg + & {
         margin-top: $spacing-xs;
@@ -72,11 +49,5 @@
     .mzp-c-field-control + &,
     .mzp-c-field + & {
         margin-top: $spacing-md;
-    }
-
-    // choice component uses padding instead of margins
-    .mzp-c-choice & {
-        @include bidi(((padding-left, #{$check-height + $spacing-md}, padding-right, 0),));
-        padding-top: $spacing-md;
     }
 }

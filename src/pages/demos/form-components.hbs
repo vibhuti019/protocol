@@ -2,7 +2,7 @@
 title: Form components
 ---
 
-<fieldset id="status" class="mzp-c-group-choices mzp-l-group-inline">
+<fieldset id="status" class="mzp-c-fields-choices mzp-l-group-inline">
   <legend class="mzp-c-field-label">Status:</legend>
   {{#embed "patterns.molecules.forms.test.choice" id="status-none" type="radio" name="status" value="none"}}
     {{#content "label"}}
@@ -86,20 +86,20 @@ title: Form components
   </fieldset>
 
   <h3>Checkboxes and radio buttons</h3>
-  <fieldset class="mzp-c-group-choices">
+  <fieldset class="mzp-c-fields-choices">
     <legend class="mzp-c-field-label">Checkboxes</legend>
     {{#embed "patterns.molecules.forms.test.choice" id="s-check-1" type="checkbox"}}{{#content "label"}}Option 1{{/content}}{{/embed}}
     {{#embed "patterns.molecules.forms.test.choice" id="s-check-2" type="checkbox"}}{{#content "label"}}Option 2{{/content}}{{/embed}}
     <p class="mzp-c-field-info">More information about this group</p>
   </fieldset>
-  <fieldset class="mzp-c-group-choices mzp-l-group-inline">
+  <fieldset class="mzp-c-fields-choices mzp-l-group-inline">
     <legend class="mzp-c-field-label">Checkboxes Inline</legend>
     {{#embed "patterns.molecules.forms.test.choice" id="si-check-1" type="checkbox"}}{{#content "label"}}Option 1{{/content}}{{/embed}}
     {{#embed "patterns.molecules.forms.test.choice" id="si-check-2" type="checkbox"}}{{#content "label"}}Option 2{{/content}}{{/embed}}
     <p class="mzp-c-field-info">More information about this group</p>
   </fieldset>
 
-  <fieldset class="mzp-c-group-choices mzp-l-group-inline">
+  <fieldset class="mzp-c-fields-choices mzp-l-group-inline">
     <legend class="mzp-c-field-label">Check boxes <span class="mzp-c-fieldnote">Example with a fieldnote.</span></legend>
     {{#embed "patterns.molecules.forms.test.choice" id="sic-1" type="checkbox"}}{{#content "label"}}Option 1{{/content}}{{/embed}}
     {{#embed "patterns.molecules.forms.test.choice" id="sic-2" type="checkbox"}}{{#content "label"}}Option 2{{/content}}{{/embed}}
@@ -112,7 +112,7 @@ title: Form components
   {{#embed "patterns.molecules.forms.test.choice" id="s-terms" type="checkbox"}}{{#content "label"}}Single checkbox <span class="mzp-c-fieldnote">With note</span>{{/content}}{{/embed}}
   {{#embed "patterns.molecules.forms.test.choice" id="s-terms2" type="checkbox" is-legal="true"}}{{#content "label"}}Single checkbox that for some reason we want to have a less prominent label{{/content}}{{/embed}}
   {{#embed "patterns.molecules.forms.test.choice" id="s-terms3" type="checkbox" is-legal="true" msg="You must agree to our privacy notice to continue."}}{{#content "label"}}I’m okay with Mozilla handling my info as explained in <a href="/en-US/privacy/websites/">this Privacy Notice</a>{{/content}}{{/embed}}
-  <fieldset class="mzp-c-group-choices">
+  <fieldset class="mzp-c-fields-choices">
     <legend class="mzp-c-field-label">Check boxes <span class="mzp-c-fieldnote">Example with a fieldnote.</span></legend>
     {{#embed "patterns.molecules.forms.test.choice" id="scn-1" type="checkbox"}}{{#content "label"}}Option 1{{/content}}{{/embed}}
     {{#embed "patterns.molecules.forms.test.choice" id="scn-2" type="checkbox"}}{{#content "label"}}Option 2{{/content}}{{/embed}}
@@ -120,7 +120,7 @@ title: Form components
     <p class="mzp-c-field-info">More information about this group</p>
   </fieldset>
 
-  <fieldset id="status" class="mzp-c-group-choices">
+  <fieldset id="status" class="mzp-c-fields-choices">
     <legend class="mzp-c-field-label">Radio buttons</legend>
     {{#embed "patterns.molecules.forms.test.choice" id="f5" type="radio" name="g1"}}{{/embed}}
     {{#embed "patterns.molecules.forms.test.choice" id="f6" type="radio" name="g1"}}
@@ -131,7 +131,7 @@ title: Form components
     <p class="mzp-c-field-info">More information about this group</p>
   </fieldset>
 
-  <fieldset id="status" class="mzp-c-group-choices mzp-l-group-inline">
+  <fieldset id="status" class="mzp-c-fields-choices mzp-l-group-inline">
     <legend class="mzp-c-field-label">Radio buttons inline</legend>
     {{#embed "patterns.molecules.forms.test.choice" id="f9" type="radio" name="g2"}}{{/embed}}
     {{#embed "patterns.molecules.forms.test.choice" id="f10" type="radio" name="g2"}}{{/embed}}
@@ -207,6 +207,20 @@ title: Form components
       {{#embed "patterns.molecules.forms.test.input" id="fp2" type="text" msg="msg"}}{{/embed}}
       <div class="mzp-c-field-msg">msg</div>
     </div>
+
+    <fieldset class="mzp-c-fields-half">
+      <legend class="mzp-c-field-label">Label</legend>
+      {{#embed "patterns.molecules.forms.test.choice" id="ch1" type="checkbox" info="true"}}
+        {{#content "info"}}
+          Get how-tos, advice and news ot make your Firefox experience work best for you.
+        {{/content}}
+      {{/embed}}
+      {{#embed "patterns.molecules.forms.test.choice" id="ch2" type="checkbox" info="true" msg="one two three four"}}
+        {{#content "info"}}
+          A developer's guide to highlights of Web platform innovactions, best practices, new documentation, and more.
+        {{/content}}
+      {{/embed}}
+    </fieldset>
 
     <div class="mzp-c-fields-third">
       {{#embed "patterns.molecules.forms.test.input" id="ft1" type="text" msg="msg"}}{{/embed}}
@@ -592,7 +606,7 @@ title: Form components
     <legend>Presentation Details</legend>
     <ol>
       <li>
-        <fieldset class="mzp-c-group-choices">
+        <fieldset class="mzp-c-fields-choices">
           <legend class="mzp-c-field-label">Type of Presentation</legend>
           {{#embed "patterns.molecules.forms.test.choice" id="sr_presentation_type_0" type="checkbox" name="sr_presentation_type" value="keynote" }}{{#content "label"}}Keynote{{/content}}{{/embed}}
           {{#embed "patterns.molecules.forms.test.choice" id="sr_presentation_type_1" type="checkbox" name="sr_presentation_type" value="presentation" }}{{#content "label"}} Presentation{{/content}}{{/embed}}

@@ -80,6 +80,31 @@
     }
 }
 
+.mzp-c-choice-msg {
+    @include form-msg;
+
+    .mzp-c-choice-label + &:after {
+        @include form-msg-pointer;
+    }
+}
+
+.mzp-c-choice-info {
+    @include form-info;
+
+    .mzp-c-choice & {
+        @include bidi(((padding-left, #{$check-height + $spacing-md}, padding-right, 0),));
+    }
+
+    .mzp-c-choice-label + & {
+        padding-top: $spacing-md;
+    }
+
+    .mzp-c-choice .mzp-c-field-msg + & {
+        padding-top: $spacing-xs;
+    }
+}
+
+
 // multiple together, inline or not
 
 // the spacing on these involves maths because the margins don't collapse on fieldsets
@@ -87,7 +112,7 @@
 // but with inline elements we can't know how many are on the last line to remove the bottom margin
 // the maths is done with padding instead of margin so there's consistant behaviour no matter what element the class is applied to
 // this involves a fair amount of removing margins too
-.mzp-c-group-choices {
+.mzp-c-fields-choices {
     margin-bottom: 0;
     padding-bottom: $field-spacing - $label-spacing;
 
