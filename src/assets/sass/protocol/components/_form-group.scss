@@ -1,0 +1,141 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+@import '../includes/lib';
+
+
+.mzp-c-field-head {
+    @include form-label;
+    @include text-display-sm;
+    color: #00f;
+}
+
+
+.mzp-c-fields-row,
+.mzp-c-fields-half,
+.mzp-c-fields-third,
+.mzp-c-fields-quarter,
+.mzp-c-fields-expiry  {
+    display: grid;
+    column-gap: $field-spacing;
+    margin-bottom: $field-spacing;
+
+    > .mzp-c-field-label,
+    > .mzp-c-field-msg,
+    > .mzp-c-field-info,
+    > .mzp-c-field-head {
+        grid-column-start: 1;
+        grid-column-end: -1;
+    }
+
+    > .mzp-c-field {
+        margin: 0;
+    }
+
+    .mzp-c-field-control {
+        min-width: 0;
+        width: 100%;
+    }
+}
+
+.mzp-c-fields-row {
+    grid-template-columns: min-content min-content min-content min-content min-content 1fr;
+
+    .mzp-c-field > .mzp-c-field-msg,
+    .mzp-c-field-control {
+        width: auto;
+    }
+}
+
+.mzp-c-fields-expiry {
+    grid-template-columns: repeat(3, min-content);
+    column-gap: $spacing-sm;
+
+    .mzp-c-field > .mzp-c-field-label {
+        @include visually-hidden();
+    }
+
+    .mzp-c-field > .mzp-c-field-msg,
+    .mzp-c-field-control {
+        width: auto;
+    }
+}
+
+.mzp-c-fields-half {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.mzp-c-fields-third {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.mzp-c-fields-quarter {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+
+
+
+
+
+
+
+// .mzp-c-fields-row,
+// .mzp-c-fields-half,
+// .mzp-c-fields-third {
+//     display: flex;
+//     flex-wrap: wrap;
+//     column-gap: $field-spacing;
+//     margin-bottom: $field-spacing;
+
+//     > .mzp-c-field-label,
+//     > .mzp-c-field-msg,
+//     > .mzp-c-field-info,
+//     > .mzp-c-field-head {
+//         width: 100%;
+//     }
+
+//     > .mzp-c-field {
+//         margin: 0;
+//     }
+
+//     .mzp-c-field-control {
+//         min-width: 0;
+//     }
+// }
+
+// .mzp-c-fields-half {
+//     .mzp-c-field,
+//     .mzp-c-choice {
+//         width: calc(50% - #{$spacing-lg});
+//     }
+
+//     .mzp-c-field-control {
+//         width: 100%;
+//     }
+// }
+
+// .mzp-c-fields-third {
+//     .mzp-c-field,
+//     .mzp-c-choice {
+//         width: calc(33% - #{$spacing-lg});
+//     }
+
+//     .mzp-c-field-control {
+//         width: 100%;
+//     }
+// }
+
+// .mzp-c-fields-quarter {
+//     .mzp-c-field,
+//     .mzp-c-choice {
+//         width: calc(33% - #{$spacing-lg});
+//     }
+
+//     .mzp-c-field-control {
+//         width: 100%;
+//     }
+// }
+
+

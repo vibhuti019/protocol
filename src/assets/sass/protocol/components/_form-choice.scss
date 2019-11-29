@@ -91,11 +91,8 @@
     margin-bottom: 0;
     padding-bottom: $field-spacing - $label-spacing;
 
-    legend { // TODO: class or mixin for labels
-        @include text-body-sm;
-        color: $color-gray-70;
-        display: block;
-        font-weight: bold;
+    legend {
+        @include form-label();
         float: left;
         padding-bottom: $label-spacing;
         margin: 0;
@@ -114,7 +111,6 @@
     }
 
     .mzp-c-field-info {
-        margin: 0;
         padding-top: $spacing-md - $label-spacing;
         padding-bottom: $label-spacing;
     }

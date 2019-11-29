@@ -1,6 +1,6 @@
 <div class="mzp-c-field">
   <label class="mzp-c-field-label" for="{{ id }}">Select</label>
-  <select class="mzp-c-field-contol" name="select" id="{{ id }}" {{#if required}}required aria-required="true"{{/if}}>
+  <select class="mzp-c-field-control" name="select" id="{{ id }}" {{#if multiple}}multiple{{/if}} {{#if required}}required aria-required="true"{{/if}}>
     {{#block "options"}}
       <option>Option 1</option>
       <option>Option 2</option>

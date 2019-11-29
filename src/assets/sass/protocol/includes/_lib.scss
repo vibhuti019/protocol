@@ -14,6 +14,7 @@
 $form-red: #D70022;
 $form-yellow: #D7B600;
 $form-green: $color-green-60;
+$field-min-width: 300px;
 $field-padding: $spacing-sm;
 $label-spacing: $spacing-sm;
 $field-spacing: $spacing-lg;
@@ -21,3 +22,12 @@ $field-border: 2px solid $color-gray-50;
 $check-height: 26px;
 $symbol-spacing: calc(1.5em + #{$spacing-sm * 2});
 $check-sprite-grid: 30px;
+
+
+@mixin form-label() {
+    @include text-body-sm;
+    color: $color-gray-70;
+    display: block;
+    font-weight: bold;
+    margin: 0 0 $label-spacing;
+}
