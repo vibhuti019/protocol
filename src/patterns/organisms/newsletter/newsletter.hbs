@@ -15,58 +15,44 @@ links:
     <img src="{{@root.baseurl}}/static/img/newsletter/newsletter-image.png" width="346" height="346" alt="">
   </div>
 
-  <form id="newsletter-form" class="mzp-c-newsletter-form" name="newsletter-form" action="/path/to/handler/" method="post">
+  <form id="newsletter-form" class="mzp-c-newsletter-form mzp-c-form" name="newsletter-form" action="/path/to/handler/" method="post">
     <header class="mzp-c-newsletter-header">
       <h3 class="mzp-c-newsletter-title">Love the Web?</h3>
       <p class="mzp-c-newsletter-tagline">Get the Mozilla newsletter and help us keep it open and free.</p>
     </header>
 
     <fieldset class="mzp-c-newsletter-content">
-      <div class="mzp-c-form-errors" id="newsletter-errors"></div>
+      <div class="mzp-c-form-errors" id="newsletter-errors">{{#if errors}}{{#block "errors"}}{{/block}}{{/if}}</div>
 
-      <p>
-        <label for="email">Your email address</label>
-        <input type="email" class="mzp-js-email-field" id="email" name="email" placeholder="yourname@example.com" required aria-required="true">
-      </p>
+      {{#embed "patterns.molecules.forms.test.input" id="email" type="email" required="true" addclass="mzp-js-email-field"}}
+        {{#content "label"}}Your email address{{/content}}
+        {{#content "attrs"}}placeholder="yourname@example.com"{{/content}}
+      {{/embed}}
 
       <div id="newsletter-details" class="mzp-c-newsletter-details">
-        <p>
-          <label for="country">Country</label>
-          <select id="country" name="country" required aria-required="true">
+        {{#embed "patterns.molecules.forms.test.select" id="country" name="country" required="true"}}
+          {{#content "label"}}Country{{/content}}
+          {{#content "options"}}
             {{#each (data "items")}}
               <option value="{{country}}">{{country}}</option>
             {{/each}}
               <option>And so on...</option>
-          </select>
-        </p>
-
-        <p>
-          <label for="language">Language</label>
-          <select id="language" name="lang" required aria-required="true">
+          {{/content}}
+        {{/embed}}
+        {{#embed "patterns.molecules.forms.test.select" id="language" name="lang" required="true"}}
+          {{#content "label"}}Language{{/content}}
+          {{#content "options"}}
             {{#each (data "items")}}
               <option value="{{language}}">{{language}}</option>
             {{/each}}
-          </select>
-        </p>
-
-        <fieldset class="mzp-u-inline">
-          <legend>Format</legend>
-          <p>
-            <label for="format-html" class="mzp-u-inline">
-              <input type="radio" id="format-html" name="fmt" value="H" checked> HTML
-            </label>
-            <label for="format-text" class="mzp-u-inline">
-              <input type="radio" id="format-text" name="fmt" value="T"> Text
-            </label>
-          </p>
+          {{/content}}
+        {{/embed}}
+        <fieldset class="mzp-c-choices mzp-l-choices-inline">
+          <legend class="mzp-c-field-label">Format</legend>
+          {{#embed "patterns.molecules.forms.test.choice" id="format-html" name="fmt" type="radio" value="H"}}{{#content "label"}}HTML{{/content}}{{/embed}}
+          {{#embed "patterns.molecules.forms.test.choice" id="format-text" name="fmt" type="radio" value="T"}}{{#content "label"}}Text{{/content}}{{/embed}}
         </fieldset>
-
-        <p>
-          <label for="privacy" class="mzp-u-inline">
-            <input type="checkbox" id="privacy" name="privacy" required aria-required="true">
-            I’m okay with Mozilla handling my info as explained in <a href="https://www.mozilla.org/privacy/websites/">this Privacy Notice</a>
-          </label>
-        </p>
+        {{#embed "patterns.molecules.forms.test.choice" id="privacy" name="privacy" type="checkbox" required="true" is-legal="true"}}{{#content "label"}}I’m okay with Mozilla handling my info as explained in <a href="https://www.mozilla.org/privacy/websites/">this Privacy Notice</a>{{/content}}{{/embed}}
       </div>
 
       <p class="mzp-c-form-submit">

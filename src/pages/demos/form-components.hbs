@@ -2,7 +2,7 @@
 title: Form components
 ---
 
-<fieldset id="status" class="mzp-c-fields-choices mzp-l-group-inline">
+<fieldset id="status" class="mzp-c-choices mzp-l-choices-inline">
   <legend class="mzp-c-field-label">Status:</legend>
   {{#embed "patterns.molecules.forms.test.choice" id="status-none" type="radio" name="status" value="none"}}
     {{#content "label"}}
@@ -26,31 +26,7 @@ title: Form components
   {{/embed}}
 </fieldset>
 
-<style>
-
-
-  .mzp-l-fields-credit .mzp-c-field {
-    width: 33%;
-    float: left;
-  }
-
-  .mzp-l-fields-expiry .mzp-c-field {
-    width: 100px;
-    display: inline-block;
-    vertical-align: top;
-  }
-
-  .mzp-l-fields-expiry .mzp-c-field-control {
-    min-width: 100px;
-    width: 100px;
-  }
-
-  .mzp-l-choices-inline .mzp-c-choice {
-    display: inline-block;
-  }
-</style>
-
-<form id="form">
+<form id="form" class="mzp-c-form">
 
   <h3>One of everything</h3>
   <fieldset>
@@ -74,32 +50,32 @@ title: Form components
     {{#embed "patterns.molecules.forms.test.choice" id="g-radio" type="radio" name="g-radio"}}{{#content "label"}}Radio{{/content}}{{/embed}}
     {{#embed "patterns.molecules.forms.test.choice" id="g-check" type="checkbox" name="g-check"}}{{#content "label"}}Checkbox{{/content}}{{/embed}}
 
-    <div class="mzp-c-input-group">
+    <div class="mzp-c-field">
       <button type="button" class="mzp-c-button">Button</button>
     </div>
-    <div class="mzp-c-input-group">
+    <div class="mzp-c-field">
       <input type="submit" value="Submit" class="mzp-c-button">
     </div>
-    <div class="mzp-c-input-group">
+    <div class="mzp-c-field">
       <input type="reset" value="Reset">
     </div>
   </fieldset>
 
   <h3>Checkboxes and radio buttons</h3>
-  <fieldset class="mzp-c-fields-choices">
+  <fieldset class="mzp-c-choices">
     <legend class="mzp-c-field-label">Checkboxes</legend>
     {{#embed "patterns.molecules.forms.test.choice" id="s-check-1" type="checkbox"}}{{#content "label"}}Option 1{{/content}}{{/embed}}
     {{#embed "patterns.molecules.forms.test.choice" id="s-check-2" type="checkbox"}}{{#content "label"}}Option 2{{/content}}{{/embed}}
     <p class="mzp-c-field-info">More information about this group</p>
   </fieldset>
-  <fieldset class="mzp-c-fields-choices mzp-l-group-inline">
+  <fieldset class="mzp-c-choices mzp-l-choices-inline">
     <legend class="mzp-c-field-label">Checkboxes Inline</legend>
     {{#embed "patterns.molecules.forms.test.choice" id="si-check-1" type="checkbox"}}{{#content "label"}}Option 1{{/content}}{{/embed}}
     {{#embed "patterns.molecules.forms.test.choice" id="si-check-2" type="checkbox"}}{{#content "label"}}Option 2{{/content}}{{/embed}}
     <p class="mzp-c-field-info">More information about this group</p>
   </fieldset>
 
-  <fieldset class="mzp-c-fields-choices mzp-l-group-inline">
+  <fieldset class="mzp-c-choices mzp-l-choices-inline">
     <legend class="mzp-c-field-label">Check boxes <span class="mzp-c-fieldnote">Example with a fieldnote.</span></legend>
     {{#embed "patterns.molecules.forms.test.choice" id="sic-1" type="checkbox"}}{{#content "label"}}Option 1{{/content}}{{/embed}}
     {{#embed "patterns.molecules.forms.test.choice" id="sic-2" type="checkbox"}}{{#content "label"}}Option 2{{/content}}{{/embed}}
@@ -112,7 +88,7 @@ title: Form components
   {{#embed "patterns.molecules.forms.test.choice" id="s-terms" type="checkbox"}}{{#content "label"}}Single checkbox <span class="mzp-c-fieldnote">With note</span>{{/content}}{{/embed}}
   {{#embed "patterns.molecules.forms.test.choice" id="s-terms2" type="checkbox" is-legal="true"}}{{#content "label"}}Single checkbox that for some reason we want to have a less prominent label{{/content}}{{/embed}}
   {{#embed "patterns.molecules.forms.test.choice" id="s-terms3" type="checkbox" is-legal="true" msg="You must agree to our privacy notice to continue."}}{{#content "label"}}I’m okay with Mozilla handling my info as explained in <a href="/en-US/privacy/websites/">this Privacy Notice</a>{{/content}}{{/embed}}
-  <fieldset class="mzp-c-fields-choices">
+  <fieldset class="mzp-c-choices">
     <legend class="mzp-c-field-label">Check boxes <span class="mzp-c-fieldnote">Example with a fieldnote.</span></legend>
     {{#embed "patterns.molecules.forms.test.choice" id="scn-1" type="checkbox"}}{{#content "label"}}Option 1{{/content}}{{/embed}}
     {{#embed "patterns.molecules.forms.test.choice" id="scn-2" type="checkbox"}}{{#content "label"}}Option 2{{/content}}{{/embed}}
@@ -120,7 +96,7 @@ title: Form components
     <p class="mzp-c-field-info">More information about this group</p>
   </fieldset>
 
-  <fieldset id="status" class="mzp-c-fields-choices">
+  <fieldset class="mzp-c-choices">
     <legend class="mzp-c-field-label">Radio buttons</legend>
     {{#embed "patterns.molecules.forms.test.choice" id="f5" type="radio" name="g1"}}{{/embed}}
     {{#embed "patterns.molecules.forms.test.choice" id="f6" type="radio" name="g1"}}
@@ -131,7 +107,7 @@ title: Form components
     <p class="mzp-c-field-info">More information about this group</p>
   </fieldset>
 
-  <fieldset id="status" class="mzp-c-fields-choices mzp-l-group-inline">
+  <fieldset class="mzp-c-choices mzp-l-choices-inline">
     <legend class="mzp-c-field-label">Radio buttons inline</legend>
     {{#embed "patterns.molecules.forms.test.choice" id="f9" type="radio" name="g2"}}{{/embed}}
     {{#embed "patterns.molecules.forms.test.choice" id="f10" type="radio" name="g2"}}{{/embed}}
@@ -194,50 +170,65 @@ title: Form components
       {{#content "info"}}Info.{{/content}}
     {{/embed}}
 
-    <div class="mzp-c-fields-row">
-      <div class="mzp-c-field-head">Head</div>
+    <div class="mzp-c-group mzp-l-group-datetime">
       {{#embed "patterns.molecules.forms.test.input" id="dt1" type="date"}}{{#content "label"}}Date{{/content}}{{/embed}}
       {{#embed "patterns.molecules.forms.test.input" id="dt2" type="time"}}{{#content "label"}}Time{{/content}}{{/embed}}
-      <p class="mzp-c-field-msg">msg</p>
-      <p class="mzp-c-field-info">Info</p>
     </div>
 
-    <div class="mzp-c-fields-half">
-      {{#embed "patterns.molecules.forms.test.input" id="fp1" type="text" msg="msg"}}{{/embed}}
-      {{#embed "patterns.molecules.forms.test.input" id="fp2" type="text" msg="msg"}}{{/embed}}
-      <div class="mzp-c-field-msg">msg</div>
+    <div class="mzp-c-group mzp-l-group-datetime">
+      <div class="mzp-c-field-label">Lorem <span class="mzp-c-fieldnote">Ipsum dollar sit</span></div>
+      {{#embed "patterns.molecules.forms.test.input" id="dt1" type="date" msg="Lorem ipsum dollar sit amet."}}{{#content "label"}}Date{{/content}}{{/embed}}
+      {{#embed "patterns.molecules.forms.test.input" id="dt2" type="time" msg="Lorem ipsum dollar sit amet."}}{{#content "label"}}Time{{/content}}{{/embed}}
+      <div class="mzp-c-field-info">Lorem ipsum dollar sit amet.</div>
     </div>
 
-    <fieldset class="mzp-c-fields-half">
-      <legend class="mzp-c-field-label">Label</legend>
-      {{#embed "patterns.molecules.forms.test.choice" id="ch1" type="checkbox" info="true"}}
-        {{#content "info"}}
-          Get how-tos, advice and news ot make your Firefox experience work best for you.
+    <fieldset class="mzp-c-group mzp-l-group-expiry">
+      <legend class="mzp-c-field-label">Expiry</legend>
+      {{#embed "patterns.molecules.forms.test.input" id="f7" type="text"}}
+        {{#content "label"}}
+          Month
+        {{/content}}
+        {{#content "attrs"}}
+          maxlength="2" size="2"
         {{/content}}
       {{/embed}}
-      {{#embed "patterns.molecules.forms.test.choice" id="ch2" type="checkbox" info="true" msg="one two three four"}}
-        {{#content "info"}}
-          A developer's guide to highlights of Web platform innovactions, best practices, new documentation, and more.
+      <div class="mzp-c-group-spacer">/</div>
+      {{#embed "patterns.molecules.forms.test.input" id="f8" type="text"}}
+        {{#content "label"}}
+          Year
+        {{/content}}
+        {{#content "attrs"}}
+          maxlength="2" size="2"
         {{/content}}
       {{/embed}}
     </fieldset>
 
-    <div class="mzp-c-fields-third">
-      {{#embed "patterns.molecules.forms.test.input" id="ft1" type="text" msg="msg"}}{{/embed}}
-      {{#embed "patterns.molecules.forms.test.input" id="ft2" type="text" msg="msg"}}{{/embed}}
-      {{#embed "patterns.molecules.forms.test.select" id="ft3" type="text" msg="msg"}}{{/embed}}
-    </div>
-
-    <fieldset class="mzp-c-fields-third">
-      <legend class="mzp-c-field-head">Head</legend>
-      {{#embed "patterns.molecules.forms.test.input" id="ftl1" type="text" msg="msg"}}{{/embed}}
-      {{#embed "patterns.molecules.forms.test.textarea" id="ftl2" msg="msg"}}{{/embed}}
-      {{#embed "patterns.molecules.forms.test.choice" id="ftl3" type="checkbox" is-legal="true" msg="You must agree to our privacy notice to continue."}}{{#content "label"}}I’m okay with Mozilla handling my info as explained in <a href="/en-US/privacy/websites/">this Privacy Notice</a>{{/content}}{{/embed}}
-      <div class="mzp-c-field-msg">msg</div>
+    <fieldset class="mzp-c-group mzp-l-group-expiry">
+      <legend class="mzp-c-field-label">Expiry</legend>
+      {{#embed "patterns.molecules.forms.test.input" id="f7" type="text" msg="Please enter two digits for the month."}}
+        {{#content "label"}}
+          Month
+        {{/content}}
+        {{#content "attrs"}}
+          maxlength="2" size="2"
+        {{/content}}
+      {{/embed}}
+      <div class="mzp-c-group-spacer">/</div>
+      {{#embed "patterns.molecules.forms.test.input" id="f8" type="text" msg="msg"}}
+        {{#content "label"}}
+          Year
+        {{/content}}
+        {{#content "attrs"}}
+          maxlength="2" size="2"
+        {{/content}}
+      {{/embed}}
+      <div class="mzp-c-field-msg">Lorem ipsum dollar sit amet.</div>
+      <p class="mzp-c-field-info">Details</p>
     </fieldset>
 
-     <fieldset class="mzp-c-fields-row">
-      <legend class="mzp-c-field-head">Head</legend>
+
+    <fieldset class="mzp-c-group mzp-l-group-row">
+      <legend class="mzp-c-field-head">row</legend>
       {{#embed "patterns.molecules.forms.test.input" id="br1" type="text" msg="msg"}}{{#content "attrs"}}maxlength="10" size="10"{{/content}}{{/embed}}
       {{#embed "patterns.molecules.forms.test.textarea" id="br2" msg="msg"}}{{#content "attrs"}}cols="10"{{/content}}{{/embed}}
       {{#embed "patterns.molecules.forms.test.select" id="br3" type="text" msg="msg"}}{{/embed}}
@@ -245,13 +236,13 @@ title: Form components
       <div class="mzp-c-field-msg">msg</div>
     </fieldset>
 
-    <fieldset class="mzp-c-fields-row">
-      <legend class="mzp-c-field-head">Head</legend>
+    <fieldset class="mzp-c-group mzp-l-group-row">
+      <legend class="mzp-c-field-head">row</legend>
       {{#embed "patterns.molecules.forms.test.input" id="br1" type="text" msg="msg"}}
         {{#content "label"}}Card Number{{/content}}
         {{#content "attrs"}}maxlength="19" size="19"{{/content}}
       {{/embed}}
-      <fieldset class="mzp-c-fields-row">
+      <fieldset class="mzp-c-group mzp-l-group-expiry">
         <legend class="mzp-c-field-label">Expiry</legend>
         {{#embed "patterns.molecules.forms.test.input" id="f7" type="text" msg="Please enter two digits for the month."}}
           {{#content "label"}}
@@ -261,7 +252,7 @@ title: Form components
             maxlength="2" size="2"
           {{/content}}
         {{/embed}}
-        <div class="TODO">/</div>
+        <div class="mzp-c-group-spacer">/</div>
         {{#embed "patterns.molecules.forms.test.input" id="f8" type="text" msg="msg"}}
           {{#content "label"}}
             Year
@@ -270,7 +261,7 @@ title: Form components
             maxlength="2" size="2"
           {{/content}}
         {{/embed}}
-        <div class="mzp-c-field-msg">msg</div>
+        <div class="mzp-c-field-msg">Lorem ipsum dollar sit amet.</div>
         <p class="mzp-c-field-info">Details</p>
       </fieldset>
       {{#embed "patterns.molecules.forms.test.input" id="br1" type="text" msg="msg"}}
@@ -284,50 +275,23 @@ title: Form components
       <div class="mzp-c-field-msg">msg</div>
     </fieldset>
 
-    <fieldset class="mzp-l-test">
-      <legend class="mzp-c-field-label">Label</legend>
-      {{#embed "patterns.molecules.forms.test.input" id="f4" type="text" msg="msg"}}
-        {{#content "label"}}
-          Label <span class="mzp-c-fieldnote">Hide me</span>
-        {{/content}}
-      {{/embed}}
-      {{#embed "patterns.molecules.forms.test.input" id="f4" type="text" msg="msg" info="true"}}
-        {{#content "label"}}
-          Label <span class="mzp-c-fieldnote">Hide me</span>
-        {{/content}}
-        {{#content "info"}}
-          Info
-        {{/content}}
-      {{/embed}}
-      <div class="mzp-c-field-msg">msg</div>
+     <fieldset class="mzp-c-row mzp-l-row-wide">
+       <legend class="mzp-c-field-head">Single column full width</legend>
+      {{#embed "patterns.molecules.forms.test.input" id="w1" type="text"}}{{/embed}}
+      {{#embed "patterns.molecules.forms.test.select" id="w2"}}{{/embed}}
     </fieldset>
 
-    <fieldset class="mzp-c-fields-row">
-      <legend class="mzp-c-field-label">Expiry</legend>
-      {{#embed "patterns.molecules.forms.test.input" id="f7" type="text" msg="Please enter two digits for the month."}}
-        {{#content "label"}}
-          Month
-        {{/content}}
-        {{#content "attrs"}}
-          maxlength="2" size="2"
-        {{/content}}
-      {{/embed}}
-      <div class="TODO">/</div>
-      {{#embed "patterns.molecules.forms.test.input" id="f8" type="text" msg="msg"}}
-        {{#content "label"}}
-          Year
-        {{/content}}
-        {{#content "attrs"}}
-          maxlength="2" size="2"
-        {{/content}}
-      {{/embed}}
-      <div class="mzp-c-field-msg">msg</div>
-      <p class="mzp-c-field-info">Details</p>
-    </fieldset>
+    <div class="mzp-c-row mzp-l-row-half">
+      <div class="mzp-c-field-head">Half</div>
+      {{#embed "patterns.molecules.forms.test.input" id="fp1" type="text"}}{{/embed}}
+      {{#embed "patterns.molecules.forms.test.input" id="fp2" type="text"}}{{/embed}}
+      {{#embed "patterns.molecules.forms.test.input" id="fp3" type="text"}}{{/embed}}
+      {{#embed "patterns.molecules.forms.test.input" id="fp4" type="text"}}{{/embed}}
+    </div>
 
-    <fieldset class="mzp-c-fields-half">
-      <legend class="mzp-c-field-head">Head</legend>
-      {{#embed "patterns.molecules.forms.test.input" id="f11" type="text" msg="msg"}}
+    <fieldset class="mzp-c-row mzp-l-row-half">
+      <legend class="mzp-c-field-head">Half</legend>
+      {{#embed "patterns.molecules.forms.test.input" id="f11" type="text" msg="msg" info="true"}}
         {{#content "label"}}
           Label <span class="mzp-c-fieldnote">Note</span>
         {{/content}}
@@ -335,7 +299,7 @@ title: Form components
           Info
         {{/content}}
       {{/embed}}
-      {{#embed "patterns.molecules.forms.test.input" id="f12" type="text" msg="msg"}}
+      {{#embed "patterns.molecules.forms.test.input" id="f12" type="text" msg="msg" info="true"}}
         {{#content "label"}}
           Label <span class="mzp-c-fieldnote">Note</span>
         {{/content}}
@@ -346,22 +310,70 @@ title: Form components
       <div class="mzp-c-field-msg">msg</div>
       <p class="mzp-c-field-info">Info</p>
     </fieldset>
+
+    <fieldset class="mzp-c-row mzp-l-row-half">
+      <legend class="mzp-c-field-label">Half</legend>
+      {{#embed "patterns.molecules.forms.test.choice" id="ch1" type="checkbox" info="true"}}
+        {{#content "info"}}
+          Get how-tos, advice and news ot make your Firefox experience work best for you.
+        {{/content}}
+      {{/embed}}
+      {{#embed "patterns.molecules.forms.test.choice" id="ch2" type="checkbox" info="true" msg="one two three four"}}
+        {{#content "info"}}
+          A developer's guide to highlights of Web platform innovactions, best practices, new documentation, and more.
+        {{/content}}
+      {{/embed}}
+    </fieldset>
+
+    <fieldset class="mzp-c-row mzp-l-row-third">
+      <legend class="mzp-c-field-head">Third</legend>
+      {{#embed "patterns.molecules.forms.test.input" id="ftl1" type="text" msg="msg"}}{{/embed}}
+      {{#embed "patterns.molecules.forms.test.textarea" id="ftl2" msg="msg"}}{{#content "label"}}Label <span class="mzp-c-fieldnote">Note</span>{{/content}}{{/embed}}
+      {{#embed "patterns.molecules.forms.test.choice" id="ftl3" type="checkbox" is-legal="true" msg="You must agree to our privacy notice to continue."}}{{#content "label"}}I’m okay with Mozilla handling my info as explained in <a href="/en-US/privacy/websites/">this Privacy Notice</a>{{/content}}{{/embed}}
+      <div class="mzp-c-field-msg">msg</div>
+    </fieldset>
+
+    <div class="mzp-c-row mzp-l-row-third">
+      {{#embed "patterns.molecules.forms.test.input" id="ft4" type="text" msg="msg"}}{{/embed}}
+      {{#embed "patterns.molecules.forms.test.input" id="ft5" type="text" msg="msg"}}{{/embed}}
+      {{#embed "patterns.molecules.forms.test.select" id="ft6" msg="msg"}}{{/embed}}
+    </div>
+
+    <fieldset class="mzp-c-row mzp-l-row-quarter">
+      <legend class="mzp-c-field-head">Quarter</legend>
+      {{#embed "patterns.molecules.forms.test.input" id="q1" type="text" msg="msg"}}{{/embed}}
+      {{#embed "patterns.molecules.forms.test.textarea" id="q2"}}{{/embed}}
+      {{#embed "patterns.molecules.forms.test.choice" id="q3" type="checkbox" is-legal="true"}}{{#content "label"}}I’m okay with Mozilla handling my info as explained in <a href="/en-US/privacy/websites/">this Privacy Notice</a>{{/content}}{{/embed}}
+      {{#embed "patterns.molecules.forms.test.select" id="q4"}}{{/embed}}
+      {{#embed "patterns.molecules.forms.test.input" id="q5" type="text"}}{{/embed}}
+      {{#embed "patterns.molecules.forms.test.input" id="q6" type="text"}}{{/embed}}
+      {{#embed "patterns.molecules.forms.test.input" id="q7" type="text"}}{{/embed}}
+      {{#embed "patterns.molecules.forms.test.input" id="q8" type="text"}}{{/embed}}
+    </fieldset>
+
+    <fieldset class="mzp-c-row mzp-l-row-quarter">
+      <legend class="mzp-c-field-head">Quarter with radio buttons</legend>
+      {{#embed "patterns.molecules.forms.test.choice" id="qc1" type="radio" name="qc"}}{{/embed}}
+      {{#embed "patterns.molecules.forms.test.choice" id="qc2" type="radio" name="qc"}}{{/embed}}
+      {{#embed "patterns.molecules.forms.test.choice" id="qc3" type="radio" name="qc"}}{{/embed}}
+      {{#embed "patterns.molecules.forms.test.choice" id="qc4" type="radio" name="qc"}}{{/embed}}
+    </fieldset>
+
   </fieldset>
 
 <h2>Use cases</h2>
 <fieldset>
   <legend>Subscribe</legend>
   <div class="mzp-c-choice">
-    <input type="radio" name="sub-fx" id="sub-fx" value="subscribe">
-    <label for="sub-fx">Firefox Newsletter</label>
-    <div class="mzp-c-field-info">Get how-tos, advice and news ot make your Firefox experience work best for you.</div>
+    <input class="mzp-c-choice-control" type="checkbox" name="sub-fx" id="sub-fx" value="subscribe">
+    <label class="mzp-c-choice-label" for="sub-fx">Firefox Newsletter</label>
+    <div class="mzp-c-choice-info">Get how-tos, advice and news ot make your Firefox experience work best for you.</div>
   </div>
 
-
   <div class="mzp-c-choice">
-    <input type="radio" name="sub-dev" id="sub-dev" value="subscribe">
-    <label for="sub-dev">Developer Newsletter</label>
-    <div class="mzp-c-field-info">A developer's guide to highlights of Web platform innovactions, best practices, new documentation, and more.</div>
+    <input class="mzp-c-choice-control" type="checkbox" name="sub-dev" id="sub-dev" value="subscribe">
+    <label class="mzp-c-choice-label" for="sub-dev">Developer Newsletter</label>
+    <div class="mzp-c-choice-info">A developer's guide to highlights of Web platform innovactions, best practices, new documentation, and more.</div>
   </div>
 
 </fieldset>
@@ -370,7 +382,7 @@ title: Form components
 <hr>
 <hr>
 
-<form>
+<form class="mzp-c-form">
   <h1>You’ve got the latest browser. Now get the rest of Firefox.</h1>
   <p>Join Firefox for a whole family of respectful products, plus all the knowledge you need to protect yourself online.</p>
   <div class="c-signup-container fxa-form-cta">
@@ -423,64 +435,11 @@ title: Form components
 <hr>
 <hr>
 <hr>
-<form id="newsletter-form" class="mzp-c-newsletter-form" action="/en-US/newsletter/" method="post">
-  <input type="hidden" name="newsletters" value="mozilla-foundation" id="id_newsletters">
-  <input type="hidden" name="source_url" value="https://www.mozilla.org/en-US/">
-  <header class="mzp-c-newsletter-header">
-    <h3 class="mzp-c-newsletter-title">Love the Web?</h3>
-    <p class="mzp-c-newsletter-tagline">Get the Mozilla newsletter and help us keep it open and free.</p>
-  </header>
-  <fieldset class="mzp-c-newsletter-content">
-    <p>
-      <label for="id_email">
-        Your email address
-      </label>
-      <input type="email" name="email" required="" placeholder="yourname@example.com" class="mzp-js-email-field" id="id_email">
-    </p>
-    <div id="newsletter-details" class="mzp-c-newsletter-details">
-      <p><select name="country" required="required" aria-required="true" id="id_country">
-          <option value="af">Afghanistan</option>
-          <option value="qz">Akrotiri</option>
-          <option value="al">Albania</option>
-        </select></p>
-      <p><select name="lang" required="required" aria-required="true" id="id_lang">
-          <option value="de">Deutsch</option>
-          <option value="en" selected="">English</option>
-          <option value="es">Español</option>
-          <option value="fr">Français</option>
-          <option value="pl">Polski</option>
-          <option value="pt">Português</option>
-        </select></p>
-      <fieldset class="mzp-u-inline">
-        <legend>Format</legend>
-        <p>
-          <label for="format-html" class="mzp-u-inline">
-            <input type="radio" id="format-html" name="fmt" value="H" checked=""> HTML
-          </label>
-          <label for="format-text" class="mzp-u-inline">
-            <input type="radio" id="format-text" name="fmt" value="T"> Text
-          </label>
-        </p>
-      </fieldset>
-      <p>
-        <label for="privacy" class="mzp-u-inline">
-          <input type="checkbox" id="privacy" name="privacy" required="" aria-required="true"> I’m okay with Mozilla handling my info as explained
-          in <a href="/en-US/privacy/websites/">this Privacy Notice</a>
-        </label>
-      </p>
-    </div>
-    <p class="mzp-c-form-submit">
-      <button type="submit" id="newsletter-submit" class="mzp-c-button button-dark" data-cta-type="Newsletter-mozilla-foundation" data-cta-text="Newsletter Sign Up">
-        Sign up now
-      </button>
-      <span class="mzp-c-fieldnote">We will only send you Mozilla-related information.</span>
-    </p>
-  </fieldset>
-</form>
+{{#embed "patterns.organisms.newsletter.newsletter"}}{{/embed}}
 <hr>
 <hr>
 <hr>
-<form action="/en-US/press/speakerrequest/" method="post" name="speaker-request-form" id="speaker-request-form" enctype="multipart/form-data">
+<form class="mzp-c-form" action="/en-US/press/speakerrequest/" method="post" name="speaker-request-form" id="speaker-request-form" enctype="multipart/form-data">
   <input type="hidden" name="csrfmiddlewaretoken" value="xk1p2ljBYT4wcfP2TAboTiHT2O2MRwwikIcOAwAUdogOfHB0NE1VL54WwWPu418S">
   <h3><a href="https://www.mozilla.org/en-US/press/speakerrequest/">Speaker request form</a></h3>
   <fieldset>
@@ -493,7 +452,7 @@ title: Form components
         <label class="mzp-c-field-label" for="sr_event_url">Event URL</label>
         <input class="mzp-c-field-control" id="sr_event_url" name="sr_event_url" type="url" placeholder="https://www.example.com" maxlength="2000" aria-required="true" required>
       </li>
-      <li class="mzp-l-fields-datetime required">
+      <li class="mzp-c-group mzp-l-group-datetime required">
         <div class="mzp-c-field">
           <label class="mzp-c-field-label" for="sr_event_date">Date</label>
           <input class="mzp-c-field-control" id="sr_event_date" name="sr_event_date" type="date" aria-required="true" required>
@@ -606,7 +565,7 @@ title: Form components
     <legend>Presentation Details</legend>
     <ol>
       <li>
-        <fieldset class="mzp-c-fields-choices">
+        <fieldset class="mzp-c-choices">
           <legend class="mzp-c-field-label">Type of Presentation</legend>
           {{#embed "patterns.molecules.forms.test.choice" id="sr_presentation_type_0" type="checkbox" name="sr_presentation_type" value="keynote" }}{{#content "label"}}Keynote{{/content}}{{/embed}}
           {{#embed "patterns.molecules.forms.test.choice" id="sr_presentation_type_1" type="checkbox" name="sr_presentation_type" value="presentation" }}{{#content "label"}} Presentation{{/content}}{{/embed}}
@@ -634,7 +593,7 @@ title: Form components
 <hr>
 <hr>
 <hr>
-<form name="mozilla-contact-us" id="press_inquiry" class="press-inquiry" action="/en-US/press/press-inquiry/" method="post">
+<form class="mzp-c-form" name="mozilla-contact-us" id="press_inquiry" action="/en-US/press/press-inquiry/" method="post">
   <h3><a href="https://www.mozilla.org/en-US/press/press-inquiry/">Press Inquiry</a></h3>
   <fieldset>
     {{#embed "patterns.molecules.forms.test.input" id="id_jobtitle" name="jobtitle" type="text" required="true"}}{{#content "label"}}Job Title{{/content}}{{/embed}}
@@ -713,7 +672,7 @@ title: Form components
     buttons[i].addEventListener('change', function() {
       var button = this;
       var status = button.value;
-      var newClass = 'mzp-is-' + status;
+      var newClass = 'mzp-c-form mzp-is-' + status;
       form.className = newClass;
     })
   }

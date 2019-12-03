@@ -155,14 +155,7 @@ input[type='tel'],
 input[type='text'],
 input[type='time'],
 input[type='url'] {
-    @include border-box;
-    @include text-body-md;
-    background: $color-white;
-    border-radius: 4px;
-    border: $field-border;
-    line-height: 1.25;
-    margin: 0 0 $field-spacing;
-    padding: $field-padding;
+    @include form-input;
 
     &::placeholder {
         color: $color-gray-70;
@@ -301,19 +294,14 @@ textarea {
 select {
     @include border-box;
     @include appearance(none);
-	background-color: #fff;
+    @include form-input;
     background-image: $url-image-arrow-down-form,
                       linear-gradient(to bottom, #ffffff 0%,#ffffff 100%); // must keep gradient to avoid bugs
 	background-position: right 8px top 50%;
     background-repeat: no-repeat, repeat;
     background-size: 1.5em auto, 100%;
-	border-radius: 4px;
-	border: $field-border;
-	color: #444;
 	display: block;
 	font-weight: normal;
-	line-height: 1.25;
-	margin: 0 0 $field-spacing;
 	max-width: 100%;
 	min-width: $field-min-width;
     padding: $field-padding calc(1.5em + #{$field-padding * 2}) $field-padding $field-padding;
@@ -422,12 +410,11 @@ button {
 }
 
 /* -------------------------------------------------------------------------- */
-// Components and utility classes (basic only, for backwards compatability)
+// Basic utility class and not component
 
 label {
-    // inline included for backwards compatability but I think it should be moved - SH
     &.mzp-u-inline {
-        @include bidi(((padding, 0 $spacing-sm 0, 0 0 $spacing-sm),)); //TODO
+        @include bidi(((padding, 0 $spacing-sm 0, 0 0 0 $spacing-sm),));
         display: inline;
         font-weight: normal;
     }
@@ -439,10 +426,8 @@ legend {
     }
 }
 
-.mzp-c-group-note,
 .mzp-c-fieldnote {
     @include text-body-sm;
-    color: $color-gray-70;
     display: block;
     font-weight: normal;
 

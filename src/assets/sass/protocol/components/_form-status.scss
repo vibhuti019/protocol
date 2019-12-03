@@ -4,6 +4,23 @@
 
 @import '../includes/lib';
 
+
+.mzp-c-field-msg,
+.mzp-c-choice-msg {
+    @include form-msg;
+    /* for now these only come in red but they could be updated to have other colours */
+}
+
+.mzp-c-field-control + .mzp-c-field-msg:after,
+.mzp-c-choice-label + .mzp-c-choice-msg:after {
+    @include form-msg-pointer;
+}
+
+.mzp-c-choice-label + .mzp-c-choice-msg {
+    max-width: calc(100% - 8px); //avoid clipping the box shadow
+}
+
+
 input[list],
 input[type='color'],
 input[type='date'],

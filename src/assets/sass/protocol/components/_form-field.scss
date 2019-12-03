@@ -4,10 +4,22 @@
 
 @import '../includes/lib';
 
+.mzp-c-form {
+    color: $color-gray-70;
+    margin-bottom: $field-spacing;
+
+    &.mzp-t-dark {
+        color: #fff;
+    }
+}
 
 .mzp-c-field {
     margin-bottom: $field-spacing;
     max-width: 100%;
+
+    button {
+        margin-bottom: 0;
+    }
 
     textarea,
     select,
@@ -27,16 +39,14 @@
     }
 }
 
-.mzp-c-field-label {
-    @include form-label;
+.mzp-c-field-head {
+    @include text-body-lg;
+    font-weight: bold;
+    margin: 0 0 $label-spacing;
 }
 
-.mzp-c-field-msg {
-    @include form-msg;
-
-    .mzp-c-field-control + &:after {
-        @include form-msg-pointer;
-    }
+.mzp-c-field-label {
+    @include form-label;
 }
 
 .mzp-c-field-info {

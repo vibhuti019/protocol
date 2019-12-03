@@ -5,17 +5,15 @@
 @import '../includes/lib';
 
 
-.mzp-c-field-head {
-    @include form-label;
-    @include text-display-sm;
-    color: #00f;
+.mzp-c-group-spacer {
+    color: $color-gray-70;
+    padding: #{$field-padding + 2px} 0; // push content down to be inline with field-control content
 }
 
-.mzp-c-fields-row,
-.mzp-c-fields-half,
-.mzp-c-fields-third,
-.mzp-c-fields-quarter,
-.mzp-c-fields-expiry  {
+/* -------------------------------------------------------------------------- */
+// fixed width, fields conform to the grid
+
+.mzp-c-row {
     display: grid;
     column-gap: $field-spacing;
     margin-bottom: $field-spacing;
@@ -28,113 +26,83 @@
         grid-column-end: -1;
     }
 
-    > .mzp-c-field {
-        margin: 0;
-    }
-
-    .mzp-c-field-control {
+    > .mzp-c-field > .mzp-c-field-control {
         min-width: 0;
         width: 100%;
     }
 }
 
-.mzp-c-fields-row {
-    grid-template-columns: min-content min-content min-content min-content min-content 1fr;
+.mzp-l-row-wide,
+.mzp-l-row-half,
+.mzp-l-row-third,
+.mzp-l-row-quarter {
+    grid-template-columns: repeat(1, 1fr);
+}
 
-    .mzp-c-field > .mzp-c-field-msg,
-    .mzp-c-field-control {
+@media #{$mq-sm} {
+    .mzp-l-row-half {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .mzp-l-row-third {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .mzp-l-row-quarter {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media #{$mq-md} {
+    .mzp-l-row-quarter {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+// flexable width, grid conforms to the fields
+
+.mzp-c-group {
+    display: grid;
+    column-gap: $field-spacing;
+    margin-bottom: $field-spacing;
+
+    > .mzp-c-field-label,
+    > .mzp-c-field-msg,
+    > .mzp-c-field-info,
+    > .mzp-c-field-head {
+        grid-column-start: 1;
+        grid-column-end: -1;
+    }
+}
+
+.mzp-l-group-datetime,
+.mzp-l-group-expiry,
+.mzp-l-group-row {
+    grid-template-columns: repeat(1, 1fr);
+
+    > .mzp-c-field > .mzp-c-field-msg,
+    > .mzp-c-field-control {
+        min-width: 0;
         width: auto;
     }
 }
 
-.mzp-c-fields-expiry {
-    grid-template-columns: repeat(3, min-content);
+.mzp-l-group-datetime {
+    grid-template-columns: repeat(2, min-content) 1fr; // extra fr lets msg and info blocks expand to width of parent
+}
+
+.mzp-l-group-expiry {
+    grid-template-columns: repeat(3, min-content) 1fr; // extra fr lets msg and info blocks expand to width of parent
     column-gap: $spacing-sm;
 
-    .mzp-c-field > .mzp-c-field-label {
+    > .mzp-c-field > .mzp-c-field-label {
         @include visually-hidden();
     }
+}
 
-    .mzp-c-field > .mzp-c-field-msg,
-    .mzp-c-field-control {
-        width: auto;
+@media #{$mq-sm} {
+    .mzp-l-group-row {
+        grid-template-columns: min-content min-content min-content min-content min-content 1fr;
     }
 }
-
-.mzp-c-fields-half {
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.mzp-c-fields-third {
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.mzp-c-fields-quarter {
-    grid-template-columns: repeat(4, 1fr);
-}
-
-
-
-
-
-
-
-
-// .mzp-c-fields-row,
-// .mzp-c-fields-half,
-// .mzp-c-fields-third {
-//     display: flex;
-//     flex-wrap: wrap;
-//     column-gap: $field-spacing;
-//     margin-bottom: $field-spacing;
-
-//     > .mzp-c-field-label,
-//     > .mzp-c-field-msg,
-//     > .mzp-c-field-info,
-//     > .mzp-c-field-head {
-//         width: 100%;
-//     }
-
-//     > .mzp-c-field {
-//         margin: 0;
-//     }
-
-//     .mzp-c-field-control {
-//         min-width: 0;
-//     }
-// }
-
-// .mzp-c-fields-half {
-//     .mzp-c-field,
-//     .mzp-c-choice {
-//         width: calc(50% - #{$spacing-lg});
-//     }
-
-//     .mzp-c-field-control {
-//         width: 100%;
-//     }
-// }
-
-// .mzp-c-fields-third {
-//     .mzp-c-field,
-//     .mzp-c-choice {
-//         width: calc(33% - #{$spacing-lg});
-//     }
-
-//     .mzp-c-field-control {
-//         width: 100%;
-//     }
-// }
-
-// .mzp-c-fields-quarter {
-//     .mzp-c-field,
-//     .mzp-c-choice {
-//         width: calc(33% - #{$spacing-lg});
-//     }
-
-//     .mzp-c-field-control {
-//         width: 100%;
-//     }
-// }
-
-
