@@ -26,55 +26,55 @@
     }
 
     // label
-    label {
+    .mzp-c-choice-label {
         @include bidi(((padding-left, #{$check-height + $spacing-sm}, padding-right, 0),));
         margin-bottom: 0;
         padding-top: 3px;
         vertical-align: top;
     }
 
-    &.mzp-is-legal label {
+    &.mzp-is-legal .mzp-c-choice-label {
         font-weight: normal;
         margin-top: 0.1em; // non-choice labels have a bit of line height, mock that here for better vertical spacing
     }
 
     // create fake input
-    label:before {
+    .mzp-c-choice-label:before {
         display: block;
         left: $check-sprite-grid * 7 * -1; //todo bidi
         position: absolute;
         top: 0;
     }
 
-    input[type="checkbox"] + label:before {
+    .mzp-c-choice-control[type="checkbox"] + .mzp-c-choice-label:before {
         content: url('/static/img/forms/check_sprite.svg');
     }
 
-    input[type="radio"] + label:before {
+    .mzp-c-choice-control[type="radio"] + .mzp-c-choice-label:before {
         content: url('/static/img/forms/radio_sprite.svg');
     }
 
-    input:hover + label:before {
+    .mzp-c-choice-control:hover + .mzp-c-choice-label:before {
         left: $check-sprite-grid * 6 * -1; //todo bidi
         top: $check-sprite-grid * 1 * -1; //todo bidi
     }
 
-    input:focus + label:before {
+    .mzp-c-choice-control:focus + .mzp-c-choice-label:before {
         left: $check-sprite-grid * 5 * -1; //todo bidi
         top: $check-sprite-grid * 2 * -1; //todo bidi
     }
 
-    input:checked + label:before {
+    .mzp-c-choice-control:checked + .mzp-c-choice-label:before {
         left: $check-sprite-grid * 4 * -1; //todo bidi
         top: $check-sprite-grid * 3 * -1; //todo bidi
     }
 
-    input:checked:hover + label:before {
+    .mzp-c-choice-control:checked:hover + .mzp-c-choice-label:before {
         left: $check-sprite-grid * 3 * -1; //todo bidi
         top: $check-sprite-grid * 4 * -1; //todo bidi
     }
 
-    input:checked:focus + label:before {
+    .mzp-c-choice-control:checked:focus + .mzp-c-choice-label:before {
         left: $check-sprite-grid * 2 * -1; //todo bidi
         top: $check-sprite-grid * 5 * -1; //todo bidi
     }
@@ -91,7 +91,7 @@
         padding-top: $spacing-md;
     }
 
-    .mzp-c-choice .mzp-c-field-msg + & {
+    .mzp-c-choice .mzp-c-form-msg + & {
         padding-top: $spacing-xs;
     }
 }
@@ -109,19 +109,11 @@
     margin-bottom: 0;
     padding-bottom: $field-spacing - $label-spacing;
 
-    legend {
-        @include form-label();
-        float: left;
-        padding-bottom: $label-spacing;
-        margin: 0;
-        width: 100%;
-    }
-
     .mzp-c-choice {
         margin-bottom: 0;
         padding-bottom: $label-spacing;
 
-        label {
+        .mzp-c-choice-label {
             font-weight: normal;
             margin-bottom: 0;
         }

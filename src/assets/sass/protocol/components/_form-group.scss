@@ -4,26 +4,17 @@
 
 @import '../includes/lib';
 
-
-.mzp-c-group-spacer {
-    color: $color-gray-70;
-    padding: #{$field-padding + 2px} 0; // push content down to be inline with field-control content
-}
-
 /* -------------------------------------------------------------------------- */
 // fixed width, fields conform to the grid
 
 .mzp-c-row {
+    @include grid-column-gap($field-spacing);
     display: grid;
-    column-gap: $field-spacing;
-    margin-bottom: $field-spacing;
+    min-width: 1px; // to solve problem with floated legends
 
-    > .mzp-c-field-label,
-    > .mzp-c-field-msg,
-    > .mzp-c-field-info,
-    > .mzp-c-field-head {
-        grid-column-start: 1;
-        grid-column-end: -1;
+    & > .mzp-c-field-msg:last-child,
+    & > .mzp-c-field-info:last-child {
+        margin-bottom: $field-spacing;
     }
 
     > .mzp-c-field > .mzp-c-field-control {
@@ -65,14 +56,12 @@
 .mzp-c-group {
     display: grid;
     column-gap: $field-spacing;
-    margin-bottom: $field-spacing;
+    margin-bottom: 0;
+    min-width: 1px; // to solve problem with floated legends
 
-    > .mzp-c-field-label,
-    > .mzp-c-field-msg,
-    > .mzp-c-field-info,
-    > .mzp-c-field-head {
-        grid-column-start: 1;
-        grid-column-end: -1;
+    & > .mzp-c-field-msg:last-child,
+    & > .mzp-c-field-info:last-child {
+        margin-bottom: $field-spacing;
     }
 }
 
@@ -81,7 +70,7 @@
 .mzp-l-group-row {
     grid-template-columns: repeat(1, 1fr);
 
-    > .mzp-c-field > .mzp-c-field-msg,
+    > .mzp-c-field > .mzp-c-form-msg,
     > .mzp-c-field-control {
         min-width: 0;
         width: auto;
@@ -105,4 +94,9 @@
     .mzp-l-group-row {
         grid-template-columns: min-content min-content min-content min-content min-content 1fr;
     }
+}
+
+.mzp-c-group-spacer {
+    color: $color-gray-70;
+    padding: #{$field-padding + 2px} 0; // push content down to be inline with field-control content
 }

@@ -105,12 +105,6 @@ fieldset {
     margin-bottom: $field-spacing;
     min-width: 0; // https://stackoverflow.com/questions/17408815/fieldset-resizes-wrong-appears-to-have-unremovable-min-width-min-content
     width: 100%;
-
-    > *:last-child,
-    > *:last-child > *:last-child,
-    > *:last-child > *:last-child > *:last-child {
-        margin-bottom: 0;
-    }
 }
 
 legend {
