@@ -13,8 +13,8 @@
     position: relative;
 
     // hide real input
-    input[type="checkbox"],
-    input[type="radio"] {
+    .mzp-c-choice-control[type="checkbox"],
+    .mzp-c-choice-control[type="radio"] {
         @include bidi(((left, 0, right, auto),));
         box-sizing: border-box;
         height: $check-height;
@@ -117,11 +117,6 @@
             font-weight: normal;
             margin-bottom: 0;
         }
-    }
-
-    .mzp-c-field-info {
-        padding-top: $spacing-md - $label-spacing;
-        padding-bottom: $label-spacing;
     }
 
     &.mzp-l-choices-inline .mzp-c-choice {

@@ -2,28 +2,30 @@
 title: Form components
 ---
 
-<fieldset id="status" class="mzp-c-choices mzp-l-choices-inline">
+<fieldset id="status" class="mzp-c-field-set">
   <legend class="mzp-c-set-label">Status:</legend>
-  {{#embed "patterns.molecules.forms.test.choice" id="status-none" type="radio" name="status" value="none"}}
-    {{#content "label"}}
-      none
-    {{/content}}
-  {{/embed}}
-  {{#embed "patterns.molecules.forms.test.choice" id="status-error" type="radio" name="status" value="error"}}
-    {{#content "label"}}
-      error
-    {{/content}}
-  {{/embed}}
-  {{#embed "patterns.molecules.forms.test.choice" id="status-warn" type="radio" name="status" value="warn"}}
-    {{#content "label"}}
-      warn
-    {{/content}}
-  {{/embed}}
-  {{#embed "patterns.molecules.forms.test.choice" id="status-success" type="radio" name="status" value="success"}}
-    {{#content "label"}}
-      success
-    {{/content}}
-  {{/embed}}
+  <div class="mzp-c-choices mzp-l-choices-inline">
+    {{#embed "patterns.molecules.forms.test.choice" id="status-none" type="radio" name="status" value="none"}}
+      {{#content "label"}}
+        none
+      {{/content}}
+    {{/embed}}
+    {{#embed "patterns.molecules.forms.test.choice" id="status-error" type="radio" name="status" value="error"}}
+      {{#content "label"}}
+        error
+      {{/content}}
+    {{/embed}}
+    {{#embed "patterns.molecules.forms.test.choice" id="status-warn" type="radio" name="status" value="warn"}}
+      {{#content "label"}}
+        warn
+      {{/content}}
+    {{/embed}}
+    {{#embed "patterns.molecules.forms.test.choice" id="status-success" type="radio" name="status" value="success"}}
+      {{#content "label"}}
+        success
+      {{/content}}
+    {{/embed}}
+  </div>
 </fieldset>
 
 <form id="form" class="mzp-c-form">
@@ -62,55 +64,67 @@ title: Form components
   </fieldset>
 
   <h3>Checkboxes and radio buttons</h3>
-  <fieldset class="mzp-c-choices">
+  <fieldset class="mzp-c-field-set">
     <legend class="mzp-c-set-label">Checkboxes</legend>
-    {{#embed "patterns.molecules.forms.test.choice" id="s-check-1" type="checkbox"}}{{#content "label"}}Option 1{{/content}}{{/embed}}
-    {{#embed "patterns.molecules.forms.test.choice" id="s-check-2" type="checkbox"}}{{#content "label"}}Option 2{{/content}}{{/embed}}
+    <div class="mzp-c-choices">
+      {{#embed "patterns.molecules.forms.test.choice" id="s-check-1" type="checkbox"}}{{#content "label"}}Option 1{{/content}}{{/embed}}
+      {{#embed "patterns.molecules.forms.test.choice" id="s-check-2" type="checkbox"}}{{#content "label"}}Option 2{{/content}}{{/embed}}
+    </div>
     <p class="mzp-c-set-info">More information about this group</p>
   </fieldset>
-  <fieldset class="mzp-c-choices mzp-l-choices-inline">
+  <fieldset class="mzp-c-field-set">
     <legend class="mzp-c-set-label">Checkboxes Inline</legend>
-    {{#embed "patterns.molecules.forms.test.choice" id="si-check-1" type="checkbox"}}{{#content "label"}}Option 1{{/content}}{{/embed}}
-    {{#embed "patterns.molecules.forms.test.choice" id="si-check-2" type="checkbox"}}{{#content "label"}}Option 2{{/content}}{{/embed}}
+    <div class="mzp-c-choices mzp-l-choices-inline">
+      {{#embed "patterns.molecules.forms.test.choice" id="si-check-1" type="checkbox"}}{{#content "label"}}Option 1{{/content}}{{/embed}}
+      {{#embed "patterns.molecules.forms.test.choice" id="si-check-2" type="checkbox"}}{{#content "label"}}Option 2{{/content}}{{/embed}}
+    </div>
     <p class="mzp-c-set-info">More information about this group</p>
   </fieldset>
 
-  <fieldset class="mzp-c-choices mzp-l-choices-inline">
+  <fieldset class="mzp-c-field-set">
     <legend class="mzp-c-set-label">Check boxes <span class="mzp-c-fieldnote">Example with a fieldnote.</span></legend>
-    {{#embed "patterns.molecules.forms.test.choice" id="sic-1" type="checkbox"}}{{#content "label"}}Option 1{{/content}}{{/embed}}
-    {{#embed "patterns.molecules.forms.test.choice" id="sic-2" type="checkbox"}}{{#content "label"}}Option 2{{/content}}{{/embed}}
-    {{#embed "patterns.molecules.forms.test.choice" id="sic-3" type="checkbox"}}{{#content "label"}}Option 3{{/content}}{{/embed}}
-    {{#embed "patterns.molecules.forms.test.choice" id="sic-4" type="checkbox"}}{{#content "label"}}Obnoxiously long input option that is intended to push this to a new line{{/content}}{{/embed}}
-    {{#embed "patterns.molecules.forms.test.choice" id="sic-5" type="checkbox"}}{{#content "label"}}Option 5{{/content}}{{/embed}}
+    <div class="mzp-c-choices mzp-l-choices-inline">
+      {{#embed "patterns.molecules.forms.test.choice" id="sic-1" type="checkbox"}}{{#content "label"}}Option 1{{/content}}{{/embed}}
+      {{#embed "patterns.molecules.forms.test.choice" id="sic-2" type="checkbox"}}{{#content "label"}}Option 2{{/content}}{{/embed}}
+      {{#embed "patterns.molecules.forms.test.choice" id="sic-3" type="checkbox"}}{{#content "label"}}Option 3{{/content}}{{/embed}}
+      {{#embed "patterns.molecules.forms.test.choice" id="sic-4" type="checkbox"}}{{#content "label"}}Obnoxiously long input option that is intended to push this to a new line{{/content}}{{/embed}}
+      {{#embed "patterns.molecules.forms.test.choice" id="sic-5" type="checkbox"}}{{#content "label"}}Option 5{{/content}}{{/embed}}
+    </div>
     <p class="mzp-c-set-info">More information about this group</p>
   </fieldset>
 
   {{#embed "patterns.molecules.forms.test.choice" id="s-terms" type="checkbox"}}{{#content "label"}}Single checkbox <span class="mzp-c-fieldnote">With note</span>{{/content}}{{/embed}}
   {{#embed "patterns.molecules.forms.test.choice" id="s-terms2" type="checkbox" is-legal="true"}}{{#content "label"}}Single checkbox that for some reason we want to have a less prominent label{{/content}}{{/embed}}
   {{#embed "patterns.molecules.forms.test.choice" id="s-terms3" type="checkbox" is-legal="true" msg="You must agree to our privacy notice to continue."}}{{#content "label"}}I’m okay with Mozilla handling my info as explained in <a href="/en-US/privacy/websites/">this Privacy Notice</a>{{/content}}{{/embed}}
-  <fieldset class="mzp-c-choices">
+  <fieldset class="mzp-c-field-set">
     <legend class="mzp-c-set-label">Check boxes <span class="mzp-c-fieldnote">Example with a fieldnote.</span></legend>
-    {{#embed "patterns.molecules.forms.test.choice" id="scn-1" type="checkbox"}}{{#content "label"}}Option 1{{/content}}{{/embed}}
-    {{#embed "patterns.molecules.forms.test.choice" id="scn-2" type="checkbox"}}{{#content "label"}}Option 2{{/content}}{{/embed}}
+    <div class="mzp-c-choices">
+      {{#embed "patterns.molecules.forms.test.choice" id="scn-1" type="checkbox"}}{{#content "label"}}Option 1{{/content}}{{/embed}}
+      {{#embed "patterns.molecules.forms.test.choice" id="scn-2" type="checkbox"}}{{#content "label"}}Option 2{{/content}}{{/embed}}
+    </div>
     <div class="mzp-c-form-msg">Msg</div>
     <p class="mzp-c-set-info">More information about this group</p>
   </fieldset>
 
-  <fieldset class="mzp-c-choices">
+  <fieldset class="mzp-c-field-set">
     <legend class="mzp-c-set-label">Radio buttons</legend>
-    {{#embed "patterns.molecules.forms.test.choice" id="f5" type="radio" name="g1"}}{{/embed}}
-    {{#embed "patterns.molecules.forms.test.choice" id="f6" type="radio" name="g1"}}
-      {{#content "label"}}
-        Label <span class="mzp-c-fieldnote">Note</span>
-      {{/content}}
-    {{/embed}}
+    <div class="mzp-c-choices">
+      {{#embed "patterns.molecules.forms.test.choice" id="f5" type="radio" name="g1"}}{{/embed}}
+      {{#embed "patterns.molecules.forms.test.choice" id="f6" type="radio" name="g1"}}
+        {{#content "label"}}
+          Label <span class="mzp-c-fieldnote">Note</span>
+        {{/content}}
+      {{/embed}}
+    </div>
     <p class="mzp-c-set-info">More information about this group</p>
   </fieldset>
 
-  <fieldset class="mzp-c-choices mzp-l-choices-inline">
+  <fieldset class="mzp-c-field-set">
     <legend class="mzp-c-set-label">Radio buttons inline</legend>
-    {{#embed "patterns.molecules.forms.test.choice" id="f9" type="radio" name="g2"}}{{/embed}}
-    {{#embed "patterns.molecules.forms.test.choice" id="f10" type="radio" name="g2"}}{{/embed}}
+    <div class="mzp-c-choices mzp-l-choices-inline">
+      {{#embed "patterns.molecules.forms.test.choice" id="f9" type="radio" name="g2"}}{{/embed}}
+      {{#embed "patterns.molecules.forms.test.choice" id="f10" type="radio" name="g2"}}{{/embed}}
+    </div>
   </fieldset>
 
   <h2>Placeholder</h2>
@@ -588,13 +602,15 @@ title: Form components
     <legend>Presentation Details</legend>
     <ol>
       <li>
-        <fieldset class="mzp-c-choices">
+        <fieldset class="mzp-c-field-set">
           <legend class="mzp-c-set-label">Type of Presentation</legend>
-          {{#embed "patterns.molecules.forms.test.choice" id="sr_presentation_type_0" type="checkbox" name="sr_presentation_type" value="keynote" }}{{#content "label"}}Keynote{{/content}}{{/embed}}
-          {{#embed "patterns.molecules.forms.test.choice" id="sr_presentation_type_1" type="checkbox" name="sr_presentation_type" value="presentation" }}{{#content "label"}} Presentation{{/content}}{{/embed}}
-          {{#embed "patterns.molecules.forms.test.choice" id="sr_presentation_type_2" type="checkbox" name="sr_presentation_type" value="fireside chat" }}{{#content "label"}}Fireside Chat{{/content}}{{/embed}}
-          {{#embed "patterns.molecules.forms.test.choice" id="sr_presentation_type_3" type="checkbox" name="sr_presentation_type" value="panel" }}{{#content "label"}} Panel{{/content}}{{/embed}}
-          {{#embed "patterns.molecules.forms.test.choice" id="sr_presentation_type_4" type="checkbox" name="sr_presentation_type" value="other" }}{{#content "label"}}Other{{/content}}{{/embed}}
+          <div class="mzp-c-choices">
+            {{#embed "patterns.molecules.forms.test.choice" id="sr_presentation_type_0" type="checkbox" name="sr_presentation_type" value="keynote" }}{{#content "label"}}Keynote{{/content}}{{/embed}}
+            {{#embed "patterns.molecules.forms.test.choice" id="sr_presentation_type_1" type="checkbox" name="sr_presentation_type" value="presentation" }}{{#content "label"}} Presentation{{/content}}{{/embed}}
+            {{#embed "patterns.molecules.forms.test.choice" id="sr_presentation_type_2" type="checkbox" name="sr_presentation_type" value="fireside chat" }}{{#content "label"}}Fireside Chat{{/content}}{{/embed}}
+            {{#embed "patterns.molecules.forms.test.choice" id="sr_presentation_type_3" type="checkbox" name="sr_presentation_type" value="panel" }}{{#content "label"}} Panel{{/content}}{{/embed}}
+            {{#embed "patterns.molecules.forms.test.choice" id="sr_presentation_type_4" type="checkbox" name="sr_presentation_type" value="other" }}{{#content "label"}}Other{{/content}}{{/embed}}
+          </div>
         </fieldset>
       </li>
       <li class="mzp-c-field">

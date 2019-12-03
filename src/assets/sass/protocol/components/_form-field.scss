@@ -89,16 +89,11 @@ legend.mzp-c-field-label {
 
 
 
-
+.mzp-c-field-set {
+    margin-bottom: 0;
+}
 
 // set labels do not go inside groups! (but can go inside choices)
-
-.mzp-c-field-set {
-    & > .mzp-c-form-msg:last-child,
-    & > .mzp-c-set-info:last-child {
-        margin-bottom: $field-spacing;
-    }
-}
 
 .mzp-c-set-label {
     @include form-label;
@@ -116,6 +111,7 @@ legend.mzp-c-set-label {
 .mzp-c-set-info {
     @include form-info;
 
+    .mzp-c-choices + &,
     .mzp-c-group + &,
     .mzp-c-row + & {
         margin-top: ($field-spacing * -1) + $spacing-md;
@@ -123,5 +119,9 @@ legend.mzp-c-set-label {
 
     .mzp-c-form-msg + & {
         margin-top: $spacing-xs;
+    }
+
+    .mzp-c-field-set > &:last-child {
+        margin-bottom: $field-spacing;
     }
 }

@@ -13,6 +13,7 @@
         margin-top: ($field-spacing * -1) + 2px;
     }
 
+    .mzp-c-choices + &,
     .mzp-c-group + &,
     .mzp-c-row + & {
         margin-top: ($field-spacing * -1) + $spacing-md;
@@ -25,6 +26,10 @@
 
     .mzp-c-choice-label + & {
         max-width: calc(100% - 8px); //avoid clipping the box shadow
+    }
+
+    .mzp-c-field-set > &:last-child {
+        margin-bottom: $field-spacing;
     }
 }
 
