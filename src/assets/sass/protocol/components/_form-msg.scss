@@ -1,0 +1,29 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+@import '../includes/lib';
+
+.mzp-c-form-msg {
+    @include form-msg;
+    /* for now these only come in red but they could be updated to have other colours */
+
+    .mzp-c-field + &,
+    .mzp-c-choices + &,
+    .mzp-c-group + & {
+        margin-top: ($field-spacing * -1) + $spacing-md;
+    }
+
+    .mzp-c-field-control + &:after,
+    .mzp-c-choice-label + &:after {
+        @include form-msg-pointer;
+    }
+
+    .mzp-c-choice-label + & {
+        max-width: calc(100% - 8px); //avoid clipping the box shadow
+    }
+
+    .mzp-c-field-set > &:last-child {
+        margin-bottom: $field-spacing;
+    }
+}

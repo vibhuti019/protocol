@@ -31,11 +31,19 @@ legend.mzp-c-form-head {
     width: 100%;
 }
 
+// labels
+.mzp-c-form-label {
+    @include form-label;
+}
 
+legend.mzp-c-form-label {
+    float: left;
+    padding-bottom: $label-spacing;
+    margin: 0;
+    width: 100%;
+}
 
-
-
-// fields, a control-label combo
+// fields
 .mzp-c-field {
     margin-bottom: $field-spacing;
     max-width: 100%;
@@ -62,19 +70,7 @@ legend.mzp-c-form-head {
     }
 }
 
-// label
-.mzp-c-field-label {
-    @include form-label;
-}
-
-legend.mzp-c-field-label {
-    float: left;
-    padding-bottom: $label-spacing;
-    margin: 0;
-    width: 100%;
-}
-
-// info
+// infos
 .mzp-c-field-info {
     @include form-info;
 
@@ -87,33 +83,17 @@ legend.mzp-c-field-label {
     }
 }
 
-
-
+// sets
 .mzp-c-field-set {
     margin-bottom: 0;
 }
 
-// set labels do not go inside groups! (but can go inside choices)
-
-.mzp-c-set-label {
-    @include form-label;
-}
-
-legend.mzp-c-set-label {
-    float: left;
-    padding-bottom: $label-spacing;
-    margin: 0;
-    width: 100%;
-}
-
-// info
-// set info does not go inside groups!
-.mzp-c-set-info {
+// set infos
+.mzp-c-field-set-info {
     @include form-info;
 
     .mzp-c-choices + &,
-    .mzp-c-group + &,
-    .mzp-c-row + & {
+    .mzp-c-group + &{
         margin-top: ($field-spacing * -1) + $spacing-md;
     }
 

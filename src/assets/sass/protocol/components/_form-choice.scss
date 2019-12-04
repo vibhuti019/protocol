@@ -11,10 +11,33 @@
     min-height: $check-height;
     overflow: hidden;
     position: relative;
+}
 
-    // hide real input
-    .mzp-c-choice-control[type="checkbox"],
-    .mzp-c-choice-control[type="radio"] {
+// label
+.mzp-c-choice-label {
+    @include bidi(((padding-left, #{$check-height + $spacing-sm}, padding-right, 0),));
+    margin-bottom: 0;
+    padding-top: 3px;
+    vertical-align: top;
+
+    &:before {
+        display: block;
+        left: $check-sprite-grid * 7 * -1; //todo bidi
+        position: absolute;
+        top: 0;
+    }
+
+    .mzp-is-legal & {
+        font-weight: normal;
+        margin-top: 0.1em; // other labels have a bit of line height, mock that here for better vertical spacing
+    }
+}
+
+// control
+
+.mzp-c-choice-control {
+    &[type="checkbox"],
+    &[type="radio"] {
         @include bidi(((left, 0, right, auto),));
         box-sizing: border-box;
         height: $check-height;
@@ -24,62 +47,45 @@
         width: $check-height;
         z-index: 1;
     }
-
-    // label
-    .mzp-c-choice-label {
-        @include bidi(((padding-left, #{$check-height + $spacing-sm}, padding-right, 0),));
-        margin-bottom: 0;
-        padding-top: 3px;
-        vertical-align: top;
-    }
-
-    &.mzp-is-legal .mzp-c-choice-label {
-        font-weight: normal;
-        margin-top: 0.1em; // non-choice labels have a bit of line height, mock that here for better vertical spacing
-    }
-
-    // create fake input
-    .mzp-c-choice-label:before {
-        display: block;
-        left: $check-sprite-grid * 7 * -1; //todo bidi
-        position: absolute;
-        top: 0;
-    }
-
-    .mzp-c-choice-control[type="checkbox"] + .mzp-c-choice-label:before {
-        content: url('/static/img/forms/check_sprite.svg');
-    }
-
-    .mzp-c-choice-control[type="radio"] + .mzp-c-choice-label:before {
-        content: url('/static/img/forms/radio_sprite.svg');
-    }
-
-    .mzp-c-choice-control:hover + .mzp-c-choice-label:before {
-        left: $check-sprite-grid * 6 * -1; //todo bidi
-        top: $check-sprite-grid * 1 * -1; //todo bidi
-    }
-
-    .mzp-c-choice-control:focus + .mzp-c-choice-label:before {
-        left: $check-sprite-grid * 5 * -1; //todo bidi
-        top: $check-sprite-grid * 2 * -1; //todo bidi
-    }
-
-    .mzp-c-choice-control:checked + .mzp-c-choice-label:before {
-        left: $check-sprite-grid * 4 * -1; //todo bidi
-        top: $check-sprite-grid * 3 * -1; //todo bidi
-    }
-
-    .mzp-c-choice-control:checked:hover + .mzp-c-choice-label:before {
-        left: $check-sprite-grid * 3 * -1; //todo bidi
-        top: $check-sprite-grid * 4 * -1; //todo bidi
-    }
-
-    .mzp-c-choice-control:checked:focus + .mzp-c-choice-label:before {
-        left: $check-sprite-grid * 2 * -1; //todo bidi
-        top: $check-sprite-grid * 5 * -1; //todo bidi
-    }
 }
 
+
+// fake controls, created with background on labels positioned under transparent form controls
+
+.mzp-c-choice-control[type="checkbox"] + .mzp-c-choice-label:before {
+    content: url('/static/img/forms/check_sprite.svg');
+}
+
+.mzp-c-choice-control[type="radio"] + .mzp-c-choice-label:before {
+    content: url('/static/img/forms/radio_sprite.svg');
+}
+
+.mzp-c-choice-control:hover + .mzp-c-choice-label:before {
+    left: $check-sprite-grid * 6 * -1; //todo bidi
+    top: $check-sprite-grid * 1 * -1; //todo bidi
+}
+
+.mzp-c-choice-control:focus + .mzp-c-choice-label:before {
+    left: $check-sprite-grid * 5 * -1; //todo bidi
+    top: $check-sprite-grid * 2 * -1; //todo bidi
+}
+
+.mzp-c-choice-control:checked + .mzp-c-choice-label:before {
+    left: $check-sprite-grid * 4 * -1; //todo bidi
+    top: $check-sprite-grid * 3 * -1; //todo bidi
+}
+
+.mzp-c-choice-control:checked:hover + .mzp-c-choice-label:before {
+    left: $check-sprite-grid * 3 * -1; //todo bidi
+    top: $check-sprite-grid * 4 * -1; //todo bidi
+}
+
+.mzp-c-choice-control:checked:focus + .mzp-c-choice-label:before {
+    left: $check-sprite-grid * 2 * -1; //todo bidi
+    top: $check-sprite-grid * 5 * -1; //todo bidi
+}
+
+//info
 .mzp-c-choice-info {
     @include form-info;
 
@@ -91,20 +97,20 @@
         padding-top: $spacing-md;
     }
 
-    .mzp-c-choice .mzp-c-form-msg + & {
+    .mzp-c-form-msg + & {
         padding-top: $spacing-xs;
     }
 }
 
 
 /* -------------------------------------------------------------------------- */
-// multiple together, inline or not
+// multiple together, with optional inline layout option
 
 // the spacing on these involves maths because the margins don't collapse on fieldsets
 // normally I'd just remove the bottom margin on the :last-child
 // but with inline elements we can't know how many are on the last line to remove the bottom margin
 // the maths is done with padding instead of margin so there's consistant behaviour no matter what element the class is applied to
-// this involves a fair amount of removing margins too
+// so we strip the margins off stuff
 .mzp-c-choices {
     margin-bottom: 0;
     padding-bottom: $field-spacing - $label-spacing;
@@ -112,11 +118,11 @@
     .mzp-c-choice {
         margin-bottom: 0;
         padding-bottom: $label-spacing;
+    }
 
-        .mzp-c-choice-label {
-            font-weight: normal;
-            margin-bottom: 0;
-        }
+    .mzp-c-choice-label {
+        font-weight: normal;
+        margin-bottom: 0;
     }
 
     &.mzp-l-choices-inline .mzp-c-choice {

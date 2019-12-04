@@ -4,18 +4,31 @@
 
 @import '../includes/lib';
 
-/* -------------------------------------------------------------------------- */
-// fixed width, fields conform to the grid
 
-.mzp-c-row {
-    @include grid-column-gap($field-spacing);
+.mzp-c-group {
     display: grid;
+    column-gap: $field-spacing;
     min-width: 1px; // to solve problem with floated legends
 
     & > .mzp-c-field-msg:last-child,
     & > .mzp-c-field-info:last-child {
         margin-bottom: $field-spacing;
     }
+}
+
+.mzp-c-group-spacer {
+    color: $color-gray-70;
+    padding: #{$field-padding + 2px} 0; // push content down to be inline with field-control content
+}
+
+/* -------------------------------------------------------------------------- */
+// fixed width, fields conform to the grid
+
+.mzp-l-group-full,
+.mzp-l-group-half,
+.mzp-l-group-third,
+.mzp-l-group-quarter {
+    grid-template-columns: repeat(1, 1fr);
 
     > .mzp-c-field > .mzp-c-field-control {
         min-width: 0;
@@ -23,47 +36,28 @@
     }
 }
 
-.mzp-l-row-wide,
-.mzp-l-row-half,
-.mzp-l-row-third,
-.mzp-l-row-quarter {
-    grid-template-columns: repeat(1, 1fr);
-}
-
 @media #{$mq-sm} {
-    .mzp-l-row-half {
+    .mzp-l-group-half {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .mzp-l-row-third {
+    .mzp-l-group-third {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .mzp-l-row-quarter {
+    .mzp-l-group-quarter {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media #{$mq-md} {
-    .mzp-l-row-quarter {
+    .mzp-l-group-quarter {
         grid-template-columns: repeat(4, 1fr);
     }
 }
 
 /* -------------------------------------------------------------------------- */
 // flexable width, grid conforms to the fields
-
-.mzp-c-group {
-    display: grid;
-    column-gap: $field-spacing;
-    margin-bottom: 0;
-    min-width: 1px; // to solve problem with floated legends
-
-    & > .mzp-c-field-msg:last-child,
-    & > .mzp-c-field-info:last-child {
-        margin-bottom: $field-spacing;
-    }
-}
 
 .mzp-l-group-datetime,
 .mzp-l-group-expiry,
@@ -85,7 +79,7 @@
     grid-template-columns: repeat(3, min-content) 1fr; // extra fr lets msg and info blocks expand to width of parent
     column-gap: $spacing-sm;
 
-    > .mzp-c-field > .mzp-c-field-label {
+    > .mzp-c-field > .mzp-c-form-label {
         @include visually-hidden();
     }
 }
@@ -96,7 +90,3 @@
     }
 }
 
-.mzp-c-group-spacer {
-    color: $color-gray-70;
-    padding: #{$field-padding + 2px} 0; // push content down to be inline with field-control content
-}
