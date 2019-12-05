@@ -1,0 +1,71 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+@import '../includes/lib';
+
+.mzp-c-form {
+    color: $color-gray-70;
+    margin-bottom: $field-spacing;
+
+    &.mzp-t-dark {
+        color: #fff;
+    }
+
+    fieldset {
+        margin-bottom: 0;
+    }
+}
+
+// heading
+.mzp-c-form-head {
+    @include text-body-lg;
+    font-weight: bold;
+    margin: 0 0 $label-spacing;
+}
+
+legend.mzp-c-form-head {
+    float: left;
+    padding-bottom: $label-spacing;
+    margin: 0;
+    width: 100%;
+}
+
+// labels
+.mzp-c-form-label {
+    @include form-label;
+}
+
+legend.mzp-c-form-label {
+    float: left;
+    padding-bottom: $label-spacing;
+    margin: 0;
+    width: 100%;
+}
+
+// infos
+.mzp-c-form-info {
+    @include form-info;
+
+    .mzp-c-choices + &,
+    .mzp-c-group + & {
+        margin-top: ($field-spacing * -1) + $spacing-md;
+    }
+
+    .mzp-c-field-control + & {
+        margin-top: $spacing-md;
+    }
+
+    .mzp-c-form-msg + & {
+        margin-top: $spacing-xs;
+    }
+
+    .mzp-c-form-set > &:last-child {
+        margin-bottom: $field-spacing;
+    }
+}
+
+// sets
+.mzp-c-form-set {
+    margin-bottom: 0;
+}

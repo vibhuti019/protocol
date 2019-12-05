@@ -11,7 +11,7 @@
     min-width: 1px; // to solve problem with floated legends
 
     & > .mzp-c-field-msg:last-child,
-    & > .mzp-c-field-info:last-child {
+    & > .mzp-c-form-info:last-child {
         margin-bottom: $field-spacing;
     }
 }

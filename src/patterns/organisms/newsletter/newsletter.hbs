@@ -24,13 +24,13 @@ links:
     <fieldset class="mzp-c-newsletter-content">
       <div class="mzp-c-form-errors" id="newsletter-errors">{{#if errors}}{{#block "errors"}}{{/block}}{{/if}}</div>
 
-      {{#embed "patterns.molecules.forms.test.input" id="email" type="email" required="true" addclass="mzp-js-email-field"}}
+      {{#embed "patterns.molecules.forms.fields.input" id="email" type="email" required="true" addclass="mzp-js-email-field"}}
         {{#content "label"}}Your email address{{/content}}
         {{#content "attrs"}}placeholder="yourname@example.com"{{/content}}
       {{/embed}}
 
       <div id="newsletter-details" class="mzp-c-newsletter-details">
-        {{#embed "patterns.molecules.forms.test.select" id="country" name="country" required="true"}}
+        {{#embed "patterns.molecules.forms.fields.select" id="country" name="country" required="true"}}
           {{#content "label"}}Country{{/content}}
           {{#content "options"}}
             {{#each (data "items")}}
@@ -39,7 +39,7 @@ links:
               <option>And so on...</option>
           {{/content}}
         {{/embed}}
-        {{#embed "patterns.molecules.forms.test.select" id="language" name="lang" required="true"}}
+        {{#embed "patterns.molecules.forms.fields.select" id="language" name="lang" required="true"}}
           {{#content "label"}}Language{{/content}}
           {{#content "options"}}
             {{#each (data "items")}}
@@ -49,10 +49,10 @@ links:
         {{/embed}}
         <fieldset class="mzp-c-choices mzp-l-choices-inline">
           <legend class="mzp-c-form-label">Format</legend>
-          {{#embed "patterns.molecules.forms.test.choice" id="format-html" name="fmt" type="radio" value="H"}}{{#content "label"}}HTML{{/content}}{{/embed}}
-          {{#embed "patterns.molecules.forms.test.choice" id="format-text" name="fmt" type="radio" value="T"}}{{#content "label"}}Text{{/content}}{{/embed}}
+          {{#embed "patterns.molecules.forms.fields.choice" id="format-html" name="fmt" type="radio" value="H"}}{{#content "label"}}HTML{{/content}}{{/embed}}
+          {{#embed "patterns.molecules.forms.fields.choice" id="format-text" name="fmt" type="radio" value="T"}}{{#content "label"}}Text{{/content}}{{/embed}}
         </fieldset>
-        {{#embed "patterns.molecules.forms.test.choice" id="privacy" name="privacy" type="checkbox" required="true" is-legal="true"}}{{#content "label"}}I’m okay with Mozilla handling my info as explained in <a href="https://www.mozilla.org/privacy/websites/">this Privacy Notice</a>{{/content}}{{/embed}}
+        {{#embed "patterns.molecules.forms.fields.choice" id="privacy" name="privacy" type="checkbox" required="true" is-legal="true"}}{{#content "label"}}I’m okay with Mozilla handling my info as explained in <a href="https://www.mozilla.org/privacy/websites/">this Privacy Notice</a>{{/content}}{{/embed}}
       </div>
 
       <p class="mzp-c-form-submit">

@@ -23,7 +23,7 @@
         max-width: calc(100% - 8px); //avoid clipping the box shadow
     }
 
-    .mzp-c-field-set > &:last-child {
+    .mzp-c-form-set > &:last-child {
         margin-bottom: $field-spacing;
     }
 }

@@ -2,5 +2,5 @@
   <label class="mzp-c-form-label" for="{{ id }}">{{#block "label"}}Label{{/block}}</label>
   <input class="mzp-c-field-control {{ addclass }}" type="{{ type }}" id="{{ id }}" {{#if required}}required aria-required="true"{{/if}} {{#block "attrs"}}{{/block}}>
   {{#if msg}}<div class="mzp-c-form-msg">{{ msg }}</div>{{/if}}
-  {{#if info}}<p class="mzp-c-field-info">{{#block "info"}}{{/block}}</p>{{/if}}
+  {{#if info}}<p class="mzp-c-form-info">{{#block "info"}}{{/block}}</p>{{/if}}
 </div>
