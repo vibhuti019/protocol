@@ -2,11 +2,34 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-@import '../../includes/lib';
+/* -------------------------------------------------------------------------- */
+// Content width demo
 
+@import '../protocol/includes/lib';
+@import '../docs/protocol';
+@import '../docs/protocol-extra';
+
+
+$new-content-sm: 432px;
+$new-content-md: 688px;
+$new-content-lg: 928px;
+$new-content-xl: 1152px;
+
+body {
+    padding: $spacing-md;
+}
+
+h1 {
+    @include text-display-sm;
+}
+
+h2 {
+    @include text-display-xs;
+    text-align: center;
+}
 
 // This wrapper element sets the content width
-.mzp-l-content {
+.new-l-content {
     @include border-box;
     @include clearfix;
     margin: 0 auto;
@@ -16,7 +39,7 @@
     position: relative;
 
     &.mzp-t-content-sm {
-        max-width: $content-sm;
+        max-width: $new-content-sm;
 
         @media #{$mq-md} {
             padding: $layout-xs;
@@ -28,7 +51,7 @@
     }
 
     &.mzp-t-content-md {
-        max-width: $content-md;
+        max-width: $new-content-md;
 
         @media #{$mq-md} {
             padding: $layout-xs;
@@ -40,11 +63,11 @@
     }
 
     &.mzp-t-content-lg {
-        max-width: $content-lg;
+        max-width: $new-content-lg;
     }
 
     &.mzp-t-content-xl {
-        max-width: $content-xl;
+        max-width: $new-content-xl;
     }
 
     @media #{$mq-md} {
@@ -56,8 +79,21 @@
     }
 }
 
-hr {
-    border: 0 solid $color-gray-20;
-    border-top-width: 4px;
-    margin: 1.25em 0;
+
+.display {
+    background: rgba(0, 255, 100, .25);
+    margin-bottom: $layout-sm;
+}
+
+.label {
+    @include text-body-lg;
+    background: rgba(255, 255, 255, .5);
+    font-weight: bold;
+    margin: 0;
+    text-align: center;
+    padding: $spacing-sm 0;
+
+    code {
+        display: block;
+    }
 }
