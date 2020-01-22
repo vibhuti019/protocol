@@ -4,46 +4,23 @@
 
 @import '../includes/lib';
 
-/* form */
+
 .mzp-c-newsletter-form {
-
-    input[type='email'],
-    select {
-        width: 100%;
-    }
-
-    .mzp-c-form-submit {
-        text-align: center;
-    }
-
-    .mzp-c-button {
-        margin-bottom: $spacing-sm;
-        width: 100%;
-    }
-
     // Hide errors
     .mzp-c-form-errors {
         @include hidden;
     }
 }
 
-.mzp-c-newsletter-title {
-    @include text-display-md;
-    margin-bottom: .25em;
-}
-
-.mzp-c-newsletter-image {
-    margin-bottom: $spacing-lg;
+.mzp-c-newsletter-submit {
     text-align: center;
 }
-
 
 /* thanks */
 // Hide thank you message
 .mzp-c-newsletter-thanks {
     @include hidden;
 }
-
 
 // hide details for JS users
 // (displayed when email field is focused)
@@ -56,6 +33,11 @@
     margin: 0 auto $spacing-lg;
     max-width: $content-sm;
     padding: $spacing-lg 0;
+
+    .mzp-c-newsletter-image {
+        margin-bottom: $spacing-lg;
+        text-align: center;
+    }
 
     @media #{$mq-md} {
         & {

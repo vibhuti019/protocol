@@ -1,0 +1,24 @@
+---
+title: Firefox Account Signup
+---
+
+<div class="mzp-l-content mzp-t-narrow">
+  <div class="mzp-c-emphasis-box">
+    <form class="mzp-c-form">
+      <h2 class="mzp-c-form-heading">Take your privacy and bookmarks everywhere with a Firefox account.</h2>
+      <p class="mzp-c-form-intro">Enter your email to access Firefox Accounts.</p>
+      {{#embed "patterns.molecules.forms.fields.input" id="fxa-email-field" type="email" info="true" addclass="mzp-l-full" }}
+        {{#content "label"}}Email address{{/content}}
+        {{#content "info"}}By proceeding, you agree to the <a href="https://accounts.firefox.com/legal/terms">Terms of Service</a> and <a href="https://accounts.firefox.com/legal/privacy">Privacy Notice</a>.{{/content}}
+      {{/embed}}
+      <footer class="mzp-c-form-footer mzp-l-full">
+        <button type="submit" class="mzp-c-button mzp-t-primary mzp-t-product mzp-t-small" id="fxa-email-form-submit" data-cta-type="fxa-sync" data-cta-text="Register" data-cta-position="primary">
+          Continue
+        </button>
+        <p class="mzp-c-form-info mzp-t-small">
+          Already have an account? <a href="https://accounts.firefox.com/signin?service=sync" class="js-fxa-cta-link">Sign In</a> or <a href="/en-US/firefox/accounts/">learn more</a> about joining Firefox.
+        </p>
+      </footer>
+    </form>
+  </div>
+</div>

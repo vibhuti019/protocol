@@ -6,10 +6,14 @@
 
 .mzp-c-form {
     color: $color-gray-70;
-    margin-bottom: $field-spacing;
+    margin-bottom: $field-v-spacing;
+
+    .mzp-t-firefox & {
+        color: $color-gray-70;
+    }
 
     &.mzp-t-dark {
-        color: #fff;
+        color: $color-white;
     }
 
     fieldset {
@@ -18,17 +22,43 @@
 }
 
 // heading
-.mzp-c-form-head {
-    @include text-body-lg;
+
+.mzp-c-form-heading {
+    @include text-display-xs;
+    color: $color-black;
     font-weight: bold;
-    margin: 0 0 $label-spacing;
+    margin: 0 0 $spacing-xl;
+
+    .mzp-t-firefox & {
+        @include font-firefox;
+        color: $color-off-black;
+    }
+
+    .mzp-t-mozilla & {
+        @include font-mozilla;
+    }
+
+    .mzp-t-dark &,
+    .mzp-t-dark.mzp-t-firefox &,
+    .mzp-t-firefox .mzp-t-dark & {
+        color: $color-white;
+    }
 }
 
-legend.mzp-c-form-head {
+legend.mzp-c-form-heading {
     float: left;
-    padding-bottom: $label-spacing;
+    padding-bottom: $spacing-lg;
     margin: 0;
     width: 100%;
+}
+
+.mzp-c-form-intro {
+    margin-bottom: $spacing-xl;
+
+    .mzp-c-form-heading + &,
+    & + & {
+        margin-top: $spacing-md * -1;
+    }
 }
 
 // labels
@@ -38,8 +68,6 @@ legend.mzp-c-form-head {
 
 legend.mzp-c-form-label {
     float: left;
-    padding-bottom: $label-spacing;
-    margin: 0;
     width: 100%;
 }
 
@@ -47,25 +75,72 @@ legend.mzp-c-form-label {
 .mzp-c-form-info {
     @include form-info;
 
-    .mzp-c-choices + &,
-    .mzp-c-group + & {
-        margin-top: ($field-spacing * -1) + $spacing-md;
+    .mzp-c-field + &,
+    .mzp-c-choices + & {
+        margin-top: $field-v-spacing * -1 + $info-v-spacing;
     }
 
     .mzp-c-field-control + & {
-        margin-top: $spacing-md;
+        padding-top: $info-v-spacing;
     }
 
     .mzp-c-form-msg + & {
-        margin-top: $spacing-xs;
+        padding-top: $spacing-xs;
     }
 
     .mzp-c-form-set > &:last-child {
-        margin-bottom: $field-spacing;
+        padding-bottom: $field-v-spacing;
+    }
+
+    .mzp-c-form-group + & {
+        margin-top: ($field-v-spacing * -1) + $spacing-sm; // TODO: verrify
+    }
+
+    .mzp-c-choice-label + & {
+        padding-top: $info-v-spacing;
+        @include bidi(((padding-left, #{$check-height + $spacing-sm}, padding-right, 0),));
+    }
+
+    .mzp-c-choice + & {
+        margin-top: $label-v-spacing * -1;
+        @include bidi(((padding-left, #{$check-height + $spacing-sm}, padding-right, 0),));
+    }
+
+    .mzp-c-button + & {
+        margin-top: ($field-v-spacing * -1) + $info-v-spacing;
+        grid-column: 1 / -1;
+    }
+
+    &.mzp-t-small {
+        @include text-body-xs;
     }
 }
 
-// sets
+.mzp-c-field-control.mzp-l-full {
+    width: 100%;
+}
+
 .mzp-c-form-set {
     margin-bottom: 0;
+}
+
+.mzp-c-form-footer {
+    padding-top: calc(#{$spacing-sm} + #{$line-height-shim});
+
+    &.mzp-l-full {
+        display: grid;
+        column-gap: $field-h-spacing;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+}
+
+.mzp-c-form-buttons {
+
+    .mzp-c-button + .mzp-c-button {
+        margin-left: $field-h-spacing;
+    }
+
+    .mzp-c-form-group + & {
+        margin-top: $spacing-xl - $field-v-spacing;
+    }
 }

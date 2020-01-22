@@ -102,7 +102,7 @@ textarea {
 // Element styles
 
 fieldset {
-    margin-bottom: $field-spacing;
+    margin-bottom: $field-v-spacing;
     min-width: 0; // https://stackoverflow.com/questions/17408815/fieldset-resizes-wrong-appears-to-have-unremovable-min-width-min-content
     width: 100%;
 }
@@ -110,7 +110,7 @@ fieldset {
 legend {
     @include text-body-lg;
     font-weight: bold;
-    margin-bottom: $field-spacing;
+    margin-bottom: $field-v-spacing;
 
     .mzp-t-firefox & {
         @include font-firefox;
@@ -209,6 +209,24 @@ input[size] {
     min-width: 0;
 }
 
+/* size on HTML is not a good way to size things, this is most evident at small sizes */
+input[size='2'] {
+    max-width: calc(2.5ch + #{$field-padding * 2});
+}
+
+input[size='3'] {
+    max-width: calc(3.5ch + #{$field-padding * 2});
+}
+
+input[size='4'] {
+    max-width: calc(4.5ch + #{$field-padding * 2});
+}
+
+input[size='5'] {
+    max-width: calc(5.5ch + #{$field-padding * 2});
+}
+
+
 input[type='search'] {
     background-image: $url-image-search-form;
     background-repeat: no-repeat;
@@ -235,7 +253,7 @@ input[type='file'] {
     border-radius: 4px;
     border: $field-border;
     line-height: 1.25;
-    margin: 0 0 $field-spacing;
+    margin: 0 0 $field-v-spacing;
 
     &:hover {
         border-color: $color-link-hover;
@@ -374,7 +392,7 @@ select {
 // Buttons
 
 button {
-    margin: 0 0 $field-spacing;
+    margin: 0 0 $field-v-spacing;
     padding: $spacing-sm $spacing-md;
     border-radius: 4px;
     font-weight: bold;
@@ -428,6 +446,10 @@ legend {
     .mzp-is-error & {
         color: $form-red;
     }
+
+    .mzp-c-button + & {
+        margin-top: $spacing-sm * -1;
+    }
 }
 
 
@@ -440,13 +462,13 @@ legend {
     border-radius: 4px;
     color: #fff;
     padding: $spacing-sm;
-    margin-bottom: $field-spacing;
+    margin-bottom: $spacing-xl;
 
     :last-child {
         margin-bottom: 0;
     }
 
     li {
-        margin-bottom: $label-spacing;
+        margin-bottom: $label-v-spacing;
     }
 }

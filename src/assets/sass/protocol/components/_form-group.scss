@@ -5,18 +5,18 @@
 @import '../includes/lib';
 
 
-.mzp-c-group {
+.mzp-c-form-group {
     display: grid;
-    column-gap: $field-spacing;
+    column-gap: $field-h-spacing;
     min-width: 1px; // to solve problem with floated legends
 
     & > .mzp-c-field-msg:last-child,
     & > .mzp-c-form-info:last-child {
-        margin-bottom: $field-spacing;
+        padding-bottom: $field-v-spacing;
     }
 }
 
-.mzp-c-group-spacer {
+.mzp-c-form-group-spacer {
     color: $color-gray-70;
     padding: #{$field-padding + 2px} 0; // push content down to be inline with field-control content
 }
@@ -24,10 +24,10 @@
 /* -------------------------------------------------------------------------- */
 // fixed width, fields conform to the grid
 
-.mzp-l-group-full,
-.mzp-l-group-half,
-.mzp-l-group-third,
-.mzp-l-group-quarter {
+.mzp-l-form-group-full,
+.mzp-l-form-group-half,
+.mzp-l-form-group-third,
+.mzp-l-form-group-quarter {
     grid-template-columns: repeat(1, 1fr);
 
     > .mzp-c-field > .mzp-c-field-control {
@@ -37,21 +37,21 @@
 }
 
 @media #{$mq-sm} {
-    .mzp-l-group-half {
+    .mzp-l-form-group-half {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .mzp-l-group-third {
+    .mzp-l-form-group-third {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .mzp-l-group-quarter {
+    .mzp-l-form-group-quarter {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media #{$mq-md} {
-    .mzp-l-group-quarter {
+    .mzp-l-form-group-quarter {
         grid-template-columns: repeat(4, 1fr);
     }
 }
@@ -59,9 +59,9 @@
 /* -------------------------------------------------------------------------- */
 // flexable width, grid conforms to the fields
 
-.mzp-l-group-datetime,
-.mzp-l-group-expiry,
-.mzp-l-group-row {
+.mzp-l-form-group-datetime,
+.mzp-l-form-group-expiry,
+.mzp-l-form-group-row {
     grid-template-columns: repeat(1, 1fr);
 
     > .mzp-c-field > .mzp-c-form-msg,
@@ -71,11 +71,11 @@
     }
 }
 
-.mzp-l-group-datetime {
+.mzp-l-form-group-datetime {
     grid-template-columns: repeat(2, min-content) 1fr; // extra fr lets msg and info blocks expand to width of parent
 }
 
-.mzp-l-group-expiry {
+.mzp-l-form-group-expiry {
     grid-template-columns: repeat(3, min-content) 1fr; // extra fr lets msg and info blocks expand to width of parent
     column-gap: $spacing-sm;
 
@@ -85,8 +85,8 @@
 }
 
 @media #{$mq-sm} {
-    .mzp-l-group-row {
-        grid-template-columns: min-content min-content min-content min-content min-content 1fr;
+    .mzp-l-form-group-row {
+        grid-template-columns: repeat(4, min-content);
     }
 }
 

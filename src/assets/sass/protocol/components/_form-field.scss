@@ -5,8 +5,9 @@
 @import '../includes/lib';
 
 .mzp-c-field {
-    margin-bottom: $field-spacing;
+    margin: 0;
     max-width: 100%;
+    padding-bottom: $field-v-spacing;
 
     button {
         margin-bottom: 0;

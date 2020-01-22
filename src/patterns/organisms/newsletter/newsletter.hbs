@@ -14,22 +14,20 @@ links:
   <div class="mzp-c-newsletter-image">
     <img src="{{@root.baseurl}}/static/img/newsletter/newsletter-image.png" width="346" height="346" alt="">
   </div>
-
-  <form id="newsletter-form" class="mzp-c-newsletter-form mzp-c-form" name="newsletter-form" action="/path/to/handler/" method="post">
-    <header class="mzp-c-newsletter-header">
-      <h3 class="mzp-c-newsletter-title">Love the Web?</h3>
-      <p class="mzp-c-newsletter-tagline">Get the Mozilla newsletter and help us keep it open and free.</p>
-    </header>
+  <form id="newsletter-form" class="mzp-c-form mzp-c-newsletter-form" name="newsletter-form" action="/path/to/handler/" method="post">
+    <h3 class="mzp-c-form-heading">Love the Web?</h3>
+    <p class="mzp-c-form-intro">Get the Mozilla newsletter and help us keep it open and free.</p>
 
     <fieldset class="mzp-c-newsletter-content">
       <div class="mzp-c-form-errors" id="newsletter-errors">{{#if errors}}{{#block "errors"}}{{/block}}{{/if}}</div>
 
+      <div class="mzp-c-form-group mzp-l-form-group-full">
       {{#embed "patterns.molecules.forms.fields.input" id="email" type="email" required="true" addclass="mzp-js-email-field"}}
         {{#content "label"}}Your email address{{/content}}
         {{#content "attrs"}}placeholder="yourname@example.com"{{/content}}
       {{/embed}}
-
-      <div id="newsletter-details" class="mzp-c-newsletter-details">
+      </div>
+      <div id="newsletter-details" class="mzp-c-newsletter-details mzp-c-form-group mzp-l-form-group-full">
         {{#embed "patterns.molecules.forms.fields.select" id="country" name="country" required="true"}}
           {{#content "label"}}Country{{/content}}
           {{#content "options"}}
@@ -55,10 +53,10 @@ links:
         {{#embed "patterns.molecules.forms.fields.choice" id="privacy" name="privacy" type="checkbox" required="true" is-legal="true"}}{{#content "label"}}I’m okay with Mozilla handling my info as explained in <a href="https://www.mozilla.org/privacy/websites/">this Privacy Notice</a>{{/content}}{{/embed}}
       </div>
 
-      <p class="mzp-c-form-submit">
+      <footer class="mzp-c-form-footer mzp-l-full">
         <button type="submit" class="mzp-c-button" id="newsletter-submit">Sign up now</button>
-        <span class="mzp-c-fieldnote">We will only send you Mozilla-related information.</span>
-      </p>
+        <small class="mzp-c-form-info mzp-t-small">We will only send you Mozilla-related information.</small>
+      </footer>
     </fieldset>
   </form>
 
